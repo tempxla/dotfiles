@@ -1,0 +1,19 @@
+Config {
+  font = "xft:MigMix 1P:antialias=true:autohinting=true:size=9"
+  , additionalFonts = ["xft:MigMix 1M:size=9:antialias=true"]
+  , bgColor = "#1a1a1a"
+  , fgColor = "#e5e5e5"
+  , position = Static { xpos = 1440, ypos = 0, width = 1440, height = 20 }
+  , lowerOnStart = True
+  , commands = [
+      Run StdinReader
+      , Run MultiCpu ["-t", "<total0>% <total1>%", "-m", "2"] 10
+      , Run Memory ["-t", "<usedratio>%", "-p", "3"] 10
+	  , Run DynNetwork ["-t" , "<tx>k <rx>k", "-m", "2"] 10
+      , Run Date "%a.%d  %H:%M" "date" 10
+	  , Run Volume "default" "Master" ["-t", "<volume>%"] 10
+	  ]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template = " %StdinReader% } %date% { <fn=1><fn=0><fc=#6D9CBE>Cpu</fc></fn> %multicpu%  <fn=0><fc=#6D9CBE>Mem</fc></fn>%memory%  <fn=0><fc=#6D9CBE>Net</fc></fn> %dynnetwork%  <fn=0><fc=#6D9CBE>Vol</fc></fn> %default:Master%</fn>  "
+  }
