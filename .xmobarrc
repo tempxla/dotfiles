@@ -12,7 +12,7 @@ Config {
       , Run DynNetwork ["-t" , "<tx>k <rx>k", "-m", "2"] 10
       , Run Date "%a.%d  %H:%M" "date" 10
       , Run Volume "default" "Master" ["-t", "<volume>%"] 10
-	  ]
+      ]
   , sepChar = "%"
   , alignSep = "}{"
   , template = " %StdinReader% } %date% { <fn=1><fn=0><fc=#6D9CBE>Cpu</fc></fn> %multicpu%  <fn=0><fc=#6D9CBE>Mem</fc></fn>%memory%  <fn=0><fc=#6D9CBE>Net</fc></fn> %dynnetwork%  <fn=0><fc=#6D9CBE>Vol</fc></fn> %default:Master%</fn>  "
