@@ -9,9 +9,9 @@ Config {
       Run StdinReader
       , Run MultiCpu ["-t", "<total0>% <total1>%", "-m", "2"] 10
       , Run Memory ["-t", "<usedratio>%", "-p", "3"] 10
-	  , Run DynNetwork ["-t" , "<tx>k <rx>k", "-m", "2"] 10
+      , Run DynNetwork ["-t" , "<tx>k <rx>k", "-m", "2"] 10
       , Run Date "%a.%d  %H:%M" "date" 10
-	  , Run Volume "default" "Master" ["-t", "<volume>%"] 10
+      , Run Volume "default" "Master" ["-t", "<volume>%"] 10
 	  ]
   , sepChar = "%"
   , alignSep = "}{"
