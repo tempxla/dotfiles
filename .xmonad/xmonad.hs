@@ -15,6 +15,7 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 import XMonad.Layout.Spacing
+import XMonad.Layout.Renamed
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
@@ -25,6 +26,7 @@ import XMonad.Hooks.InsertPosition
 -- certain contrib modules.
 --
 myTerminal      = "urxvt"
+-- myTerminal      = "urxvt -e bash -c \"tmux new-session\""
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -191,16 +193,15 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 myLayout = avoidStruts standardLayout
   where
-     standardLayout = tiled ||| Mirror tiled ||| Full
+     standardLayout =   renamed [Replace "Tall"] tiled
+                    ||| renamed [Replace "Mirror Tall"] (Mirror tiled)
+                    ||| renamed [Replace "Full"] Full
      -- default tiling algorithm partitions the screen into two panes
      tiled   = spacing 10 $ Tall nmaster delta ratio
-
      -- The default number of windows in the master pane
      nmaster = 1
-
      -- Default proportion of screen occupied by master pane
      ratio   = 1/2
-
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
@@ -286,7 +287,8 @@ myStartupHook = do
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
--- main = xmonad =<< xmobar defaults
+--main = xmonad =<< xmobar defaults
+--main = xmonad defaults
 main = do
   -- The main function.
   xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig

@@ -1,12 +1,17 @@
+! ime
 URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
-
-URxvt.scrollBar: false
+! color
 URxvt*.depth: 32
 URxvt.background: [0]#000000
 URxvt.foreground: [100]#d8d8d8
+! font
 URxvt.font: xft:monospace:antialias=true:autohinting=true:size=9
 URxvt.letterSpace: -2
+! scroll bar
+URxvt.scrollBar: false
+! pointer
+URxvt.cursorBlink: true
 
 ! 0: black
 *color0:  #242424
