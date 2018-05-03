@@ -228,8 +228,11 @@ myManageHook = composeAll
     , className =? "Mikutter.rb"    --> doShift (myWorkspaces !! 0)
     , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
+    -- 新しいウィンドウを末尾に追加しフォーカスする
+    , not <$> isFloat               --> insertPosition End Newer
     ]
-    <+> insertPosition End Newer -- 新しいウィンドウを末尾に追加しフォーカスする
+  where
+    isFloat = liftX $ not . M.null <$> gets (W.floating . windowset)
 
 ------------------------------------------------------------------------
 -- Event handling
