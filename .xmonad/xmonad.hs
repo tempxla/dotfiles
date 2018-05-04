@@ -232,7 +232,10 @@ myManageHook = composeAll
     , not <$> isFloat               --> insertPosition End Newer
     ]
   where
-    isFloat = liftX $ not . M.null <$> gets (W.floating . windowset)
+    isFloat = liftX $ do
+      floats <- gets $ W.floating . windowset
+      ws <- gets $ W.integrate' . W.stack . W.workspace . W.current . windowset
+      return $ any (flip M.member floats) ws
 
 ------------------------------------------------------------------------
 -- Event handling
