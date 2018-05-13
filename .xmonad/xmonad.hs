@@ -140,6 +140,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
+
+    -- alsa
+    , ((modm,               xK_minus     ), spawn "amixer -q set Master 2%-"   )
+    , ((modm .|. shiftMask, xK_semicolon ), spawn "amixer -q set Master 2%+"   )
+    , ((modm .|. shiftMask, xK_m         ), spawn "amixer -q set Master toggle")
     ]
     ++
 
@@ -226,6 +231,7 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     , className =? "Mikutter.rb"    --> doShift (myWorkspaces !! 0)
+    , className =? "Corebird"       --> doShift (myWorkspaces !! 0)
     , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
     -- 新しいウィンドウを末尾に追加しフォーカスする

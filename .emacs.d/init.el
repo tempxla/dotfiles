@@ -127,11 +127,11 @@
 ;; 行末の空白を削除する
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; 閉じ括弧などを自動挿入
-(setq skeleton-pair t)
-(global-set-key (kbd "(")   'skeleton-pair-insert-maybe)
-(global-set-key (kbd "{")   'skeleton-pair-insert-maybe)
-(global-set-key (kbd "[")   'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\"")  'skeleton-pair-insert-maybe)
+;; (setq skeleton-pair t)
+;; (global-set-key (kbd "(")   'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "{")   'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "[")   'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "\"")  'skeleton-pair-insert-maybe)
 ;; マウスホイールでスクロール(ホイール壊れてるから使ってない)
 (defun scroll-down-with-lines () "" (interactive) (scroll-down 1))
 (defun scroll-up-with-lines ()   "" (interactive) (scroll-up 1))
