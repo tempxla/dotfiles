@@ -2,9 +2,9 @@
 URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
 ! color
-URxvt*.depth: 32
-URxvt.background: [100]#000000
-URxvt.foreground: [100]#d8d8d8
+!URxvt*.depth: 32
+URxvt.background: #1a1a1a
+URxvt.foreground: #e5e5e5
 ! font
 URxvt.font: xft:monospace:antialias=true:autohinting=true:size=9
 URxvt.letterSpace: -2

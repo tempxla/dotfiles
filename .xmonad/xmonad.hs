@@ -62,7 +62,7 @@ myWorkspaces    = ["壱","弐","参","肆","伍","陸","漆","捌","玖"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#1A1A1A"
-myFocusedBorderColor = "#777777"
+myFocusedBorderColor = "#BCBCBC"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -262,12 +262,12 @@ myEventHook = docksEventHook -- 初期起動時 xmobarに重なるの防止
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
---myLogHook = return ()
-myLogHook = fadeOrigLogHook fadeAmount
-  where
-    fadeAmount = 0.8
-    fadeOrigLogHook = fadeOutLogHook . fadeIf fadeSomeWindows
-    fadeSomeWindows = className =? "URxvt"
+myLogHook = return ()
+-- myLogHook = fadeOrigLogHook fadeAmount
+--   where
+--     fadeAmount = 0.8
+--     fadeOrigLogHook = fadeOutLogHook . fadeIf fadeSomeWindows
+--     fadeSomeWindows = className =? "URxvt"
 
 myXmobarPP = xmobarPP
   {
