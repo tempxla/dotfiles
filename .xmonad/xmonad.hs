@@ -21,6 +21,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.InsertPosition
+import XMonad.Hooks.FadeInactive
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -261,7 +262,12 @@ myEventHook = docksEventHook -- 初期起動時 xmobarに重なるの防止
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
-myLogHook = return ()
+--myLogHook = return ()
+myLogHook = fadeOrigLogHook fadeAmount
+  where
+    fadeAmount = 0.8
+    fadeOrigLogHook = fadeOutLogHook . fadeIf fadeSomeWindows
+    fadeSomeWindows = className =? "URxvt"
 
 myXmobarPP = xmobarPP
   {

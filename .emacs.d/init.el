@@ -114,6 +114,10 @@
 (set-face-background 'whitespace-tab   "white")
 (set-face-background 'whitespace-space "white")
 (global-whitespace-mode 1)
+;; emacsで曖昧な文字幅を全角にする
+;; https://github.com/hamano/locale-eaw
+(require 'eaw)
+(eaw-fullwidth)
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
