@@ -39,7 +39,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 2
+myBorderWidth   = 1
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -235,6 +235,7 @@ myManageHook = composeAll
     , className =? "Corebird"       --> doShift (myWorkspaces !! 0)
     , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
+    , className =? "Chromium"       --> doShift (myWorkspaces !! 4)
     -- 新しいウィンドウを末尾に追加しフォーカスする
     , not <$> isFloat               --> insertPosition End Newer
     ]
