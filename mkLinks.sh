@@ -7,3 +7,4 @@ ln -sf ${THIS_DIR}/.config/fontconfig/fonts.conf    ~/.config/fontconfig/fonts.c
 ln -sf ${THIS_DIR}/.tmux.conf           ~/.tmux.conf
 ln -sf ${THIS_DIR}/.emacs.d/init.el     ~/.emacs.d/init.el
 ln -sf ${THIS_DIR}/.ncmpcpp/config      ~/.ncmpcpp/config
+ln -sf ${THIS_DIR}/.config/mpd/mpd.conf ~/.config/mpd/mpd.conf
