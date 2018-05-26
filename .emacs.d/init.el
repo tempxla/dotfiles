@@ -28,7 +28,6 @@
 
 ;; auto-install はあまり使わない
 ;; 手動でelispフォルダにDLしてbyte-compile-fileコンパイルする
-;; どこからインストールしたのかメモすること
 ;; (when (require 'auto-install nil t)
 ;;  (setq auto-install-directory "~/.emacs.d/elisp/")
 ;;  (auto-install-update-emacswiki-package-name t)
@@ -155,8 +154,14 @@
   (set-face-background 'ahs-plugin-defalt-face      "green"      )
   )
 ;; flymake
-(setq flymake-no-changes-timeout nil)             ;; たぶん何かの設定
-(setq flymake-start-syntax-check-on-newline nil)  ;; たぶん何かの設定
+;; Time to wait after last change before starting compilation.
+(setq flymake-no-changes-timeout nil)
+;; Start syntax check if newline char was added/removed from the buffer.
+(setq flymake-start-syntax-check-on-newline nil)
+;; Nope, I want my copies in the system temp dir.
+;; (setq flymake-run-in-place nil)
+;; This lets me say where my temp dir is.
+;; (setq temporary-file-directory "~/.emacs.d/tmp/")
 
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
