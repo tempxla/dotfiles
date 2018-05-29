@@ -298,6 +298,7 @@ myXmobarPP = xmobarPP
 -- By default, do nothing.
 -- myStartupHook = return ()
 myStartupHook = do
+  spawn "feh --bg-fill ~/data/pic/desktop.jpg"
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   setWMName "LG3D"  -- for java apps
 
@@ -313,7 +314,7 @@ main = do
   xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
   where
     -- Command to launch the bar.
-    myBar = "~/.cabal/bin/xmobar"
+    myBar = "/usr/bin/xmobar"
     -- Custom PP, configure it as you like. It determines what is being written to the bar.
     -- myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
     myPP = myXmobarPP

@@ -176,7 +176,8 @@
 ;; -----------------------------------------------------------------------------
 ;; Haskell
 ;; -----------------------------------------------------------------------------
-(add-to-list 'exec-path (concat (getenv "HOME") "/.cabal/bin"))
+;; (add-to-list 'exec-path (concat (getenv "HOME") "/.cabal/bin"))
+(add-to-list 'exec-path (concat (getenv "HOME") "/.local/bin"))
 (autoload 'ghc-init "ghc" nil t)
 (when (require 'haskell-mode nil t)
   (setq haskell-indentation-left-offset       2)
