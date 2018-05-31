@@ -1,13 +1,12 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                            ;;
-;; emacs init.el                                                              ;;
-;;                                                                            ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init.el --- Emacs init file
+;;; Commentary:
 ;; -----------------------------------------------------------------------------
 ;; グローバルな設定
 ;; -----------------------------------------------------------------------------
 ;; ロードパスの追加
+;;; Code:
 (defun add-to-load-path (&rest paths)
+  "PATHS: path list."
   (let (path)
     (dolist (path paths paths)
       (let ((default-directory
@@ -47,7 +46,7 @@
 (recentf-mode t)
 (setq recentf-max-menu-items 30)
 (setq recentf-max-saved-items 2000)
-(setq recentf-save-file "~/.emacs.d/cache/.recentf")
+(setq recentf-save-file "~/.emacs.d/cache/recentf")
 
 ;; ミニバッファの履歴を保存する
 (savehist-mode 1)
@@ -57,12 +56,14 @@
 ;; 前回の編集場所を記憶する
 (load "saveplace")
 (setq-default save-place t)
-(setq save-place-file   "~/.emacs.d/cache/.emacs-places")
+(setq save-place-file   "~/.emacs.d/cache/places")
 
 ;; undohist
 ;; ファイルを閉じた後もundoできる
 (when (require 'undohist nil t)
-  (undohist-initialize))
+  (setq undohist-directory "~/.emacs.d/cache/undohist")
+  (undohist-initialize)
+  )
 
 ;; undo-tree
 ;; ctrl+uでtree表示
@@ -136,8 +137,8 @@
 ;; (global-set-key (kbd "[")   'skeleton-pair-insert-maybe)
 ;; (global-set-key (kbd "\"")  'skeleton-pair-insert-maybe)
 ;; マウスホイールでスクロール(ホイール壊れてるから使ってない)
-(defun scroll-down-with-lines () "" (interactive) (scroll-down 1))
-(defun scroll-up-with-lines ()   "" (interactive) (scroll-up 1))
+;; (defun scroll-down-with-lines () "" (interactive) (scroll-down 1))
+;; (defun scroll-up-with-lines ()   "" (interactive) (scroll-up 1))
 (define-key global-map (kbd "<wheel-up>")         'scroll-down-with-lines)
 (define-key global-map (kbd "<nil> <wheel-up>")   'scroll-down-with-lines)
 (define-key global-map (kbd "<wheel-down>")       'scroll-up-with-lines)
@@ -155,30 +156,41 @@
   )
 ;; flymake
 ;; Time to wait after last change before starting compilation.
-(setq flymake-no-changes-timeout nil)
+;; (setq flymake-no-changes-timeout nil)
 ;; Start syntax check if newline char was added/removed from the buffer.
-(setq flymake-start-syntax-check-on-newline nil)
+;; (setq flymake-start-syntax-check-on-newline nil)
 ;; Nope, I want my copies in the system temp dir.
 ;; (setq flymake-run-in-place nil)
 ;; This lets me say where my temp dir is.
 ;; (setq temporary-file-directory "~/.emacs.d/tmp/")
 
+;; flycheck
+(define-key global-map (kbd "M-n") 'flycheck-next-error)
+(define-key global-map (kbd "M-p") 'flycheck-previous-error)
+(add-hook 'flycheck-mode-hook
+          (lambda ()
+            (set-face-foreground 'flycheck-warning   "yellow")
+            (set-face-underline  'flycheck-warning   "yellow")
+            (set-face-foreground 'flycheck-error     "red"   )
+            (set-face-underline  'flycheck-error     "red"   )
+            ))
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
-(define-key global-map (kbd "C-h") 'delete-backward-char)
+(define-key global-map (kbd "C-h")     'delete-backward-char)
 (define-key global-map (kbd "C-x C-c") 'kill-buffer)
-(define-key global-map (kbd "C-x q") 'save-buffers-kill-terminal)
-(define-key global-map (kbd "C-t") 'buffer-menu)
-(define-key global-map (kbd "C-z") 'undo)
-(define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
+(define-key global-map (kbd "C-x q")   'save-buffers-kill-terminal)
+(define-key global-map (kbd "C-t")     'buffer-menu)
+(define-key global-map (kbd "C-z")     'undo)
+(define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
 ;; -----------------------------------------------------------------------------
 ;; (add-to-list 'exec-path (concat (getenv "HOME") "/.cabal/bin"))
-(add-to-list 'exec-path (concat (getenv "HOME") "/.local/bin"))
-(autoload 'ghc-init "ghc" nil t)
+;; (add-to-list 'exec-path (concat (getenv "HOME") "/.local/bin"))
+;; (autoload 'ghc-init "ghc" nil t)
 (when (require 'haskell-mode nil t)
   (setq haskell-indentation-left-offset       2)
   (setq haskell-indentation-ifte-offset       2)
@@ -186,17 +198,26 @@
   (setq haskell-indentation-where-pre-offset  2)
   (setq haskell-indentation-layout-offset     2)
   (setq haskell-indentation-starter-offset    0)
-  (setq haskell-indentation-cycle-warn nil)
+  (setq haskell-indentation-cycle-warn        nil)
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
   ;; flymake
   (add-hook 'haskell-mode-hook
             (lambda ()
-              (ghc-init)
-              (flymake-mode)
+              ;;(ghc-init)
+              ;;(flymake-mode)
+              (flycheck-mode)
               ;; color
               (set-face-foreground 'haskell-operator-face        "yellow"   )
-              (set-face-foreground 'ghc-face-warn                "yellow"   )
-              (set-face-underline  'ghc-face-warn                "yellow"   )
-              (set-face-foreground 'ghc-face-error               "red"      )
-              (set-face-underline  'ghc-face-error               "red"      )))
+              ;; (set-face-foreground 'ghc-face-warn                "yellow"   )
+              ;; (set-face-underline  'ghc-face-warn                "yellow"   )
+              ;; (set-face-foreground 'ghc-face-error               "red"      )
+              ;; (set-face-underline  'ghc-face-error               "red"      )
+              ))
   )
+;; -----------------------------------------------------------------------------
+;; Emacs-Lisp
+;; -----------------------------------------------------------------------------
+(add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
+(setq flycheck-emacs-lisp-load-path load-path)
+
+;;; init.el ends here
