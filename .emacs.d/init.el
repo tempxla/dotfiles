@@ -175,6 +175,10 @@
             (set-face-underline  'flycheck-error     "red"   )
             ))
 
+;; company
+(require 'company)
+(global-company-mode)
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
@@ -199,21 +203,15 @@
   (setq haskell-indentation-layout-offset     2)
   (setq haskell-indentation-starter-offset    0)
   (setq haskell-indentation-cycle-warn        nil)
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  ;; flymake
   (add-hook 'haskell-mode-hook
             (lambda ()
-              ;;(ghc-init)
-              ;;(flymake-mode)
+              (turn-on-haskell-indentation)
+              (set-face-foreground 'haskell-operator-face "yellow")
               (flycheck-mode)
-              ;; color
-              (set-face-foreground 'haskell-operator-face        "yellow"   )
-              ;; (set-face-foreground 'ghc-face-warn                "yellow"   )
-              ;; (set-face-underline  'ghc-face-warn                "yellow"   )
-              ;; (set-face-foreground 'ghc-face-error               "red"      )
-              ;; (set-face-underline  'ghc-face-error               "red"      )
+              (intero-mode)
               ))
   )
+
 ;; -----------------------------------------------------------------------------
 ;; Emacs-Lisp
 ;; -----------------------------------------------------------------------------
