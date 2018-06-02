@@ -201,8 +201,10 @@
             (lambda ()
               (turn-on-haskell-indentation)
               (set-face-foreground 'haskell-operator-face "yellow")
-              (flycheck-mode)
-              (intero-mode)
+              (cond ((not (string-match-p "/xmonad\\.hs$" buffer-file-name))
+                     (flycheck-mode)
+                     (intero-mode)
+                     ))
               ))
   )
 
