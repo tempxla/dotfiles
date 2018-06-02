@@ -66,7 +66,7 @@
   )
 
 ;; undo-tree
-;; ctrl+uでtree表示
+;; C-x uでtree表示
 (when (require 'undo-tree nil t)
   (global-undo-tree-mode))
 
@@ -74,13 +74,13 @@
 ;; 色
 ;; -----------------------------------------------------------------------------
 ;; M-x customize-faceで調べられる
-(set-face-foreground 'font-lock-comment-face       "white"    )
-(set-face-foreground 'font-lock-doc-face           "white"    )
-(set-face-foreground 'font-lock-keyword-face       "magenta"  )
-(set-face-foreground 'font-lock-function-name-face "blue"     )
-(set-face-foreground 'font-lock-type-face          "green"    )
-(set-face-foreground 'font-lock-string-face        "red"      )
-(set-face-foreground 'font-lock-constant-face      "cyan"     )
+(set-face-foreground 'font-lock-comment-face       "white"  )
+(set-face-foreground 'font-lock-doc-face           "white"  )
+(set-face-foreground 'font-lock-keyword-face       "magenta")
+(set-face-foreground 'font-lock-function-name-face "blue"   )
+(set-face-foreground 'font-lock-type-face          "green"  )
+(set-face-foreground 'font-lock-string-face        "red"    )
+(set-face-foreground 'font-lock-constant-face      "cyan"   )
 ;; (set-face-foreground 'font-lock-operator-face      "yellow"   ) ; 演算子は無い
 
 ;; -----------------------------------------------------------------------------
@@ -136,7 +136,7 @@
 ;; (global-set-key (kbd "{")   'skeleton-pair-insert-maybe)
 ;; (global-set-key (kbd "[")   'skeleton-pair-insert-maybe)
 ;; (global-set-key (kbd "\"")  'skeleton-pair-insert-maybe)
-;; マウスホイールでスクロール(ホイール壊れてるから使ってない)
+;; マウスホイールでスクロール
 ;; (defun scroll-down-with-lines () "" (interactive) (scroll-down 1))
 ;; (defun scroll-up-with-lines ()   "" (interactive) (scroll-up 1))
 (define-key global-map (kbd "<wheel-up>")         'scroll-down-with-lines)
@@ -151,18 +151,9 @@
 (when (require 'auto-highlight-symbol nil t)
   (global-auto-highlight-symbol-mode t)
   (ahs-set-idle-interval 0.8)
-  (set-face-background 'ahs-face                    "green"      )
-  (set-face-background 'ahs-plugin-defalt-face      "green"      )
+  (set-face-background 'ahs-face                "green")
+  (set-face-background 'ahs-plugin-defalt-face  "green")
   )
-;; flymake
-;; Time to wait after last change before starting compilation.
-;; (setq flymake-no-changes-timeout nil)
-;; Start syntax check if newline char was added/removed from the buffer.
-;; (setq flymake-start-syntax-check-on-newline nil)
-;; Nope, I want my copies in the system temp dir.
-;; (setq flymake-run-in-place nil)
-;; This lets me say where my temp dir is.
-;; (setq temporary-file-directory "~/.emacs.d/tmp/")
 
 ;; flycheck
 (define-key global-map (kbd "M-n") 'flycheck-next-error)
@@ -192,9 +183,6 @@
 ;; -----------------------------------------------------------------------------
 ;; Haskell
 ;; -----------------------------------------------------------------------------
-;; (add-to-list 'exec-path (concat (getenv "HOME") "/.cabal/bin"))
-;; (add-to-list 'exec-path (concat (getenv "HOME") "/.local/bin"))
-;; (autoload 'ghc-init "ghc" nil t)
 (when (require 'haskell-mode nil t)
   (setq haskell-indentation-left-offset       2)
   (setq haskell-indentation-ifte-offset       2)
