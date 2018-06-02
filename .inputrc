@@ -1,0 +1,2 @@
+;; bashの補完で大文字小文字を無視する
+set completion-ignore-case on
