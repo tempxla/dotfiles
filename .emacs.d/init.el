@@ -171,6 +171,7 @@
             (set-face-foreground 'flycheck-error     "red"   )
             (set-face-underline  'flycheck-error     "red"   )
             ))
+(setq flycheck-check-syntax-automatically '(save mode-enabled))
 
 ;; company
 (require 'company)
@@ -202,6 +203,7 @@
               (turn-on-haskell-indentation)
               (set-face-foreground 'haskell-operator-face "yellow")
               (cond ((not (string-match-p "/xmonad\\.hs$" buffer-file-name))
+                     (custom-set-variables '(haskell-stylish-on-save t))
                      (flycheck-mode)
                      (intero-mode)
                      ))
