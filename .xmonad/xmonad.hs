@@ -236,6 +236,7 @@ myManageHook = composeAll
     , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
     , className =? "Chromium"       --> doShift (myWorkspaces !! 4)
+    , className =? "V2C"            --> doShift (myWorkspaces !! 7)
     -- 新しいウィンドウを末尾に追加しフォーカスする
     , not <$> isFloat               --> insertPosition End Newer
     ]
