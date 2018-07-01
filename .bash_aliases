@@ -1,0 +1,5 @@
+alias la='ls -a'
+alias ll='ls -al'
+alias x='exit'
+alias e='emacs -nw'
+alias sudoe='sudo emacs -nw'

@@ -1,0 +1,5 @@
+[user]
+    email = 38803749+tempxla@users.noreply.github.com
+    name = tempxla
+[alias]
+    loga = log --decorate --graph --all --oneline
