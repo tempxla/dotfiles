@@ -119,7 +119,6 @@ export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/prog/google-cloud-sdk/bin:$PATH"
 export PATH="$HOME/prog/appengine-java-sdk-1.9.63/bin:$PATH"
-export PATH="/snap/bin:$PATH"
 
 # 補完
 eval "$(stack --bash-completion-script stack)"
