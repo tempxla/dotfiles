@@ -37,3 +37,6 @@ URxvt.cursorBlink: true
 ! 7: white
 *color7:  #777777
 *color15: #777777
+
+!XScreenSaver
+xscreensaver.newLoginCommand:

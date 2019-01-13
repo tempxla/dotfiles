@@ -142,10 +142,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
 
-    -- alsa
+    -- AlsaMixer
     , ((modm,               xK_minus     ), spawn "amixer -q set Master 2%-"   )
     , ((modm .|. shiftMask, xK_semicolon ), spawn "amixer -q set Master 2%+"   )
     , ((modm .|. shiftMask, xK_m         ), spawn "amixer -q set Master toggle")
+
+    -- XScreenSaver
+    , ((modm .|. shiftMask, xK_l         ), spawn "xscreensaver-command -lock")
+
     ]
     ++
 
@@ -301,6 +305,7 @@ myXmobarPP = xmobarPP
 myStartupHook = do
   spawn "feh --bg-fill ~/data/pic/desktop.jpg"
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
+  spawn "xscreensaver"
   setWMName "LG3D"  -- for java apps
 
 ------------------------------------------------------------------------
