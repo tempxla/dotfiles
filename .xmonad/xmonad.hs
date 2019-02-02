@@ -241,6 +241,7 @@ myManageHook = composeAll
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
     , className =? "Chromium"       --> doShift (myWorkspaces !! 4)
     , className =? "V2C"            --> doShift (myWorkspaces !! 7)
+    , className =? "Eclipse"        --> doShift (myWorkspaces !! 6)
     -- 新しいウィンドウを末尾に追加しフォーカスする
     , not <$> isFloat               --> insertPosition End Newer
     ]
