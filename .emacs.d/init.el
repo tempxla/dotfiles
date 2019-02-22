@@ -108,7 +108,7 @@
 (require 'whitespace)
 (setq whitespace-style '(face           ; faceで可視化
                          trailing       ; 行末
-                         tabs           ; タブ
+                         ;;tabs           ; タブ
                          spaces         ; スペース
                          ;;empty          ; 先頭/末尾の空行
                          space-mark     ; 表示のマッピング
@@ -176,6 +176,15 @@
 ;; company
 (require 'company)
 (global-company-mode)
+(setq company-idle-delay 0) ; 遅延なしにすぐ表示
+(setq company-minimum-prefix-length 2) ; デフォルトは4
+(setq company-selection-wrap-around t) ; 候補の最後の次は先頭に戻る
+(setq completion-ignore-case t)
+(setq company-dabbrev-downcase nil)
+(global-set-key (kbd "C-M-i") 'company-complete)
+(define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
+(define-key company-active-map (kbd "C-s") 'company-complete-selection)
 
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
@@ -215,5 +224,25 @@
 ;; -----------------------------------------------------------------------------
 (add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
 (setq flycheck-emacs-lisp-load-path load-path)
+
+;; -----------------------------------------------------------------------------
+;; Go
+;; -----------------------------------------------------------------------------
+(add-hook 'go-mode-hook 'flycheck-mode)
+(add-hook 'go-mode-hook
+          (lambda()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            ;; (add-hook 'go-mode-hook 'go-eldoc-setup) なくても動く
+            (add-to-list 'company-backends 'company-go)
+            (setq indent-tabs-mode t)     ; タブを使用
+            (setq c-basic-offset 4)       ; tabサイズ
+            (define-key go-mode-map (kbd "M-.") 'godef-jump)
+            (define-key go-mode-map (kbd "M-,") 'pop-tag-mark)
+            (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+            (local-set-key (kbd "C-c i") 'go-goto-imports)
+            (local-set-key (kbd "C-c d") 'godoc)
+            ;; go-import-add (Default: C-c C-a)
+            ;; godef-jump (Default: C-c C-j)
+            ))
 
 ;;; init.el ends here

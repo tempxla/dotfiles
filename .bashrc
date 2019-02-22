@@ -117,8 +117,13 @@ export EDITOR="emacs -nw"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+## GAE
 export PATH="$HOME/prog/google-cloud-sdk/bin:$PATH"
 export PATH="$HOME/prog/appengine-java-sdk-1.9.63/bin:$PATH"
+## Go
+export PATH="$HOME/prog/go/go/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 # 補完
 eval "$(stack --bash-completion-script stack)"
