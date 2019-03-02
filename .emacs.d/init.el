@@ -151,6 +151,11 @@
 (define-key global-map (kbd "<nil> <wheel-down>") 'scroll-up-with-lines)
 ;; 矩形選択 cua-mode
 ;; C-x SPCでMark set
+;; C-x r t 矩形の先頭に文字を挿入
+;; C-x r d 矩形領域を削除
+;; C-x r k 矩形領域を削除して、キルリングに追加
+;; C-x r y キルリングの矩形領域を貼り付ける
+;; コピー/ペーストは通常と同じ Alt+w/Ctrl+y
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ;; cua バインドを無効
 ;; auto-highlight-symbol
