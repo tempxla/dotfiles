@@ -200,6 +200,14 @@
 (define-key global-map (kbd "C-t")     'buffer-menu)
 (define-key global-map (kbd "C-z")     'undo)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
+;; 編集
+;; M-l     ポイントに続く単語を小文字に変換します(downcase-word)．
+;; M-u     ポイントに続く単語を大文字に変換します(upcase-word)．
+;; M-c     ポイントに続く単語を大文字で始めます(capitalize-word)．
+;; C-x C-l リージョンを小文字にします(downcase-region)．
+;; C-x C-u リージョンを大文字にします(upcase-region)．
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
