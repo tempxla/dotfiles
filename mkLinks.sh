@@ -11,6 +11,7 @@ ln -sf ${THIS_DIR}/.config/mpd/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf ${THIS_DIR}/bin/get-volume.sh    ~/bin/get-volume.sh
 ln -sf ${THIS_DIR}/.inputrc             ~/.inputrc
 ln -sf ${THIS_DIR}/.stack/config.yaml   ~/.stack/config.yaml
+ln -sf ${THIS_DIR}/.stack/global-project/stack.yaml   ~/.stack/global-project/stack.yaml
 ln -sf ${THIS_DIR}/.gitconfig           ~/.gitconfig
 ln -sf ${THIS_DIR}/.bash_aliases        ~/.bash_aliases
 ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
