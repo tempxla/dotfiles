@@ -124,6 +124,11 @@
 ;; https://github.com/hamano/locale-eaw
 (require 'eaw)
 (eaw-fullwidth)
+;; What buffer position indicator do you use?
+(sml-modeline-mode t)
+(set-face-background 'sml-modeline-end-face "green3")   ; 全体の背景色
+(set-face-background 'sml-modeline-vis-face "red3")   ; 表示領域の背景色
+
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
