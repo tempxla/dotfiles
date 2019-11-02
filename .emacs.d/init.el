@@ -165,6 +165,8 @@
   (set-face-background 'ahs-face                "green")
   (set-face-background 'ahs-plugin-defalt-face  "green")
   )
+;; 補完
+(setq read-file-name-completion-ignore-case t)    ; minibuffer
 
 ;; flycheck
 (define-key global-map (kbd "M-n") 'flycheck-next-error)
