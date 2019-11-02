@@ -6,8 +6,10 @@
 # For more information about stack's configuration, see
 # http://docs.haskellstack.org/en/stable/yaml_configuration/
 #
-# resolver: lts-11.11
-# resolver: lts-7.16
-# packages: []
+resolver: lts-7.24
+
+packages: []
+
 extra-deps:
 - haskeline-0.7.5.0
+- stm-2.5.0.0
