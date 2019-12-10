@@ -125,6 +125,7 @@ export DATASTORE_EMULATOR_HOST=localhost:8081
 export PATH="$HOME/prog/go/go/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
+export GO111MODULE=on
 
 # 補完
 eval "$(stack --bash-completion-script stack)"
