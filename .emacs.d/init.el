@@ -1,10 +1,10 @@
 ;;; init.el --- Emacs init file
 ;;; Commentary:
+;;; Code:
 ;; -----------------------------------------------------------------------------
 ;; グローバルな設定
 ;; -----------------------------------------------------------------------------
 ;; ロードパスの追加
-;;; Code:
 (defun add-to-load-path (&rest paths)
   "PATHS: path list."
   (let (path)
@@ -264,6 +264,31 @@
             (local-set-key (kbd "C-c d") 'godoc)
             ;; go-import-add (Default: C-c C-a)
             ;; godef-jump (Default: C-c C-j)
+            ))
+
+;; -----------------------------------------------------------------------------
+;; navi2ch
+;; -----------------------------------------------------------------------------
+(autoload 'navi2ch "navi2ch" "Navigator for 2ch for Emacs" t)
+(defadvice navi2ch (after my-navi2ch-start-with-bookmark activate)
+  (unless navi2ch-list-bookmark-mode
+    (navi2ch-list-toggle-bookmark)))
+;; 色
+(add-hook 'navi2ch-hook
+          (lambda()
+            (set-face-foreground 'navi2ch-list-category-face             "white")
+            (set-face-foreground 'navi2ch-list-board-name-face           "blue")
+            (set-face-foreground 'navi2ch-article-header-face            "white")
+            (set-face-foreground 'navi2ch-article-header-contents-face   "blue")
+            (set-face-foreground 'navi2ch-article-header-fusianasan-face "blue")
+            (set-face-foreground 'navi2ch-article-message-separator-face "white")
+            (set-face-foreground 'navi2ch-bm-unread-face                 "white")
+            (set-face-foreground 'navi2ch-bm-updated-unread-face         "white")
+            (set-face-foreground 'navi2ch-bm-new-unread-face             "white")
+            (set-face-foreground 'navi2ch-bm-updated-cache-face          "green")
+            (set-face-foreground 'navi2ch-bm-cache-face                  "blue")
+            (set-face-foreground 'navi2ch-bm-seen-cache-face             "blue")
+            (set-face-foreground 'navi2ch-bm-seen-view-face              "magenta")
             ))
 
 ;;; init.el ends here
