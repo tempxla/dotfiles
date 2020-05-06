@@ -304,7 +304,7 @@ myXmobarPP = xmobarPP
 -- By default, do nothing.
 -- myStartupHook = return ()
 myStartupHook = do
-  spawn "feh --bg-fill ~/data/pic/desktop.jpg"
+  spawn "feh --bg-fill ~/data/pic/desktop.png"
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   spawn "xscreensaver"
   setWMName "LG3D"  -- for java apps
