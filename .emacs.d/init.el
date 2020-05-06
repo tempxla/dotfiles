@@ -282,13 +282,16 @@
             (set-face-foreground 'navi2ch-article-header-contents-face   "blue")
             (set-face-foreground 'navi2ch-article-header-fusianasan-face "blue")
             (set-face-foreground 'navi2ch-article-message-separator-face "white")
+            (set-face-foreground 'navi2ch-article-citation-face          "magenta")
             (set-face-foreground 'navi2ch-bm-unread-face                 "white")
             (set-face-foreground 'navi2ch-bm-updated-unread-face         "white")
             (set-face-foreground 'navi2ch-bm-new-unread-face             "white")
             (set-face-foreground 'navi2ch-bm-updated-cache-face          "green")
             (set-face-foreground 'navi2ch-bm-cache-face                  "blue")
             (set-face-foreground 'navi2ch-bm-seen-cache-face             "blue")
+            (set-face-foreground 'navi2ch-bm-new-cache-face              "blue")
             (set-face-foreground 'navi2ch-bm-seen-view-face              "magenta")
+            (set-face-foreground 'navi2ch-bm-view-face                   "magenta")
             ))
 
 ;;; init.el ends here
