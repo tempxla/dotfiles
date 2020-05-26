@@ -126,6 +126,9 @@ export PATH="$HOME/prog/go/go/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 export GO111MODULE=on
+## Kawa
+export KAWA_HOME="$HOME/prog/kawa/kawa"
+export PATH="$KAWA_HOME/bin:$PATH"
 
 # 補完
 eval "$(stack --bash-completion-script stack)"
