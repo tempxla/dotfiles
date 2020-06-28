@@ -39,6 +39,11 @@
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name "~/.emacs.d/cache/backups/") t)))
 
+;; Customの書き込み／読み込み先
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
 ;; -----------------------------------------------------------------------------
 ;; 履歴な設定
 ;; -----------------------------------------------------------------------------
