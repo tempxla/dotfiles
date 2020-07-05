@@ -132,3 +132,6 @@ export PATH="$KAWA_HOME/bin:$PATH"
 
 # 補完
 eval "$(stack --bash-completion-script stack)"
+
+# fish
+exec fish
