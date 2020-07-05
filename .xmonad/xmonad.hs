@@ -304,6 +304,7 @@ myXmobarPP = xmobarPP
 -- By default, do nothing.
 -- myStartupHook = return ()
 myStartupHook = do
+  spawn "xmodmap ~/.Xmodmap"
   spawn "feh --bg-fill ~/data/pic/desktop.png"
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   spawn "xscreensaver"
