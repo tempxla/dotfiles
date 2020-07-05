@@ -19,3 +19,6 @@ ln -sf ${THIS_DIR}/.stack/global-project/stack.yaml   ~/.stack/global-project/st
 ln -sf ${THIS_DIR}/.gitconfig           ~/.gitconfig
 ln -sf ${THIS_DIR}/.bash_aliases        ~/.bash_aliases
 ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
+ln -sf ${THIS_DIR}/.config/fish/config.fish                  ~/.config/fish/config.fish
+ln -sf ${THIS_DIR}/.config/fish/fishd.ukraine                ~/.config/fish/fishd.ukraine
+ln -sf ${THIS_DIR}/.config/fish/functions/fish_prompt.fish   ~/.config/fish/functions/fish_prompt.fish
