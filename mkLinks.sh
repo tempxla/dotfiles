@@ -1,5 +1,6 @@
 #!/bin/sh
 THIS_DIR=$(cd $(dirname $0); pwd)
+HOSTNAME=$(hostname)
 ln -sf ${THIS_DIR}/.xmonad/xmonad.hs    ~/.xmonad/xmonad.hs
 ln -sf ${THIS_DIR}/.xmobarrc            ~/.xmobarrc
 ln -sf ${THIS_DIR}/.Xresources          ~/.Xresources
@@ -20,5 +21,5 @@ ln -sf ${THIS_DIR}/.gitconfig           ~/.gitconfig
 ln -sf ${THIS_DIR}/.bash_aliases        ~/.bash_aliases
 ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
 ln -sf ${THIS_DIR}/.config/fish/config.fish                  ~/.config/fish/config.fish
-ln -sf ${THIS_DIR}/.config/fish/fishd.ukraine                ~/.config/fish/fishd.ukraine
+ln -sf ${THIS_DIR}/.config/fish/fishd.hostname               ~/.config/fish/fishd.${HOSTNAME}
 ln -sf ${THIS_DIR}/.config/fish/functions/fish_prompt.fish   ~/.config/fish/functions/fish_prompt.fish
