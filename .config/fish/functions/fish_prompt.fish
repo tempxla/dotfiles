@@ -41,7 +41,7 @@ function fish_prompt --description 'Write out the prompt'
                 set -g __fish_prompt_cwd (set_color $fish_color_cwd)
             end
 
-            printf '[%s%s@%s] %s%s %s(%s)%s \f\r%s> ' "$__fish_color_blue" $USER $__fish_prompt_hostname "$__fish_prompt_cwd" "$PWD" "$__fish_color_status" "$stat" "$__fish_prompt_normal" (__fish_git_prompt)
+            printf '%s[%s@%s] %s%s %s(%s)%s \f\r%s> ' "$__fish_color_blue" $USER $__fish_prompt_hostname "$__fish_prompt_cwd" "$PWD" "$__fish_color_status" "$stat" "$__fish_prompt_normal" (__fish_git_prompt)
 
     end
 end
