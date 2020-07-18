@@ -1,2 +1,3 @@
 keycode 81 = Prior
 keycode 89 = Next
+keycode 104 = Return
