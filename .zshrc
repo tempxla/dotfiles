@@ -5,7 +5,15 @@
 # prompt fade
 
 autoload -U colors && colors
-PROMPT="%{$fg_bold[blue]%}[%n@%M] %{$fg_bold[white]%}:%l %{$fg_bold[green]%}%~ %(?..%{$fg_bold[red]%}→ %?)
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '{%s:%b}'
+
+#RPROMPT=\$vcs_info_msg_0_
+PROMPT="%{$fg_bold[blue]%}[%n@%M] %{$fg_bold[white]%}:%l %{$fg_bold[green]%}%~ %{$fg_bold[yellow]%}\$vcs_info_msg_0_ %(?..%{$fg_bold[red]%}→ %?)
 %{$reset_color%}%# "
 
 setopt histignorealldups sharehistory
