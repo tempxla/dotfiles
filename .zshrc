@@ -52,8 +52,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # History search
-[[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"    history-beginning-search-backward
-[[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}"  history-beginning-search-forward
+[[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"    history-search-backward
+[[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}"  history-search-forward
 
 # Alias
 alias ls='ls --color=auto'
