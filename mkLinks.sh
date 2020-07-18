@@ -23,3 +23,5 @@ ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
 ln -sf ${THIS_DIR}/.config/fish/config.fish                  ~/.config/fish/config.fish
 ln -sf ${THIS_DIR}/.config/fish/fishd.hostname               ~/.config/fish/fishd.${HOSTNAME}
 ln -sf ${THIS_DIR}/.config/fish/functions/fish_prompt.fish   ~/.config/fish/functions/fish_prompt.fish
+ln -sf ${THIS_DIR}/.zshrc               ~/.zshrc
+ln -sf ${THIS_DIR}/.zshenv              ~/.zshenv
