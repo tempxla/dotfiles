@@ -9,3 +9,4 @@ keycode 85 = Right
 keycode 87 = End
 keycode 88 = Down
 keycode 89 = Next
+keycode 104 = Return
