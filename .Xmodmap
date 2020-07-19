@@ -1,3 +1,11 @@
+keycode 79 = Home
+keycode 80 = Up
 keycode 81 = Prior
+!keycode 82 =
+keycode 83 = Left
+!keycode 84 =
+keycode 85 = Right
+!keycode 86 =
+keycode 87 = End
+keycode 88 = Down
 keycode 89 = Next
-keycode 104 = Return
