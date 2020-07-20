@@ -72,9 +72,9 @@ alias po='popd'
 
 alias E='emacs -nw'
 alias e='emacsclient -nw'
-alias kill-emacs="emacsclient -e '(kill-emacs)'"
-alias emacs-daemon='emacs --daemon'
-alias emacs-debug-init='emacs -nw --debug-init'
+alias e-kill="emacsclient -e '(kill-emacs)'"
+alias e-daemon='emacs --daemon'
+alias e-debug-init='emacs -nw --debug-init'
 
 # alias g='git'
 alias ga='git add'
