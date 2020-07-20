@@ -209,7 +209,8 @@
 (define-key global-map (kbd "C-h")     'delete-backward-char)
 (define-key global-map (kbd "C-x C-c") 'kill-buffer)
 (define-key global-map (kbd "C-x q")   'save-buffers-kill-terminal)
-(define-key global-map (kbd "C-t")     'buffer-menu)
+(define-key global-map (kbd "C-x b")   'buffer-menu)
+(define-key global-map (kbd "C-x B")   'switch-to-buffer)
 (define-key global-map (kbd "C-z")     'undo)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 ;; 編集
