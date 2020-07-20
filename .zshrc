@@ -65,6 +65,7 @@ alias egrep='egrep --color=auto'
 
 alias la='ls -a'
 alias ll='ls -al --group-directories-first --time-style="+%Y/%m/%d %H:%M:%S"'
+alias lo='ls -ao --group-directories-first --time-style="+%Y/%m/%d %H:%M:%S"'
 alias x='exit'
 alias d='dirs -v'
 alias c='clear'
