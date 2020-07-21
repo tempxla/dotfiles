@@ -213,6 +213,12 @@
 (define-key global-map (kbd "C-x B")   'switch-to-buffer)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 (define-key global-map (kbd "C-z")     nil)
+(define-key global-map (kbd "C-t")     nil)
+;; (define-key global-map (kbd "C-h")     nil)
+;; (define-key global-map (kbd "C-j")     nil)
+;; (define-key global-map (kbd "C-m")     nil)
+
+
 ;; 編集
 ;; M-l     ポイントに続く単語を小文字に変換します(downcase-word)．
 ;; M-u     ポイントに続く単語を大文字に変換します(upcase-word)．
