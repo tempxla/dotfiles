@@ -225,7 +225,12 @@
 ;; -----------------------------------------------------------------------------
 ;; Dired
 ;; -----------------------------------------------------------------------------
-(setq dired-listing-switches "-alh --group-directories-first")
+(require 'ls-lisp)
+(setq ls-lisp-use-insert-directory-program nil)
+(setq ls-lisp-use-localized-time-format t)
+(setq ls-lisp-format-time-list '("%Y/%m/%d %H:%M:%S" "%Y/%m/%d %H:%M:%S"))
+(setq dired-listing-switches "-alh -G")
+(setq ls-lisp-dirs-first t)
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
