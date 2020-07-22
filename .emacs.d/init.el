@@ -21,16 +21,18 @@
 (when (require 'package nil t)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-  ;;なんかエラー
-  ;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (package-initialize))
 
-;; auto-install はあまり使わない
-;; 手動でelispフォルダにDLしてbyte-compile-fileコンパイルする
-;; (when (require 'auto-install nil t)
-;;  (setq auto-install-directory "~/.emacs.d/elisp/")
-;;  (auto-install-update-emacswiki-package-name t)
-;;  (auto-install-compatibility-setup))
+;; auto-install
+(when (require 'auto-install nil t)
+  (setq auto-install-directory "~/.emacs.d/elisp/")
+  (auto-install-update-emacswiki-package-name t)
+  (auto-install-compatibility-setup))
+;; << Setup >>
+;; https://www.emacswiki.org/emacs/download/auto-install.el
+;; M-x byte-compile-file
+;; << Install Elisp >>
+;; (install-elisp "https://www.emacswiki.org/emacs/download/point-undo.el")
 
 ;; backup & autosave filesはcacheフォルダに保存
 ;; 他のプラグインのキャッシュとかもcacheフォルダへ設定する
