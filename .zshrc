@@ -77,7 +77,7 @@ alias e-kill="emacsclient -e '(kill-emacs)'"
 alias e-daemon='emacs --daemon'
 alias e-debug-init='emacs -nw --debug-init'
 
-# alias g='git'
+alias g='git'
 alias ga='git add'
 alias gd='git diff'
 alias gs='git status'
