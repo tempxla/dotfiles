@@ -29,7 +29,7 @@
   (auto-install-update-emacswiki-package-name t)
   (auto-install-compatibility-setup))
 ;; << Setup >>
-;; https://www.emacswiki.org/emacs/download/auto-install.el
+;; curl -O https://www.emacswiki.org/emacs/download/auto-install.el
 ;; M-x byte-compile-file
 ;; << Install Elisp >>
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/point-undo.el")
