@@ -85,7 +85,7 @@ alias gp='git push'
 # alias gb='git branch'
 # alias gco='git checkout'
 # alias gf='git fetch'
-# alias gc='git commit'
+alias gc='git commit'
 
 alias tweet-nowplaying='mpc current | sed -e "s/\(.*\)/#nowplaying \0/" | xargs -0 twitter-friend-list tweet'
 alias covid19='curl "https://corona-stats.online/Japan"'
