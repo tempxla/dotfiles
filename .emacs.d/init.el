@@ -100,11 +100,17 @@
 ;; メニューバー表示
 (menu-bar-mode -1)
 ;; ファイルサイズ表示
-;; (setq size-indication-mode t)
+(setq size-indication-mode t)
+;; 行番号表示
+(line-number-mode 0)
+(global-linum-mode t)
+(setq linum-format "%4d| ")
 ;; 桁番号表示
 (setq column-number-mode t)
 ;; 対応する括弧強調
 (show-paren-mode t)
+(set-face-background 'show-paren-match-face "blue")
+
 ;; ツールバー表示
 (tool-bar-mode 0)
 ;; タブ文字の表示幅
@@ -130,10 +136,19 @@
 (require 'eaw)
 (eaw-fullwidth)
 ;; What buffer position indicator do you use?
-(sml-modeline-mode t)
-(set-face-background 'sml-modeline-end-face "green3")   ; 全体の背景色
-(set-face-background 'sml-modeline-vis-face "red3")   ; 表示領域の背景色
-
+;; (sml-modeline-mode t)
+;; (set-face-background 'sml-modeline-end-face "green3")   ; 全体の背景色
+;; (set-face-background 'sml-modeline-vis-face "red3")   ; 表示領域の背景色
+;; 選択行ハイライト
+(defface my-hl-line-face
+  '((((class color) (background dark))
+     (:background nil :underline t ))
+    (((class color) (background light))
+     (:background nil :underline t ))
+    (t (:bold t)))
+  "hl-line's my face ")
+(setq hl-line-face 'my-hl-line-face)
+(global-hl-line-mode)
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
