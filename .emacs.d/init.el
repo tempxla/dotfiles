@@ -111,7 +111,7 @@
 ;; 行番号表示
 (line-number-mode 0)
 (global-linum-mode t)
-(setq linum-format "%4d| ")
+(setq linum-format "%4d  ")
 ;; 桁番号表示
 (setq column-number-mode t)
 ;; 対応する括弧強調
