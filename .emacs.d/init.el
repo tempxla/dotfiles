@@ -301,6 +301,11 @@
   (set-face-foreground 'elscreen-tab-other-screen-face "black")
   (elscreen-start))
 
+;; multi-term
+(when (require 'multi-term nil t)
+  (setq multi-term-program "/usr/bin/zsh")
+  (define-key global-map (kbd "C-x t") 'multi-term))
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
