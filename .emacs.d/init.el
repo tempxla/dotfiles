@@ -62,9 +62,17 @@
 (define-key global-map (kbd "C-c o") 'recentf-open-files)
 
 ;; ミニバッファの履歴を保存する
-(savehist-mode 1)
 (setq savehist-file     "~/.emacs.d/cache/savehist/history")
 (setq history-length 2000)
+(setq savehist-additional-variables
+      '(buffer-name-history
+        compile-command
+        extended-command-history
+        file-name-history
+        kill-ring
+        regexp-search-ring
+        search-ring))
+(savehist-mode 1)
 
 ;; 前回の編集場所を記憶する
 (load "saveplace")
