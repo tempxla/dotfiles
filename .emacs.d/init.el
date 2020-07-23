@@ -80,8 +80,7 @@
 (savehist-mode 1)
 
 ;; 前回の編集場所を記憶する
-(load "saveplace")
-(setq-default save-place t)
+(save-place-mode 1) ; emacs 25
 (setq save-place-file   "~/.emacs.d/cache/places")
 
 ;; undohist
