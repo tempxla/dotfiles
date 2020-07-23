@@ -247,7 +247,6 @@
 
 ;; magit
 (when (require 'magit nil t)
-  (define-key global-map (kbd "C-x g")   'magit-status)
   (set-face-background 'magit-section-highlight nil)
   (set-face-background 'magit-diff-context-highlight nil)
   (set-face-background 'magit-diff-context-highlight nil)
@@ -255,6 +254,17 @@
   (set-face-foreground 'magit-diff-added-highlight "green")
   (set-face-background 'magit-diff-removed-highlight nil)
   (set-face-foreground 'magit-diff-removed-highlight "red")
+  (set-face-background 'magit-diff-added nil)
+  (set-face-foreground 'magit-diff-added "green")
+  (set-face-background 'magit-diff-removed nil)
+  (set-face-foreground 'magit-diff-removed "red")
+  (set-face-background 'diff-refine-added "green")
+  (set-face-foreground 'diff-refine-added "black")
+  (set-face-background 'diff-refine-removed "red")
+  (set-face-foreground 'diff-refine-removed "black")
+  ;;
+  (define-key global-map (kbd "C-x g") 'magit-status)
+  (defalias 'mfc 'magit-file-checkout) ; 変更を元に戻す
   (setq magit-diff-refine-hunk 't))
 
 ;; -----------------------------------------------------------------------------
