@@ -238,6 +238,17 @@
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-s") 'company-complete-selection)
 
+;; magit
+(define-key global-map (kbd "C-x g")   'magit-status)
+(set-face-background 'magit-section-highlight nil)
+(set-face-background 'magit-diff-context-highlight nil)
+(set-face-background 'magit-diff-context-highlight nil)
+(set-face-background 'magit-diff-added-highlight nil)
+(set-face-foreground 'magit-diff-added-highlight "green")
+(set-face-background 'magit-diff-removed-highlight nil)
+(set-face-foreground 'magit-diff-removed-highlight "red")
+(setq magit-diff-refine-hunk 't)
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
@@ -248,7 +259,7 @@
 (define-key global-map (kbd "C-x B")   'switch-to-buffer)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 (define-key global-map (kbd "C-z")     nil)
-(define-key global-map (kbd "C-t")     nil)
+(define-key global-map (kbd "C-t")     'other-window)
 ;; (define-key global-map (kbd "C-h")     nil)
 ;; (define-key global-map (kbd "C-j")     nil)
 ;; (define-key global-map (kbd "C-m")     nil)
