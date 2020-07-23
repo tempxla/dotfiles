@@ -271,6 +271,7 @@
   ;; Swap: C-u.
   ;; Delete: C-u C-u
   ;; ? - show these command bindings
+  (setq aw-scope 'frame)
   (global-set-key (kbd "M-o") 'ace-window))
 
 ;; win-switch
