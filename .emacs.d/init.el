@@ -90,6 +90,7 @@
 ;; ファイルを閉じた後もundoできる
 (when (require 'undohist nil t)
   (setq undohist-directory "~/.emacs.d/cache/undohist")
+  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG"))
   (undohist-initialize))
 
 ;; undo-tree
