@@ -290,6 +290,7 @@
   (setq elscreen-prefix-key (kbd "C-z"))
   (setq elscreen-tab-display-kill-screen nil)  ; タブの先頭に[X]を表示しない
   (setq elscreen-tab-display-control nil)      ; header-lineの先頭に[<->]を表示しない
+  (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
   (setq elscreen-display-tab 12)
   (set-face-background 'elscreen-tab-background-face "gray90")
   (set-face-foreground 'elscreen-tab-background-face "black")
