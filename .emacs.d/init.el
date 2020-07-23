@@ -276,10 +276,12 @@
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 (define-key global-map (kbd "C-z")     nil)
 (define-key global-map (kbd "C-t")     'other-window)
+(define-key global-map (kbd "C-x C-n") ; New Empty Buffer
+  '(lambda ()
+     (interactive) (switch-to-buffer (format-time-string "*New%s*"))))
 ;; (define-key global-map (kbd "C-h")     nil)
 ;; (define-key global-map (kbd "C-j")     nil)
 ;; (define-key global-map (kbd "C-m")     nil)
-
 
 ;; 編集
 ;; M-l     ポイントに続く単語を小文字に変換します(downcase-word)．
