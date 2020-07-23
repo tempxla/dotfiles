@@ -33,6 +33,7 @@
 ;; M-x byte-compile-file
 ;; << Install Elisp >>
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/point-undo.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/redo+.el")
 
 ;; backup & autosave filesはcacheフォルダに保存
 ;; 他のプラグインのキャッシュとかもcacheフォルダへ設定する
@@ -80,6 +81,11 @@
 ;; C-x uでtree表示
 (when (require 'undo-tree nil t)
   (global-undo-tree-mode))
+
+;; redo+
+(when (require 'redo+ nil t)
+  (define-key global-map (kbd "C-M-/") 'redo)
+  (define-key global-map (kbd "C-M-_") 'redo))
 
 ;; point-undo
 ;; http://d.hatena.ne.jp/rubikitch/20081230/pointundo
