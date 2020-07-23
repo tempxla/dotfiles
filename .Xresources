@@ -12,6 +12,9 @@ URxvt.letterSpace: -2
 URxvt.scrollBar: false
 ! pointer
 URxvt.cursorBlink: true
+! Disable the Ctrl+Shift binding
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 ! 0: black
 *color0:  #242424
