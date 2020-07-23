@@ -118,6 +118,7 @@
 (set-face-foreground 'font-lock-string-face        "red"    )
 (set-face-foreground 'font-lock-constant-face      "cyan"   )
 ;; (set-face-foreground 'font-lock-operator-face      "yellow"   ) ; 演算子は無い
+(set-face-background 'region    "#444444")
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
