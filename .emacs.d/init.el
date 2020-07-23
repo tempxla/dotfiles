@@ -51,21 +51,19 @@
 ;; 履歴な設定
 ;; -----------------------------------------------------------------------------
 ;; 最近読み込んだファイルのリストを保持する
-;; (require 'recentf-ext)
 (defmacro with-suppressed-message (&rest body)
   "Suppress new messages temporarily in the echo area and the `*Messages*' buffer while BODY is evaluated."
   (declare (indent 0))
   (let ((message-log-max nil))
     `(with-temp-message (or (current-message) "") ,@body)))
-(recentf-mode t)
 (setq recentf-max-menu-items 30)
 (setq recentf-max-saved-items 1000)
 (setq recentf-save-file "~/.emacs.d/cache/recentf")
-;;(setq recentf-exclude '((expand-file-name "~/.emacs.d/cache/recentf")))
+(setq recentf-exclude '("cache/recentf" "COMMIT_EDITMSG"))
 (setq recentf-auto-cleanup 'never)
-;;(setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
-(run-with-idle-timer 30 t '(lambda ()          ;; 30秒ごとに .recentf を保存
+(run-with-idle-timer 30 t '(lambda () ; 30秒ごとに recentf を保存
                              (with-suppressed-message (recentf-save-list))))
+(recentf-mode t)
 (define-key global-map (kbd "C-c o") 'recentf-open-files)
 
 ;; ミニバッファの履歴を保存する
