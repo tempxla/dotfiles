@@ -284,21 +284,36 @@
   ;; C-x oで開始。uで終了
   (global-set-key (kbd "C-x o") 'win-switch-dispatch))
 
+;; elscreen
+(when (require 'elscreen nil t)
+  (setq elscreen-prefix-key (kbd "C-z"))
+  (setq elscreen-tab-display-kill-screen nil)  ; タブの先頭に[X]を表示しない
+  (setq elscreen-tab-display-control nil)      ; header-lineの先頭に[<->]を表示しない
+  (setq elscreen-display-tab 12)
+  (set-face-background 'elscreen-tab-background-face "gray90")
+  (set-face-foreground 'elscreen-tab-background-face "black")
+  (set-face-background 'elscreen-tab-control-face "gray90")
+  (set-face-foreground 'elscreen-tab-control-face "black")
+  (set-face-background 'elscreen-tab-current-screen-face "gray75")
+  (set-face-foreground 'elscreen-tab-current-screen-face "black")
+  (set-face-background 'elscreen-tab-other-screen-face "gray90")
+  (set-face-foreground 'elscreen-tab-other-screen-face "black")
+  (elscreen-start))
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
 (define-key global-map (kbd "C-h")     'delete-backward-char)
-(define-key global-map (kbd "C-x C-c") 'kill-buffer)
 (define-key global-map (kbd "C-x q")   'save-buffers-kill-terminal)
 (define-key global-map (kbd "C-x b")   'buffer-menu)
 (define-key global-map (kbd "C-x B")   'switch-to-buffer)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
-(define-key global-map (kbd "C-z")     nil)
 (define-key global-map (kbd "C-t")     'other-window)
-(define-key global-map (kbd "C-x C-n") ; New Empty Buffer
+(define-key global-map (kbd "C-x C-c") ; New Empty Buffer
   '(lambda ()
      (interactive) (switch-to-buffer (format-time-string "*New%s*"))))
 (define-key global-map (kbd "C-x 9")   'balance-windows)
+;; (define-key global-map (kbd "C-z")     nil)
 ;; (define-key global-map (kbd "C-h")     nil)
 ;; (define-key global-map (kbd "C-j")     nil)
 ;; (define-key global-map (kbd "C-m")     nil)
