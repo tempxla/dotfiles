@@ -265,6 +265,25 @@
   (defalias 'mfc 'magit-file-checkout) ; 変更を元に戻す
   (setq magit-diff-refine-hunk 't))
 
+;; ace-window
+(when (require 'ace-window nil t)
+  ;; Swap: C-u.
+  ;; Delete: C-u C-u
+  ;; ? - show these command bindings
+  (global-set-key (kbd "M-o") 'ace-window))
+
+;; win-switch
+(when (require 'win-switch nil t)
+  (setq win-switch-idle-time nil)  ; 解除するまで続ける
+  (setq win-switch-window-threshold 1)
+  ;; リサイズ
+  (win-switch-set-keys '("k") 'enlarge-vertically)
+  (win-switch-set-keys '("j") 'shrink-vertically)
+  (win-switch-set-keys '("h") 'shrink-horizontally)
+  (win-switch-set-keys '("l") 'enlarge-horizontally)
+  ;; C-x oで開始。uで終了
+  (global-set-key (kbd "C-x o") 'win-switch-dispatch))
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
@@ -279,6 +298,7 @@
 (define-key global-map (kbd "C-x C-n") ; New Empty Buffer
   '(lambda ()
      (interactive) (switch-to-buffer (format-time-string "*New%s*"))))
+(define-key global-map (kbd "C-x 9")   'balance-windows)
 ;; (define-key global-map (kbd "C-h")     nil)
 ;; (define-key global-map (kbd "C-j")     nil)
 ;; (define-key global-map (kbd "C-m")     nil)
