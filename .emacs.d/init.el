@@ -119,6 +119,7 @@
 (set-face-foreground 'font-lock-constant-face      "cyan"   )
 ;; (set-face-foreground 'font-lock-operator-face      "yellow"   ) ; 演算子は無い
 (set-face-background 'region                       "#444444")
+;;(set-face-foreground 'linum-face                   "white")
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
@@ -295,10 +296,6 @@
 
 ;; elscreen
 (when (require 'elscreen nil t)
-  ;; keybind
-  (setq elscreen-prefix-key (kbd "C-z"))
-  (global-set-key (kbd "C-z C-z") 'elscreen-toggle)
-  ;; option
   (setq elscreen-tab-display-kill-screen nil)  ; タブの先頭に[X]を表示しない
   (setq elscreen-tab-display-control nil)      ; header-lineの先頭に[<->]を表示しない
   (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
@@ -306,13 +303,19 @@
   ;; style
   (set-face-background 'elscreen-tab-background-face "gray30")
   (set-face-foreground 'elscreen-tab-background-face "gray80")
+  (set-face-underline 'elscreen-tab-background-face nil)
   (set-face-background 'elscreen-tab-control-face "gray30")
   (set-face-foreground 'elscreen-tab-control-face "gray80")
+  (set-face-underline 'elscreen-tab-control-face nil)
   (set-face-background 'elscreen-tab-current-screen-face "gray75")
   (set-face-foreground 'elscreen-tab-current-screen-face "black")
+  (set-face-underline 'elscreen-tab-current-screen-face nil)
   (set-face-background 'elscreen-tab-other-screen-face "gray30")
   (set-face-foreground 'elscreen-tab-other-screen-face "gray80")
-  (elscreen-start))
+  (set-face-underline 'elscreen-tab-other-screen-face nil)
+  (setq elscreen-prefix-key (kbd "C-z"))
+  (elscreen-start)
+  (global-set-key (kbd "C-z C-z") 'elscreen-toggle))
 
 ;; multi-term
 (when (require 'multi-term nil t)
