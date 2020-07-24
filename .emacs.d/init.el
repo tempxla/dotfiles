@@ -295,19 +295,23 @@
 
 ;; elscreen
 (when (require 'elscreen nil t)
+  ;; keybind
   (setq elscreen-prefix-key (kbd "C-z"))
+  (global-set-key (kbd "C-z C-z") 'elscreen-toggle)
+  ;; option
   (setq elscreen-tab-display-kill-screen nil)  ; タブの先頭に[X]を表示しない
   (setq elscreen-tab-display-control nil)      ; header-lineの先頭に[<->]を表示しない
   (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
   (setq elscreen-display-tab 12)
-  (set-face-background 'elscreen-tab-background-face "gray90")
-  (set-face-foreground 'elscreen-tab-background-face "black")
-  (set-face-background 'elscreen-tab-control-face "gray90")
-  (set-face-foreground 'elscreen-tab-control-face "black")
+  ;; style
+  (set-face-background 'elscreen-tab-background-face "gray30")
+  (set-face-foreground 'elscreen-tab-background-face "gray80")
+  (set-face-background 'elscreen-tab-control-face "gray30")
+  (set-face-foreground 'elscreen-tab-control-face "gray80")
   (set-face-background 'elscreen-tab-current-screen-face "gray75")
   (set-face-foreground 'elscreen-tab-current-screen-face "black")
-  (set-face-background 'elscreen-tab-other-screen-face "gray90")
-  (set-face-foreground 'elscreen-tab-other-screen-face "black")
+  (set-face-background 'elscreen-tab-other-screen-face "gray30")
+  (set-face-foreground 'elscreen-tab-other-screen-face "gray80")
   (elscreen-start))
 
 ;; multi-term
