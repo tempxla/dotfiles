@@ -200,6 +200,11 @@
 (define-key global-map (kbd "<nil> <wheel-up>")   'scroll-down-with-lines)
 (define-key global-map (kbd "<wheel-down>")       'scroll-up-with-lines)
 (define-key global-map (kbd "<nil> <wheel-down>") 'scroll-up-with-lines)
+;; カーソル位置の保持
+(setq scroll-preserve-screen-position t)
+;; C-v、M-v でページ切り替えした時の重複行数
+(setq next-screen-context-lines 1)
+
 ;; 矩形選択 cua-mode
 ;; C-x SPCでMark set
 ;; C-x r t 矩形の先頭に文字を挿入
