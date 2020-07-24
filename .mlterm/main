@@ -1,6 +1,6 @@
 ## 端末設定
 
-termtype                    = mlterm
+termtype                    = rxvt-unicode-256color
 
 # ログの行数
 # logsize                   = 128
