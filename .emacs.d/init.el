@@ -204,6 +204,8 @@
 (setq scroll-preserve-screen-position t)
 ;; C-v、M-v でページ切り替えした時の重複行数
 (setq next-screen-context-lines 1)
+;; スクロール加速
+(setq mouse-wheel-progressive-speed nil)
 
 ;; 矩形選択 cua-mode
 ;; C-x SPCでMark set
