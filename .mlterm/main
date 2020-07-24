@@ -3,7 +3,7 @@
 ## -----------------------------------------------------------------------------
 
 # 端末タイプ
-termtype                    = rxvt-unicode-256color
+termtype                      = xterm-256color
 
 # ログインシェルを使うかどうか
 # use_login_shell           = false
