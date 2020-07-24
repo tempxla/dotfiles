@@ -33,7 +33,7 @@ fontsize                    = 12
 # line_space                = 1
 
 # 文字幅
-letter_space                = 1
+# letter_space              = 1  # 設定すると画像が表示されない
 
 # タブサイズ
 # tabsize                   = 4  # 設定するとemacsの行番号がおかしくなる
