@@ -33,10 +33,10 @@ fontsize                    = 12
 # line_space                = 1
 
 # 文字幅
-# letter_space              = 1
+letter_space                = 1
 
 # タブサイズ
-tabsize                     = 4
+# tabsize                   = 4  # 設定するとemacsの行番号がおかしくなる
 
 # East Asian Width の表示幅
 col_size_of_width_a         = 2
