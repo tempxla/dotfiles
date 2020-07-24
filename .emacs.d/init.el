@@ -315,6 +315,13 @@
   (setq multi-term-program "/usr/bin/zsh")
   (define-key global-map (kbd "C-x t") 'multi-term))
 
+;; line-bookmark
+(when (require 'bm nil t)
+  (setq bm-repository-file "~/.emacs.d/cache/bm-repository")
+  (global-set-key (kbd "<C-f2>") 'bm-toggle)
+  (global-set-key (kbd "<f2>")   'bm-next)
+  (global-set-key (kbd "<S-f2>") 'bm-previous))
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
