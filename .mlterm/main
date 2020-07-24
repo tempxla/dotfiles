@@ -1,0 +1,106 @@
+## 端末設定
+
+termtype                    = mlterm
+
+# ログの行数
+# logsize                   = 128
+
+# icon_path                 = /usr/share/pixmaps/mlterm-icon-wmaker.png
+# use_login_shell           = false
+
+# Big5 CTEXT のバグ (XFree86 4.1.0 以前) に対応する
+# big5_buggy                = false
+
+
+## IME設定
+
+# use_xim                   = true
+
+
+## フォント見た目
+
+# サイズ
+fontsize                    = 12
+# font_size_range           = 5-50
+
+# 行幅
+# line_space                = 1
+
+# 文字幅
+# letter_space              = 1
+
+# タブサイズ
+tabsize                     = 4
+
+# East Asian Width の表示幅
+col_size_of_width_a         = 2
+
+# アンチエイリアスフォントを使用する
+use_anti_alias              = true
+
+# 結合文字
+# use_combining             = true
+
+# DEC_SPECIAL フォントの罫線文字のグリフを動的に合成
+# compose_dec_special_font  = true
+
+# BiDi レンダリングを行う
+# use_bidi = true
+
+
+## フォント種類
+
+# すべての文字を UNICODE フォントだけを使って表示する
+# only_use_unicode_font    = true
+
+# 可変長コラム幅の使用 (プロポーショナルフォント)
+use_variable_column_width  = false
+
+# US_ASCII の表示には、必ず ISO8859-1 フォントを使用する
+iso88591_font_for_usascii  = false
+
+
+## 変換
+
+# 文字コード
+# ENCODING                = auto
+
+# UNICODE を適当な文字集合にmapして、UNICODE フォントを使わずに表示する
+not_use_unicode_font      = false
+
+# copy and paste で受け取った文字列をUNICODEを経由してから端末エンコーディングに変換する
+# receive_string_via_ucs  = false
+
+# アンチエイリアス(Xft)時、JISX0208 の Unicode 変換に CP932 の変換テーブルを使う
+# use_cp932_ucs_for_xft   = true
+
+
+## 色・音
+
+fg_color         = #e5e5e5
+bg_color         = #1a1a1a
+bel_mode         = none
+
+
+## スクロールバー
+
+use_scrollbar                 = false
+# scrollbar_view_name         = sample
+
+
+## キーバインド
+
+# Metaキーとして使用するキー
+mod_meta_key      = alt       # none,mod1,mod2,mod3,mod4,meta,alt,super,hyper
+
+# Metaキーの挙動
+mod_meta_mode     = esc       # none,esc,8bit
+
+
+## 参考
+
+# http://atomiyama.com/linux/page/mlterm/
+# http://d.hatena.ne.jp/kakurasan/20070609/p3
+# http://ubulog.blogspot.com/2009/02/ubuntumlterm.html
+# http://denki.nara-edu.ac.jp/~yabu/soft/cygwin/main
+# https://wiki.mma.club.uec.ac.jp/alstamber/mlterm
