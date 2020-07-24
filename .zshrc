@@ -77,6 +77,9 @@ alias e-kill="emacsclient -e '(kill-emacs)'"
 alias e-daemon='emacs --daemon'
 alias e-debug-init='emacs -nw --debug-init'
 
+alias mlterm-daemon="mlterm --daemon=genuine -e ':'"
+alias mlterm-kill="mlclient --kill"
+
 alias g='git'
 alias ga='git add'
 alias gd='git diff'

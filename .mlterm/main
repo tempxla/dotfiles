@@ -5,6 +5,12 @@ termtype                    = mlterm
 # ログの行数
 # logsize                   = 128
 
+# ビープ
+bel_mode                    = none
+
+# カーソル
+blink_cursor                = true
+
 # icon_path                 = /usr/share/pixmaps/mlterm-icon-wmaker.png
 # use_login_shell           = false
 
@@ -75,11 +81,10 @@ not_use_unicode_font      = false
 # use_cp932_ucs_for_xft   = true
 
 
-## 色・音
+## 色・背景
 
 fg_color         = #e5e5e5
 bg_color         = #1a1a1a
-bel_mode         = none
 
 
 ## スクロール
