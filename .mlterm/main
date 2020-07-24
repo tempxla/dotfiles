@@ -82,11 +82,14 @@ bg_color         = #1a1a1a
 bel_mode         = none
 
 
-## スクロールバー
+## スクロール
 
+# バー
 use_scrollbar                 = false
 # scrollbar_view_name         = sample
 
+# バックスクロール時に端末出力があっても画面が流れないようにする。
+static_backscroll_mode        = true
 
 ## キーバインド
 

@@ -25,3 +25,5 @@ ln -sf ${THIS_DIR}/.config/fish/fishd.hostname               ~/.config/fish/fish
 ln -sf ${THIS_DIR}/.config/fish/functions/fish_prompt.fish   ~/.config/fish/functions/fish_prompt.fish
 ln -sf ${THIS_DIR}/.zshrc               ~/.zshrc
 ln -sf ${THIS_DIR}/.zshenv              ~/.zshenv
+ln -sf ${THIS_DIR}/.mlterm/main         ~/.mlterm/main
+ln -sf ${THIS_DIR}/.mlterm/color        ~/.mlterm/color
