@@ -362,6 +362,10 @@
 ;; (define-key global-map (kbd "C-h")     nil)
 ;; (define-key global-map (kbd "C-j")     nil)
 ;; (define-key global-map (kbd "C-m")     nil)
+;; 他のWindowsをスクロールDown
+;; C-M-v
+;; 他のWindowsをスクロールUp
+(define-key global-map (kbd "C-M-^")   'scroll-other-window-down)
 
 ;; 編集
 ;; M-l     ポイントに続く単語を小文字に変換します(downcase-word)．
