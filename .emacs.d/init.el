@@ -32,13 +32,24 @@
 ;; curl -O https://www.emacswiki.org/emacs/download/auto-install.el
 ;; M-x byte-compile-file
 ;; << Install Elisp >>
+;; https://www.emacswiki.org/emacs/point-undo.el
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/point-undo.el")
+;; https://www.emacswiki.org/emacs/RedoPlus
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/redo+.el")
 ;; https://www.emacswiki.org/emacs/BookmarkPlus
-;; 手動でダウンロードしてコンパイルする
 ;; > Please, after you download all of the Bookmark+ files, first load bookmark+-mac.el,
 ;; > before you byte-compile and load all of the files.
 ;; > It contains the latest Lisp macros needed for proper byte-compiling.
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-mac.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-bmu.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-key.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-lit.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-doc.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-chg.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+.el")
+;; https://www.emacswiki.org/emacs/DiredPlus
+;; (install-elisp "https://www.emacswiki.org/emacs/download/dired+.el")
 
 ;; backup & autosave filesはcacheフォルダに保存
 ;; 他のプラグインのキャッシュとかもcacheフォルダへ設定する
