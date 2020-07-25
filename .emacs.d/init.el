@@ -125,7 +125,8 @@
 ;; -----------------------------------------------------------------------------
 ;; 色
 ;; -----------------------------------------------------------------------------
-;; M-x customize-faceで調べられる
+;; M-x customize-faceでfaceを調べる
+;; M-x list-colors-displayで使用可能な色一覧を表示
 (set-face-foreground 'font-lock-comment-face       "white"  )
 (set-face-foreground 'font-lock-doc-face           "white"  )
 (set-face-foreground 'font-lock-keyword-face       "magenta")
@@ -135,7 +136,12 @@
 (set-face-foreground 'font-lock-constant-face      "cyan"   )
 ;; (set-face-foreground 'font-lock-operator-face      "yellow"   ) ; 演算子は無い
 (set-face-background 'region                       "#444444")
-(set-face-foreground 'vertical-border              "gray30" )
+(set-face-foreground 'vertical-border              "black"  )
+(set-face-background 'vertical-border              "black"  )
+(set-face-foreground 'mode-line-inactive           "gray80" )
+(set-face-background 'mode-line-inactive           "black"  )
+(set-face-foreground 'mode-line                    "gray80" )
+(set-face-background 'mode-line                    "black"  )
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
@@ -317,18 +323,19 @@
   (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
   (setq elscreen-display-tab 12)
   ;; style
-  (set-face-background 'elscreen-tab-background-face "gray30")
-  (set-face-foreground 'elscreen-tab-background-face "gray80")
-  (set-face-underline 'elscreen-tab-background-face nil)
-  (set-face-background 'elscreen-tab-control-face "gray30")
-  (set-face-foreground 'elscreen-tab-control-face "gray80")
-  (set-face-underline 'elscreen-tab-control-face nil)
-  (set-face-background 'elscreen-tab-current-screen-face "gray75")
-  (set-face-foreground 'elscreen-tab-current-screen-face "black")
-  (set-face-underline 'elscreen-tab-current-screen-face nil)
-  (set-face-background 'elscreen-tab-other-screen-face "gray30")
-  (set-face-foreground 'elscreen-tab-other-screen-face "gray80")
-  (set-face-underline 'elscreen-tab-other-screen-face nil)
+  (set-face-foreground 'elscreen-tab-background-face       "blue"   )
+  (set-face-background 'elscreen-tab-background-face       "black"  )
+  (set-face-underline  'elscreen-tab-background-face       nil      )
+  (set-face-foreground 'elscreen-tab-control-face          "blue"   )
+  (set-face-background 'elscreen-tab-control-face          "black"  )
+  (set-face-underline  'elscreen-tab-control-face          nil      )
+  (set-face-foreground 'elscreen-tab-current-screen-face   "gray80" )
+  (set-face-background 'elscreen-tab-current-screen-face   "black"  )
+  (set-face-bold       'elscreen-tab-current-screen-face   t        )
+  (set-face-underline  'elscreen-tab-current-screen-face   nil      )
+  (set-face-foreground 'elscreen-tab-other-screen-face     "blue"   )
+  (set-face-background 'elscreen-tab-other-screen-face     "black"  )
+  (set-face-underline  'elscreen-tab-other-screen-face      nil     )
   (setq elscreen-prefix-key (kbd "C-z"))
   (elscreen-start)
   (global-set-key (kbd "C-z C-z") 'elscreen-toggle))
