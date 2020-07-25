@@ -152,6 +152,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- XScreenSaver
     , ((modm .|. shiftMask, xK_l         ), spawn "xscreensaver-command -lock")
 
+    -- scrot
+    , ((modm,               xK_Print     ), spawn "scrot \"a.png\" -e 'mv $f ~/data/pic/scrot/tmp && xclip -selection clipboard -t image/png ~/data/pic/scrot/tmp/a.png'")
+    , ((modm .|. shiftMask, xK_Print     ), spawn "scrot -e 'mv $f ~/data/pic/scrot/'")
     ]
     ++
 
