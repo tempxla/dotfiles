@@ -23,6 +23,8 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.FadeInactive
 
+import XMonad.Util.WorkspaceCompare (getSortByTag)
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -57,7 +59,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["壱","弐","参","肆","伍","陸","漆","捌","玖"]
+myWorkspaces    = ["1A","2A","3A","4A","5A","6A","7A","8A","9A","1B","2B","3B","4B","5B","6B","7B","8B","9B"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -163,7 +165,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-[1..9], Move client to workspace N
     --
     [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+        | (i, k) <- zip (XMonad.workspaces conf) ([xK_1 .. xK_9] ++ [xK_F1 .. xK_F9])
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
     ++
 
@@ -283,21 +285,25 @@ myLogHook = return ()
 
 myXmobarPP = xmobarPP
   {
-    ppCurrent           =   xmobarColor "#e5e5e5" "#1a1a1a" . pad . wrap "[" "]"
-  , ppVisible           =   xmobarColor "#e5e5e5" "#1a1a1a" . pad
-  , ppHidden            =   xmobarColor "#6D9CBE" "#1a1a1a" . pad
-  , ppHiddenNoWindows   =   xmobarColor "#444444" "#1a1a1a" . pad
-  , ppUrgent            =   xmobarColor "red"     "#1a1a1a" . pad
+    ppCurrent           =   xmobarColor "#e5e5e5" "#1a1a1a" . wrap "[" "]" . myDispF
+  , ppVisible           =   xmobarColor "#e5e5e5" "#1a1a1a" . myDispF
+  , ppHidden            =   xmobarColor "#6D9CBE" "#1a1a1a" . myDispF
+  , ppHiddenNoWindows   =   xmobarColor "#444444" "#1a1a1a" . myDispF
+  , ppUrgent            =   xmobarColor "red"     "#1a1a1a"
   , ppSep               =   "   "
   , ppWsSep             =   ""
   , ppTitle             =   xmobarColor "#e5e5e5" "#1a1a1a" . shorten 30
   -- , ppTitleSanitize     =
   , ppLayout            =   xmobarColor "#6D9CBE" "#1a1a1a"
   -- , ppOrder             =
-  -- , ppSort              =
+  , ppSort              =   getSortByTag
   -- , ppExtras            =
   -- , ppOutput            =
   }
+  where
+    myDispF (_:'A':[]) = "▲"
+    myDispF (_:'B':[]) = "▼"
+
 
 ------------------------------------------------------------------------
 -- Startup hook
