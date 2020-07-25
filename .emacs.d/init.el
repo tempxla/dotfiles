@@ -34,6 +34,11 @@
 ;; << Install Elisp >>
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/point-undo.el")
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/redo+.el")
+;; https://www.emacswiki.org/emacs/BookmarkPlus
+;; 手動でダウンロードしてコンパイルする
+;; > Please, after you download all of the Bookmark+ files, first load bookmark+-mac.el,
+;; > before you byte-compile and load all of the files.
+;; > It contains the latest Lisp macros needed for proper byte-compiling.
 
 ;; backup & autosave filesはcacheフォルダに保存
 ;; 他のプラグインのキャッシュとかもcacheフォルダへ設定する
