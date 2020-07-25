@@ -1,0 +1,59 @@
+UNUSED=IM_HOTKEY
+#   m17nlib, kbd (アラビア語/ヘブライ後/インド諸語の入力メソッド)の入力モード切替え。
+UNUSED=EXT_KBD
+#   (UNUSED)
+#   アラビア語、インド諸語の mlterm 内蔵入力メソッドを起動、終了します。
+#   (mlterm 2.8.0 以前 との互換オペレーション)
+UNUSED=NEW_PTY
+#   (Ctrl+F1)
+#   OPEN_SCREEN と同じ。2.6.0 以降 obsoleted.
+UNUSED=OPEN_SCREEN
+#   (Ctrl+F1)
+#   新しいPTYを、新しい画面上に開きます。
+UNUSED=OPEN_PTY
+#   (Ctrl+F2)
+#   新しいPTYを、現在の画面上に開きます。
+UNUSED=NEXT_PTY
+#   (Ctrl+F3)
+#   Background の PTY を現在の画面上に表示します。
+UNUSED=PREV_PTY
+#   (Ctrl+F4)
+#   Background の PTY を現在の画面上に表示します。
+UNUSED=HSPLIT_SCREEN
+#   (Shift+F1)
+#   新しいPTYを、新しく横方向に分割した画面上に開きます。
+UNUSED=VSPLIT_SCREEN
+#   (Shift+F2)
+#   新しいPTYを、新しく縦方向に分割した画面上に開きます。
+UNUSED=NEXT_SCREEN
+#   (Shift+F3)
+#   分割された画面のうちフォーカスを持っていない次の画面にフォーカスを移します。
+UNUSED=NEXT_SCREEN
+#   (Shift+F4)
+#   分割された画面のうちフォーカスを持っていない前の画面にフォーカスを移します。
+UNUSED=CLOSE_SCREEN
+#   (Ctrl+F5)
+#   分割された画面のうち現在選択された画面を閉じます。
+UNUSED=HEXPAND_SCREEN
+#   (Shift+F6)
+#   分割された画面のうち現在選択された画面を横方向に広げます。
+UNUSED=VEXPAND_SCREEN
+#   (Shift+F7)
+#   分割された画面のうち現在選択された画面を縦方向に広げます。
+# UNUSED=PAGE_UP
+#   (Shift+Prior)
+#   ページアップ
+# UNUSED=SCROLL_UP
+#   (Shift+Up)
+#   スクロールアップ
+# UNUSED=PAGE_DOWN
+#   (Shift+Next)
+#   ページダウン
+# UNUSED=SCROLL_DOWN
+#   (Shift+Down)
+#   スクロールダウン
+# UNUSED=INSERT_SELECTION
+#   (Shift+Insert)
+#   セレクションのペースト
+# UNUSED="" で囲まれた文字列
+#   文字列の出力

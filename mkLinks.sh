@@ -27,3 +27,4 @@ ln -sf ${THIS_DIR}/.zshrc               ~/.zshrc
 ln -sf ${THIS_DIR}/.zshenv              ~/.zshenv
 ln -sf ${THIS_DIR}/.mlterm/main         ~/.mlterm/main
 ln -sf ${THIS_DIR}/.mlterm/color        ~/.mlterm/color
+ln -sf ${THIS_DIR}/.mlterm/key          ~/.mlterm/key
