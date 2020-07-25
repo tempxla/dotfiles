@@ -29,7 +29,8 @@ import XMonad.Util.WorkspaceCompare (getSortByTag)
 -- certain contrib modules.
 --
 --myTerminal      = "urxvtc"
-myTerminal      = "mlclient"
+--myTerminal      = "mlclient"
+myTerminal      = "mlterm"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -320,7 +321,7 @@ myStartupHook = do
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   spawn "xscreensaver"
   --spawn "~/bin/run-urxvtd.sh"
-  spawn "mlterm --daemon=genuine -e ':'"
+  --spawn "mlterm --daemon=genuine -e ':'" -- daemonだとemacsでctrl+F2が効かない
   setWMName "LG3D"  -- for java apps
 
 ------------------------------------------------------------------------
