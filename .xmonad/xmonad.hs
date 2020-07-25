@@ -285,7 +285,7 @@ myLogHook = return ()
 
 myXmobarPP = xmobarPP
   {
-    ppCurrent           =   xmobarColor "#e5e5e5" "#1a1a1a" . wrap "[" "]" . myDispF
+    ppCurrent           =   xmobarColor "#d0d293" "#1a1a1a" . myDispF
   , ppVisible           =   xmobarColor "#e5e5e5" "#1a1a1a" . myDispF
   , ppHidden            =   xmobarColor "#6D9CBE" "#1a1a1a" . myDispF
   , ppHiddenNoWindows   =   xmobarColor "#444444" "#1a1a1a" . myDispF
