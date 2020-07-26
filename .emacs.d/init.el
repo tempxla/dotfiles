@@ -142,6 +142,7 @@
 (set-face-background 'mode-line-inactive           "black"  )
 (set-face-foreground 'mode-line                    "gray80" )
 (set-face-background 'mode-line                    "black"  )
+(set-face-background 'widget-field                 "white"  )
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
@@ -322,7 +323,7 @@
   (setq elscreen-tab-display-control nil)      ; header-lineの先頭に[<->]を表示しない
   (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
   (setq elscreen-display-tab 12)
-  ;; style
+  ;; face
   (set-face-foreground 'elscreen-tab-background-face       "blue"   )
   (set-face-background 'elscreen-tab-background-face       "black"  )
   (set-face-underline  'elscreen-tab-background-face       nil      )
@@ -335,7 +336,8 @@
   (set-face-underline  'elscreen-tab-current-screen-face   nil      )
   (set-face-foreground 'elscreen-tab-other-screen-face     "blue"   )
   (set-face-background 'elscreen-tab-other-screen-face     "black"  )
-  (set-face-underline  'elscreen-tab-other-screen-face      nil     )
+  (set-face-bold       'elscreen-tab-other-screen-face     t        )
+  (set-face-underline  'elscreen-tab-other-screen-face     nil      )
   (setq elscreen-prefix-key (kbd "C-z"))
   (elscreen-start)
   (global-set-key (kbd "C-z C-z") 'elscreen-toggle))
@@ -348,6 +350,8 @@
 ;; line-bookmark
 (when (require 'bm nil t)
   (setq bm-repository-file "~/.emacs.d/cache/bm-repository")
+  (set-face-foreground 'bm-face "cyan")
+  (set-face-background 'bm-face "color-16")  ; #000000
   (global-set-key (kbd "<C-f2>") 'bm-toggle)
   (global-set-key (kbd "<f2>")   'bm-next)
   (global-set-key (kbd "<S-f2>") 'bm-previous))
@@ -389,9 +393,26 @@
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-use-localized-time-format t)
-(setq ls-lisp-format-time-list '("%Y/%m/%d %H:%M:%S" "%Y/%m/%d %H:%M:%S"))
+;;(setq ls-lisp-format-time-list '("%Y/%m/%d %H:%M:%S" "%Y/%m/%d %H:%M:%S"))
+(setq ls-lisp-format-time-list '("%Y/%m/%d %H:%M:%S " "%Y/%m/%d %H:%M:%S "))
 (setq dired-listing-switches "-alh -G")
 (setq ls-lisp-dirs-first t)
+
+(when (require 'dired+ nil t)
+  ;; カスタマイズ
+  ;; M-x customize-group RET Dired-Plus
+  (set-face-background 'diredp-dir-heading nil)
+  (set-face-foreground 'diredp-dir-name "blue")
+  (set-face-background 'diredp-dir-name nil)
+  (set-face-foreground 'diredp-number "white")
+  (set-face-background 'diredp-number nil)
+  (set-face-foreground 'diredp-file-suffix "green")
+  (set-face-foreground 'diredp-dir-priv nil)
+  (set-face-background 'diredp-dir-priv nil)
+  (set-face-background 'diredp-read-priv nil)
+  (set-face-background 'diredp-write-priv nil)
+  (set-face-background 'diredp-exec-priv nil)
+  (set-face-background 'diredp-no-priv nil))
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
