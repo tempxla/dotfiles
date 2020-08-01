@@ -247,8 +247,8 @@
   (global-auto-highlight-symbol-mode t)
   (ahs-set-idle-interval 0.8)
   (set-face-background 'ahs-face                "green")
-  (set-face-background 'ahs-plugin-defalt-face  "green")
-  )
+  (set-face-background 'ahs-plugin-defalt-face  "green"))
+
 ;; 補完
 (setq read-file-name-completion-ignore-case t)    ; minibuffer
 
@@ -260,8 +260,7 @@
             (set-face-foreground 'flycheck-warning   "yellow")
             (set-face-underline  'flycheck-warning   "yellow")
             (set-face-foreground 'flycheck-error     "red"   )
-            (set-face-underline  'flycheck-error     "red"   )
-            ))
+            (set-face-underline  'flycheck-error     "red"   )))
 (setq flycheck-check-syntax-automatically '(save mode-enabled))
 
 ;; company
@@ -402,11 +401,16 @@
 
 (setq diredp-hide-details-initially-flag nil)
 (setq dired-details-propagate-flag t)
-(define-key dired-mode-map (kbd "q") '(lambda () (interactive) (quit-window t)))
-(define-key dired-mode-map (kbd "M-RET") 'dired-do-async-shell-command)
+(define-key dired-mode-map (kbd "q")         '(lambda () (interactive) (quit-window t)))
+(define-key dired-mode-map (kbd "M-RET")     'dired-do-async-shell-command)
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
+  (define-key dired-mode-map (kbd "<C-left>")  'left-word)
+  (define-key dired-mode-map (kbd "<C-right>") 'right-word)
+  (define-key dired-mode-map (kbd "<C-up>")    'backward-paragraph)
+  (define-key dired-mode-map (kbd "<C-down>")  'forward-paragraph)
+  (define-key dired-mode-map [(meta shift ?o)] nil)  ; C-left ~ C-down が効かないので
   ;; color
   (set-face-background 'diredp-dir-heading       nil         )
   (set-face-foreground 'diredp-dir-name          "blue"      )
@@ -444,10 +448,7 @@
                      (custom-set-variables '(haskell-stylish-on-save t))
                      (flycheck-mode)
                      (intero-mode)
-                     (define-key haskell-mode-map (kbd "M-,") 'xref-pop-marker-stack)
-                     ))
-              ))
-  )
+                     (define-key haskell-mode-map (kbd "M-,") 'xref-pop-marker-stack))))))
 
 ;; -----------------------------------------------------------------------------
 ;; Emacs-Lisp
@@ -470,10 +471,9 @@
             (define-key go-mode-map (kbd "M-,") 'pop-tag-mark)
             (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
             (local-set-key (kbd "C-c i") 'go-goto-imports)
-            (local-set-key (kbd "C-c d") 'godoc)
             ;; go-import-add (Default: C-c C-a)
             ;; godef-jump (Default: C-c C-j)
-            ))
+            (local-set-key (kbd "C-c d") 'godoc)))
 
 ;; -----------------------------------------------------------------------------
 ;; Clojure
@@ -507,7 +507,6 @@
             (set-face-foreground 'navi2ch-bm-seen-cache-face             "blue")
             (set-face-foreground 'navi2ch-bm-new-cache-face              "blue")
             (set-face-foreground 'navi2ch-bm-seen-view-face              "magenta")
-            (set-face-foreground 'navi2ch-bm-view-face                   "magenta")
-            ))
+            (set-face-foreground 'navi2ch-bm-view-face                   "magenta")))
 
 ;;; init.el ends here
