@@ -400,6 +400,8 @@
 (setq dired-listing-switches "-alh -G")
 (setq ls-lisp-dirs-first t)
 
+(setq diredp-hide-details-initially-flag nil)
+(setq dired-details-propagate-flag t)
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
