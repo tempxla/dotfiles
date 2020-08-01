@@ -90,6 +90,8 @@ alias gp='git push'
 # alias gf='git fetch'
 alias gc='git commit'
 
+alias feh-scale='feh --scale-down --auto-zoom --geometry 800x600+320+150'
+
 alias tweet-nowplaying='mpc current | sed -e "s/\(.*\)/#nowplaying \0/" | xargs -0 twitter-friend-list tweet'
 alias covid19='curl "https://corona-stats.online/Japan"'
 

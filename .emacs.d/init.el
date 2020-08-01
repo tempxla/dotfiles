@@ -403,6 +403,7 @@
 (setq diredp-hide-details-initially-flag nil)
 (setq dired-details-propagate-flag t)
 (define-key dired-mode-map (kbd "q") '(lambda () (interactive) (quit-window t)))
+(define-key dired-mode-map (kbd "M-RET") 'dired-do-async-shell-command)
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
