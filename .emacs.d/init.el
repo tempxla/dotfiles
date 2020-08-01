@@ -138,9 +138,9 @@
 (set-face-background 'region                       "#444444")
 (set-face-foreground 'vertical-border              "black"  )
 (set-face-background 'vertical-border              "black"  )
-(set-face-foreground 'mode-line-inactive           "gray80" )
+(set-face-foreground 'mode-line-inactive           "#308888")
 (set-face-background 'mode-line-inactive           "black"  )
-(set-face-foreground 'mode-line                    "gray80" )
+(set-face-foreground 'mode-line                    "#308888")
 (set-face-background 'mode-line                    "black"  )
 (set-face-background 'widget-field                 "white"  )
 
@@ -160,6 +160,8 @@
 ;; 対応する括弧強調
 (show-paren-mode t)
 (set-face-background 'show-paren-match-face "blue")
+;; truncate-lines
+(set-default 'truncate-lines t)
 
 ;; ツールバー表示
 (tool-bar-mode 0)
@@ -401,10 +403,11 @@
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
+  ;; color
   (set-face-background 'diredp-dir-heading nil)
   (set-face-foreground 'diredp-dir-name "blue")
   (set-face-background 'diredp-dir-name nil)
-  (set-face-foreground 'diredp-number "white")
+  (set-face-foreground 'diredp-number "color-246")
   (set-face-background 'diredp-number nil)
   (set-face-foreground 'diredp-file-suffix "green")
   (set-face-foreground 'diredp-dir-priv nil)
