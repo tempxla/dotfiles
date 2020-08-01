@@ -402,22 +402,27 @@
 
 (setq diredp-hide-details-initially-flag nil)
 (setq dired-details-propagate-flag t)
+(define-key dired-mode-map (kbd "q") '(lambda () (interactive) (quit-window t)))
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
   ;; color
-  (set-face-background 'diredp-dir-heading nil)
-  (set-face-foreground 'diredp-dir-name "blue")
-  (set-face-background 'diredp-dir-name nil)
-  (set-face-foreground 'diredp-number "color-246")
-  (set-face-background 'diredp-number nil)
-  (set-face-foreground 'diredp-file-suffix "green")
-  (set-face-foreground 'diredp-dir-priv nil)
-  (set-face-background 'diredp-dir-priv nil)
-  (set-face-background 'diredp-read-priv nil)
-  (set-face-background 'diredp-write-priv nil)
-  (set-face-background 'diredp-exec-priv nil)
-  (set-face-background 'diredp-no-priv nil))
+  (set-face-background 'diredp-dir-heading       nil         )
+  (set-face-foreground 'diredp-dir-name          "blue"      )
+  (set-face-background 'diredp-dir-name          nil         )
+  (set-face-foreground 'diredp-number            "color-246" )
+  (set-face-background 'diredp-number            nil         )
+  (set-face-foreground 'diredp-file-suffix       "green"     )
+  (set-face-foreground 'diredp-dir-priv          "blue"      )
+  (set-face-background 'diredp-dir-priv          nil         )
+  (set-face-background 'diredp-read-priv         nil         )
+  (set-face-background 'diredp-write-priv        nil         )
+  (set-face-background 'diredp-exec-priv         nil         )
+  (set-face-background 'diredp-no-priv           nil         )
+  (set-face-foreground 'diredp-rare-priv         "cyan"      )
+  (set-face-background 'diredp-rare-priv         nil         )
+  (set-face-foreground 'diredp-symlink           "cyan"      )
+  (set-face-foreground 'diredp-ignored-file-name "white"     ))
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
