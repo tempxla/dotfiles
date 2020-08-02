@@ -450,7 +450,13 @@
   (set-face-foreground 'diredp-rare-priv         "cyan"      )
   (set-face-background 'diredp-rare-priv         nil         )
   (set-face-foreground 'diredp-symlink           "cyan"      )
-  (set-face-foreground 'diredp-ignored-file-name "white"     ))
+  (set-face-foreground 'diredp-ignored-file-name "white"     )
+  (set-face-foreground 'diredp-flag-mark-line    "cyan"      )
+  (set-face-background 'diredp-flag-mark-line    nil         )
+  (set-face-foreground 'diredp-flag-mark         "black"     )
+  (set-face-background 'diredp-flag-mark         "cyan"      )
+  (set-face-foreground 'diredp-deletion          "black"     )
+  (set-face-background 'diredp-deletion          "red"       ))
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
