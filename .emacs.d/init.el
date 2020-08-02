@@ -153,9 +153,9 @@
 (set-face-background 'region                       "#444444")
 (set-face-foreground 'vertical-border              "black"  )
 (set-face-background 'vertical-border              "black"  )
-(set-face-foreground 'mode-line-inactive           "#308888")
+(set-face-foreground 'mode-line-inactive           "gray80" )
 (set-face-background 'mode-line-inactive           "black"  )
-(set-face-foreground 'mode-line                    "#308888")
+(set-face-foreground 'mode-line                    "gray80" )
 (set-face-background 'mode-line                    "black"  )
 (set-face-background 'widget-field                 "white"  )
 
@@ -374,6 +374,10 @@
 
 ;; Icicles
 (when (require 'icicles nil t)
+  (set-face-foreground 'icicle-multi-command-completion    "black")
+  (set-face-background 'icicle-multi-command-completion    "green")
+  (set-face-background 'icicle-current-candidate-highlight "#444444")
+  (set-face-foreground 'icicle-complete-input              "green")
   (icy-mode 1))
 
 ;; -----------------------------------------------------------------------------
