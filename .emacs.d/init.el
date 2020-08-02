@@ -50,6 +50,21 @@
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+.el")
 ;; https://www.emacswiki.org/emacs/DiredPlus
 ;; (install-elisp "https://www.emacswiki.org/emacs/download/dired+.el")
+;; https://www.emacswiki.org/emacs/Icicles
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-mac.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-face.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-opt.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-var.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-fn.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-mcmd.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-cmd1.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-cmd2.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-mode.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-chg.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-doc1.el")
+;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-doc2.el")
+
 
 ;; backup & autosave filesはcacheフォルダに保存
 ;; 他のプラグインのキャッシュとかもcacheフォルダへ設定する
@@ -356,6 +371,10 @@
   (global-set-key (kbd "<C-f2>") 'bm-toggle)
   (global-set-key (kbd "<f2>")   'bm-next)
   (global-set-key (kbd "<S-f2>") 'bm-previous))
+
+;; Icicles
+(when (require 'icicles nil t)
+  (icy-mode 1))
 
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
