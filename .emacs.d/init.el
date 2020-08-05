@@ -319,7 +319,7 @@
   ;; Delete: C-u C-u
   ;; ? - show these command bindings
   (setq aw-scope 'frame)
-  (global-set-key (kbd "M-o") 'ace-window))
+  (global-set-key (kbd "C-t") 'ace-window))
 
 ;; win-switch
 (when (require 'win-switch nil t)
@@ -388,7 +388,7 @@
 (define-key global-map (kbd "C-x b")   'buffer-menu)
 (define-key global-map (kbd "C-x B")   'switch-to-buffer)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
-(define-key global-map (kbd "C-t")     'other-window)
+(define-key global-map (kbd "M-o")     'other-window)
 (define-key global-map (kbd "C-x C-c") ; New Empty Buffer
   '(lambda ()
      (interactive) (switch-to-buffer (format-time-string "*New%s*"))))
