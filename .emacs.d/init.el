@@ -264,6 +264,9 @@
   (set-face-background 'ahs-face                "green")
   (set-face-background 'ahs-plugin-defalt-face  "green"))
 
+;; ibuffer
+(define-key ibuffer-mode-map (kbd "M-o") nil)
+
 ;; 補完
 (setq read-file-name-completion-ignore-case t)    ; minibuffer
 
@@ -385,9 +388,9 @@
 ;; -----------------------------------------------------------------------------
 (define-key global-map (kbd "C-h")     'delete-backward-char)
 (define-key global-map (kbd "C-x q")   'save-buffers-kill-terminal)
-(define-key global-map (kbd "C-x b")   'buffer-menu)
+(define-key global-map (kbd "C-x b")   'ibuffer)
 (define-key global-map (kbd "C-x C-b") 'switch-to-buffer)
-(define-key global-map (kbd "C-x B")   'list-buffers)
+(define-key global-map (kbd "C-x B")   'ibuffer-list-buffers)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 (define-key global-map (kbd "M-o")     'other-window)
 (define-key global-map (kbd "C-x C-c") ; New Empty Buffer
