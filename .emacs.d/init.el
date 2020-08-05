@@ -265,7 +265,9 @@
   (set-face-background 'ahs-plugin-defalt-face  "green"))
 
 ;; ibuffer
-(define-key ibuffer-mode-map (kbd "M-o") nil)  ; ibuffer-visit-buffer-1-window
+(add-hook 'ibuffer-mode-hook
+          (lambda ()
+            (define-key ibuffer-mode-map (kbd "M-o") nil)))    ; ibuffer-visit-buffer-1-window
 
 ;; 補完
 (setq read-file-name-completion-ignore-case t)    ; minibuffer
