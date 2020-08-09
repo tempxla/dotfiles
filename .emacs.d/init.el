@@ -377,8 +377,16 @@
   (global-set-key (kbd "<f2>")   'bm-next)
   (global-set-key (kbd "<S-f2>") 'bm-previous))
 
+(when (require 'bookmark+ nil t)
+  (setq bmkp-bmenu-state-file "~/.emacs.d/bmkp/.emacs-bmk-bmenu-state.el")
+  (setq bmkp-last-as-first-bookmark-file "~/.emacs.d/bmkp/bookmarks"))
+
 ;; Icicles
 (when (require 'icicles nil t)
+  (add-hook 'icicle-mode-hook
+            (lambda ()
+              (if (boundp 'icicle-mode-map)
+                  (define-key icicle-mode-map (kbd "C-h") nil))))  ; help-prefix
   (set-face-foreground 'icicle-multi-command-completion    "black")
   (set-face-background 'icicle-multi-command-completion    "green")
   (set-face-background 'icicle-current-candidate-highlight "#444444")
@@ -430,11 +438,12 @@
 
 (setq diredp-hide-details-initially-flag nil)
 (setq dired-details-propagate-flag t)
-(define-key dired-mode-map (kbd "q")         '(lambda () (interactive) (quit-window t)))
+;;(define-key dired-mode-map (kbd "q")         '(lambda () (interactive) (quit-window t)))
 (define-key dired-mode-map (kbd "M-RET")     'dired-do-async-shell-command)
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
+  (define-key dired-mode-map (kbd "C-t")     nil)  ; image-dired
   (define-key dired-mode-map (kbd "<C-left>")  'left-word)
   (define-key dired-mode-map (kbd "<C-right>") 'right-word)
   (define-key dired-mode-map (kbd "<C-up>")    'backward-paragraph)
