@@ -212,7 +212,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = avoidStruts standardLayout
   where
      standardLayout =   renamed [Replace "Tall"] tiled
-                    ||| renamed [Replace "Mirror Tall"] (Mirror tiled)
+                    ||| renamed [Replace "Mirror Tall"] mirrorTiled
                     ||| renamed [Replace "Full"] Full
      -- default tiling algorithm partitions the screen into two panes
      tiled   = spacing 10 $ Tall nmaster delta ratio
@@ -222,6 +222,8 @@ myLayout = avoidStruts standardLayout
      ratio   = 1/2
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+     -- Mirror Tiled
+     mirrorTiled  = Mirror . spacing 10 $ Tall nmaster delta (5/6)
 
 ------------------------------------------------------------------------
 -- Window rules:
