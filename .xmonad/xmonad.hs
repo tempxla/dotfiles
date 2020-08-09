@@ -88,7 +88,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
-    , ((modm .|. shiftMask, xK_space ), sendMessage NextLayout >> sendMessage NextLayout) -- Previous
+    , ((modm .|. shiftMask, xK_space ), sendMessage NextLayout >> sendMessage NextLayout) -- PreviousLayout
 
     --  Reset the layouts on the current workspace to default
     , ((modm,               xK_0     ), setLayout $ XMonad.layoutHook conf)
@@ -98,6 +98,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Move focus to the next window
     , ((modm,               xK_Tab   ), windows W.focusDown)
+    , ((modm .|. shiftMask, xK_Tab   ), windows W.focusUp  ) -- previous window
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
@@ -224,7 +225,7 @@ myLayout = avoidStruts standardLayout
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
      -- Mirror Tiled
-     mirrorTiled  = Mirror . spacing 10 $ Tall nmaster delta (5/6)
+     mirrorTiled  = Mirror . spacing 10 $ Tall nmaster delta (78/100)
 
 ------------------------------------------------------------------------
 -- Window rules:
