@@ -95,6 +95,9 @@ alias feh-scale='feh --scale-down --auto-zoom --geometry 800x600+320+150'
 alias tweet-nowplaying='mpc current | sed -e "s/\(.*\)/#nowplaying \0/" | xargs -0 twitter-friend-list tweet'
 alias covid19='curl "https://corona-stats.online/Japan"'
 
+# disable r
+disable r
+
 # Directory Stack
 DIRSTACKFILE=~/.zsh_dirs
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
