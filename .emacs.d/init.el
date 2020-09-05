@@ -443,12 +443,13 @@
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
-  (define-key dired-mode-map (kbd "C-t")     nil)  ; image-dired
+  (define-key dired-mode-map (kbd "C-t")       nil)  ; image-dired
   (define-key dired-mode-map (kbd "<C-left>")  'left-word)
   (define-key dired-mode-map (kbd "<C-right>") 'right-word)
   (define-key dired-mode-map (kbd "<C-up>")    'backward-paragraph)
   (define-key dired-mode-map (kbd "<C-down>")  'forward-paragraph)
   (define-key dired-mode-map [(meta shift ?o)] nil)  ; C-left ~ C-down が効かないので
+  (define-key dired-mode-map (kbd "I")         'dired-kill-subdir)
   ;; color
   (set-face-background 'diredp-dir-heading       nil         )
   (set-face-foreground 'diredp-dir-name          "blue"      )
