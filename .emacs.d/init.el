@@ -215,7 +215,7 @@
     (t (:bold t)))
   "hl-line's my face ")
 (setq hl-line-face 'my-hl-line-face)
-(global-hl-line-mode)
+;;(global-hl-line-mode)
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
