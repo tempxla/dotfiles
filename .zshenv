@@ -1,4 +1,4 @@
-export EDITOR="emacsclient -nw"
+export EDITOR="emacs -nw -Q"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
