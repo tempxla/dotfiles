@@ -441,6 +441,7 @@
 (setq dired-details-propagate-flag t)
 
 (put 'dired-find-alternate-file 'disabled nil)
+(define-key dired-mode-map (kbd "b") (lambda () (interactive) (find-alternate-file "..")))
 ;;(define-key dired-mode-map (kbd "q")         '(lambda () (interactive) (quit-window t)))
 (define-key dired-mode-map (kbd "M-RET")     'dired-do-async-shell-command)
 (when (require 'dired+ nil t)
