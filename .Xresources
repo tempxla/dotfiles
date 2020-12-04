@@ -15,6 +15,8 @@ URxvt.cursorBlink: true
 ! Disable the Ctrl+Shift binding
 URxvt.iso14755: false
 URxvt.iso14755_52: false
+! Disable Alt+S Keybind
+URxvt.perl-ext-common: "default,-searchable-scrollback"
 
 ! 0: black
 *color0:  #242424
