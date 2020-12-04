@@ -268,7 +268,8 @@
 ;; ibuffer
 (add-hook 'ibuffer-mode-hook
           (lambda ()
-            (define-key ibuffer-mode-map (kbd "M-o") nil)))    ; ibuffer-visit-buffer-1-window
+            (define-key ibuffer-mode-map (kbd "M-o") nil)    ; ibuffer-visit-buffer-1-window
+            (define-key ibuffer-mode-map (kbd "a") 'ibuffer-visit-buffer)))
 
 ;; 補完
 (setq read-file-name-completion-ignore-case t)    ; minibuffer
