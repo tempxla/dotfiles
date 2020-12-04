@@ -447,7 +447,7 @@
 (define-key dired-mode-map (kbd "M-RET") 'dired-do-async-shell-command)
 (define-key shell-mode-map (kbd "q")
   (lambda () (interactive)
-    (if (equal "*Async Shell Command*" (buffer-name (current-buffer)))
+    (if (string-match "\\*Async Shell Command\\*\\(<[0-9]+>\\)?" (buffer-name (current-buffer)))
         (kill-this-buffer)
       (self-insert-command 1))))
 
