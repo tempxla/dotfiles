@@ -231,16 +231,16 @@
 ;; 閉じ括弧などを自動挿入
 (electric-pair-mode 1)
 ;; (setq skeleton-pair t)
-;; (global-set-key (kbd "(")   'skeleton-pair-insert-maybe)
-;; (global-set-key (kbd "{")   'skeleton-pair-insert-maybe)
-;; (global-set-key (kbd "[")   'skeleton-pair-insert-maybe)
-;; (global-set-key (kbd "\"")  'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 ;; マウスホイールでスクロール
 ;; (defun scroll-down-with-lines () "" (interactive) (scroll-down 1))
-;; (defun scroll-up-with-lines ()   "" (interactive) (scroll-up 1))
-(define-key global-map (kbd "<wheel-up>")         'scroll-down-with-lines)
-(define-key global-map (kbd "<nil> <wheel-up>")   'scroll-down-with-lines)
-(define-key global-map (kbd "<wheel-down>")       'scroll-up-with-lines)
+;; (defun scroll-up-with-lines () "" (interactive) (scroll-up 1))
+(define-key global-map (kbd "<wheel-up>") 'scroll-down-with-lines)
+(define-key global-map (kbd "<nil> <wheel-up>") 'scroll-down-with-lines)
+(define-key global-map (kbd "<wheel-down>") 'scroll-up-with-lines)
 (define-key global-map (kbd "<nil> <wheel-down>") 'scroll-up-with-lines)
 ;; カーソル位置の保持
 (setq scroll-preserve-screen-position t)
@@ -375,7 +375,7 @@
   (set-face-foreground 'bm-face "cyan")
   (set-face-background 'bm-face "color-16")  ; #000000
   (global-set-key (kbd "<C-f2>") 'bm-toggle)
-  (global-set-key (kbd "<f2>")   'bm-next)
+  (global-set-key (kbd "<f2>") 'bm-next)
   (global-set-key (kbd "<S-f2>") 'bm-previous))
 
 (when (require 'bookmark+ nil t)
@@ -397,26 +397,26 @@
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
-(define-key global-map (kbd "C-h")     'delete-backward-char)
-(define-key global-map (kbd "C-x q")   'save-buffers-kill-terminal)
-(define-key global-map (kbd "C-x b")   'ibuffer)
+(define-key global-map (kbd "C-h") 'delete-backward-char)
+(define-key global-map (kbd "C-x q") 'save-buffers-kill-terminal)
+(define-key global-map (kbd "C-x b") 'ibuffer)
 (define-key global-map (kbd "C-x C-b") 'switch-to-buffer)
-(define-key global-map (kbd "C-x B")   'ibuffer-list-buffers)
-(define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
-(define-key global-map (kbd "M-o")     'other-window)
-(define-key global-map (kbd "C-x k")   'kill-this-buffer)
+(define-key global-map (kbd "C-x B") 'ibuffer-list-buffers)
+(define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
+(define-key global-map (kbd "M-o") 'other-window)
+(define-key global-map (kbd "C-x k") 'kill-this-buffer)
 (define-key global-map (kbd "C-x C-c") ; New Empty Buffer
   '(lambda ()
      (interactive) (switch-to-buffer (format-time-string "*New%s*"))))
-(define-key global-map (kbd "C-x 9")   'balance-windows)
-;; (define-key global-map (kbd "C-z")     nil)
-;; (define-key global-map (kbd "C-h")     nil)
-;; (define-key global-map (kbd "C-j")     nil)
-;; (define-key global-map (kbd "C-m")     nil)
+(define-key global-map (kbd "C-x 9") 'balance-windows)
+;; (define-key global-map (kbd "C-z") nil)
+;; (define-key global-map (kbd "C-h") nil)
+;; (define-key global-map (kbd "C-j") nil)
+;; (define-key global-map (kbd "C-m") nil)
 ;; 他のWindowsをスクロールDown
 ;; C-M-v
 ;; 他のWindowsをスクロールUp
-(define-key global-map (kbd "C-M-^")   'scroll-other-window-down)
+(define-key global-map (kbd "C-M-^") 'scroll-other-window-down)
 
 ;; 編集
 ;; M-l     ポイントに続く単語を小文字に変換します(downcase-word)．
@@ -443,8 +443,8 @@
 
 (put 'dired-find-alternate-file 'disabled nil)
 (define-key dired-mode-map (kbd "b") (lambda () (interactive) (find-alternate-file "..")))
-;;(define-key dired-mode-map (kbd "q")         '(lambda () (interactive) (quit-window t)))
-(define-key dired-mode-map (kbd "M-RET")     'dired-do-async-shell-command)
+;;(define-key dired-mode-map (kbd "q") '(lambda () (interactive) (quit-window t)))
+(define-key dired-mode-map (kbd "M-RET") 'dired-do-async-shell-command)
 (define-key shell-mode-map (kbd "q")
   (lambda () (interactive)
     (if (equal "*Async Shell Command*" (buffer-name (current-buffer)))
@@ -454,13 +454,13 @@
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
-  (define-key dired-mode-map (kbd "C-t")       nil)  ; image-dired
-  (define-key dired-mode-map (kbd "<C-left>")  'left-word)
+  (define-key dired-mode-map (kbd "C-t") nil)  ; image-dired
+  (define-key dired-mode-map (kbd "<C-left>") 'left-word)
   (define-key dired-mode-map (kbd "<C-right>") 'right-word)
-  (define-key dired-mode-map (kbd "<C-up>")    'backward-paragraph)
-  (define-key dired-mode-map (kbd "<C-down>")  'forward-paragraph)
+  (define-key dired-mode-map (kbd "<C-up>") 'backward-paragraph)
+  (define-key dired-mode-map (kbd "<C-down>") 'forward-paragraph)
   (define-key dired-mode-map [(meta shift ?o)] nil)  ; C-left ~ C-down が効かないので
-  (define-key dired-mode-map (kbd "I")         'dired-kill-subdir)
+  (define-key dired-mode-map (kbd "I") 'dired-kill-subdir)
   ;; color
   (set-face-background 'diredp-dir-heading nil)
   (set-face-foreground 'diredp-dir-name "blue")
