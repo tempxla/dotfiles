@@ -404,6 +404,7 @@
 (define-key global-map (kbd "C-x B")   'ibuffer-list-buffers)
 (define-key global-map (kbd "C-c l")   'toggle-truncate-lines)
 (define-key global-map (kbd "M-o")     'other-window)
+(define-key global-map (kbd "C-x k")   'kill-this-buffer)
 (define-key global-map (kbd "C-x C-c") ; New Empty Buffer
   '(lambda ()
      (interactive) (switch-to-buffer (format-time-string "*New%s*"))))
@@ -444,6 +445,12 @@
 (define-key dired-mode-map (kbd "b") (lambda () (interactive) (find-alternate-file "..")))
 ;;(define-key dired-mode-map (kbd "q")         '(lambda () (interactive) (quit-window t)))
 (define-key dired-mode-map (kbd "M-RET")     'dired-do-async-shell-command)
+(define-key shell-mode-map (kbd "q")
+  (lambda () (interactive)
+    (if (equal "*Async Shell Command*" (buffer-name (current-buffer)))
+        (kill-this-buffer)
+      (self-insert-command 1))))
+
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
