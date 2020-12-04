@@ -98,7 +98,7 @@
 (define-key global-map (kbd "C-c o") 'recentf-open-files)
 
 ;; ミニバッファの履歴を保存する
-(setq savehist-file     "~/.emacs.d/cache/savehist/history")
+(setq savehist-file "~/.emacs.d/cache/savehist/history")
 (setq history-length 2000)
 (setq savehist-additional-variables
       '(buffer-name-history
@@ -112,7 +112,7 @@
 
 ;; 前回の編集場所を記憶する
 (save-place-mode 1) ; emacs 25
-(setq save-place-file   "~/.emacs.d/cache/places")
+(setq save-place-file "~/.emacs.d/cache/places")
 
 ;; undohist
 ;; ファイルを閉じた後もundoできる
@@ -142,22 +142,22 @@
 ;; -----------------------------------------------------------------------------
 ;; M-x customize-faceでfaceを調べる
 ;; M-x list-colors-displayで使用可能な色一覧を表示
-(set-face-foreground 'font-lock-comment-face       "white"  )
-(set-face-foreground 'font-lock-doc-face           "white"  )
-(set-face-foreground 'font-lock-keyword-face       "magenta")
-(set-face-foreground 'font-lock-function-name-face "blue"   )
-(set-face-foreground 'font-lock-type-face          "green"  )
-(set-face-foreground 'font-lock-string-face        "red"    )
-(set-face-foreground 'font-lock-constant-face      "cyan"   )
-;; (set-face-foreground 'font-lock-operator-face      "yellow"   ) ; 演算子は無い
-(set-face-background 'region                       "#444444")
-(set-face-foreground 'vertical-border              "black"  )
-(set-face-background 'vertical-border              "black"  )
-(set-face-foreground 'mode-line-inactive           "gray80" )
-(set-face-background 'mode-line-inactive           "black"  )
-(set-face-foreground 'mode-line                    "gray80" )
-(set-face-background 'mode-line                    "black"  )
-(set-face-background 'widget-field                 "white"  )
+(set-face-foreground 'font-lock-comment-face "white")
+(set-face-foreground 'font-lock-doc-face "white")
+(set-face-foreground 'font-lock-keyword-face "magenta")
+(set-face-foreground 'font-lock-function-name-face "blue")
+(set-face-foreground 'font-lock-type-face "green")
+(set-face-foreground 'font-lock-string-face "red")
+(set-face-foreground 'font-lock-constant-face "cyan")
+;; (set-face-foreground 'font-lock-operator-face "yellow") ; 演算子は無い
+(set-face-background 'region "#444444")
+(set-face-foreground 'vertical-border "black")
+(set-face-background 'vertical-border "black")
+(set-face-foreground 'mode-line-inactive "gray80")
+(set-face-background 'mode-line-inactive "black")
+(set-face-foreground 'mode-line "gray80")
+(set-face-background 'mode-line "black")
+(set-face-background 'widget-field "white")
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
@@ -186,16 +186,16 @@
 (require 'whitespace)
 (setq whitespace-style '(face           ; faceで可視化
                          trailing       ; 行末
-                         ;;tabs           ; タブ
+                         ;;tabs         ; タブ
                          spaces         ; スペース
-                         ;;empty          ; 先頭/末尾の空行
+                         ;;empty        ; 先頭/末尾の空行
                          space-mark     ; 表示のマッピング
                          tab-mark
                          ))
 (setq whitespace-space-regexp "\\([\x3000]+\\)") ; 全角スペース
 (setq whitespace-display-mappings
       '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t]))) ; タブ表示
-(set-face-background 'whitespace-tab   "white")
+(set-face-background 'whitespace-tab "white")
 (set-face-background 'whitespace-space "white")
 (global-whitespace-mode 1)
 ;; emacsで曖昧な文字幅を全角にする
@@ -262,8 +262,8 @@
 (when (require 'auto-highlight-symbol nil t)
   (global-auto-highlight-symbol-mode t)
   (ahs-set-idle-interval 0.8)
-  (set-face-background 'ahs-face                "green")
-  (set-face-background 'ahs-plugin-defalt-face  "green"))
+  (set-face-background 'ahs-face "green")
+  (set-face-background 'ahs-plugin-defalt-face "green"))
 
 ;; ibuffer
 (add-hook 'ibuffer-mode-hook
@@ -278,10 +278,10 @@
 (define-key global-map (kbd "M-p") 'flycheck-previous-error)
 (add-hook 'flycheck-mode-hook
           (lambda ()
-            (set-face-foreground 'flycheck-warning   "yellow")
-            (set-face-underline  'flycheck-warning   "yellow")
-            (set-face-foreground 'flycheck-error     "red"   )
-            (set-face-underline  'flycheck-error     "red"   )))
+            (set-face-foreground 'flycheck-warning "yellow")
+            (set-face-underline 'flycheck-warning "yellow")
+            (set-face-foreground 'flycheck-error "red")
+            (set-face-underline 'flycheck-error "red")))
 (setq flycheck-check-syntax-automatically '(save mode-enabled))
 
 ;; company
@@ -346,20 +346,20 @@
   (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
   (setq elscreen-display-tab 12)
   ;; face
-  (set-face-foreground 'elscreen-tab-background-face       "blue"   )
-  (set-face-background 'elscreen-tab-background-face       "black"  )
-  (set-face-underline  'elscreen-tab-background-face       nil      )
-  (set-face-foreground 'elscreen-tab-control-face          "blue"   )
-  (set-face-background 'elscreen-tab-control-face          "black"  )
-  (set-face-underline  'elscreen-tab-control-face          nil      )
-  (set-face-foreground 'elscreen-tab-current-screen-face   "gray80" )
-  (set-face-background 'elscreen-tab-current-screen-face   "black"  )
-  (set-face-bold       'elscreen-tab-current-screen-face   t        )
-  (set-face-underline  'elscreen-tab-current-screen-face   nil      )
-  (set-face-foreground 'elscreen-tab-other-screen-face     "blue"   )
-  (set-face-background 'elscreen-tab-other-screen-face     "black"  )
-  (set-face-bold       'elscreen-tab-other-screen-face     t        )
-  (set-face-underline  'elscreen-tab-other-screen-face     nil      )
+  (set-face-foreground 'elscreen-tab-background-face "blue")
+  (set-face-background 'elscreen-tab-background-face "black")
+  (set-face-underline 'elscreen-tab-background-face nil)
+  (set-face-foreground 'elscreen-tab-control-face "blue")
+  (set-face-background 'elscreen-tab-control-face "black")
+  (set-face-underline 'elscreen-tab-control-face nil)
+  (set-face-foreground 'elscreen-tab-current-screen-face "gray80")
+  (set-face-background 'elscreen-tab-current-screen-face "black")
+  (set-face-bold 'elscreen-tab-current-screen-face t)
+  (set-face-underline 'elscreen-tab-current-screen-face nil)
+  (set-face-foreground 'elscreen-tab-other-screen-face "blue")
+  (set-face-background 'elscreen-tab-other-screen-face "black")
+  (set-face-bold 'elscreen-tab-other-screen-face t)
+  (set-face-underline 'elscreen-tab-other-screen-face nil)
   (setq elscreen-prefix-key (kbd "C-z"))
   (elscreen-start)
   (global-set-key (kbd "C-z C-z") 'elscreen-toggle))
@@ -388,10 +388,10 @@
             (lambda ()
               (if (boundp 'icicle-mode-map)
                   (define-key icicle-mode-map (kbd "C-h") nil))))  ; help-prefix
-  (set-face-foreground 'icicle-multi-command-completion    "black")
-  (set-face-background 'icicle-multi-command-completion    "green")
+  (set-face-foreground 'icicle-multi-command-completion "black")
+  (set-face-background 'icicle-multi-command-completion "green")
   (set-face-background 'icicle-current-candidate-highlight "#444444")
-  (set-face-foreground 'icicle-complete-input              "green")
+  (set-face-foreground 'icicle-complete-input "green")
   (icy-mode 1))
 
 ;; -----------------------------------------------------------------------------
@@ -462,40 +462,40 @@
   (define-key dired-mode-map [(meta shift ?o)] nil)  ; C-left ~ C-down が効かないので
   (define-key dired-mode-map (kbd "I")         'dired-kill-subdir)
   ;; color
-  (set-face-background 'diredp-dir-heading       nil         )
-  (set-face-foreground 'diredp-dir-name          "blue"      )
-  (set-face-background 'diredp-dir-name          nil         )
-  (set-face-foreground 'diredp-number            "color-246" )
-  (set-face-background 'diredp-number            nil         )
-  (set-face-foreground 'diredp-file-suffix       "green"     )
-  (set-face-foreground 'diredp-dir-priv          "blue"      )
-  (set-face-background 'diredp-dir-priv          nil         )
-  (set-face-background 'diredp-read-priv         nil         )
-  (set-face-background 'diredp-write-priv        nil         )
-  (set-face-background 'diredp-exec-priv         nil         )
-  (set-face-background 'diredp-no-priv           nil         )
-  (set-face-foreground 'diredp-rare-priv         "cyan"      )
-  (set-face-background 'diredp-rare-priv         nil         )
-  (set-face-foreground 'diredp-symlink           "cyan"      )
-  (set-face-foreground 'diredp-ignored-file-name "white"     )
-  (set-face-foreground 'diredp-flag-mark-line    "cyan"      )
-  (set-face-background 'diredp-flag-mark-line    nil         )
-  (set-face-foreground 'diredp-flag-mark         "black"     )
-  (set-face-background 'diredp-flag-mark         "cyan"      )
-  (set-face-foreground 'diredp-deletion          "black"     )
-  (set-face-background 'diredp-deletion          "red"       ))
+  (set-face-background 'diredp-dir-heading nil)
+  (set-face-foreground 'diredp-dir-name "blue")
+  (set-face-background 'diredp-dir-name nil)
+  (set-face-foreground 'diredp-number "color-246")
+  (set-face-background 'diredp-number nil)
+  (set-face-foreground 'diredp-file-suffix "green")
+  (set-face-foreground 'diredp-dir-priv "blue")
+  (set-face-background 'diredp-dir-priv nil)
+  (set-face-background 'diredp-read-priv nil)
+  (set-face-background 'diredp-write-priv nil)
+  (set-face-background 'diredp-exec-priv nil)
+  (set-face-background 'diredp-no-priv nil)
+  (set-face-foreground 'diredp-rare-priv "cyan")
+  (set-face-background 'diredp-rare-priv nil)
+  (set-face-foreground 'diredp-symlink "cyan")
+  (set-face-foreground 'diredp-ignored-file-name "white")
+  (set-face-foreground 'diredp-flag-mark-line "cyan")
+  (set-face-background 'diredp-flag-mark-line nil)
+  (set-face-foreground 'diredp-flag-mark "black")
+  (set-face-background 'diredp-flag-mark "cyan")
+  (set-face-foreground 'diredp-deletion "black")
+  (set-face-background 'diredp-deletion "red"))
 
 ;; -----------------------------------------------------------------------------
 ;; Haskell
 ;; -----------------------------------------------------------------------------
 (when (require 'haskell-mode nil t)
-  (setq haskell-indentation-left-offset       2)
-  (setq haskell-indentation-ifte-offset       2)
+  (setq haskell-indentation-left-offset 2)
+  (setq haskell-indentation-ifte-offset 2)
   (setq haskell-indentation-where-post-offset 2)
-  (setq haskell-indentation-where-pre-offset  2)
-  (setq haskell-indentation-layout-offset     2)
-  (setq haskell-indentation-starter-offset    0)
-  (setq haskell-indentation-cycle-warn        nil)
+  (setq haskell-indentation-where-pre-offset 2)
+  (setq haskell-indentation-layout-offset 2)
+  (setq haskell-indentation-starter-offset 0)
+  (setq haskell-indentation-cycle-warn nil)
   (add-hook 'haskell-mode-hook
             (lambda ()
               (turn-on-haskell-indentation)
@@ -548,21 +548,21 @@
 ;; 色
 (add-hook 'navi2ch-hook
           (lambda()
-            (set-face-foreground 'navi2ch-list-category-face             "white")
-            (set-face-foreground 'navi2ch-list-board-name-face           "blue")
-            (set-face-foreground 'navi2ch-article-header-face            "white")
-            (set-face-foreground 'navi2ch-article-header-contents-face   "blue")
+            (set-face-foreground 'navi2ch-list-category-face "white")
+            (set-face-foreground 'navi2ch-list-board-name-face "blue")
+            (set-face-foreground 'navi2ch-article-header-face "white")
+            (set-face-foreground 'navi2ch-article-header-contents-face "blue")
             (set-face-foreground 'navi2ch-article-header-fusianasan-face "blue")
             (set-face-foreground 'navi2ch-article-message-separator-face "white")
-            (set-face-foreground 'navi2ch-article-citation-face          "magenta")
-            (set-face-foreground 'navi2ch-bm-unread-face                 "white")
-            (set-face-foreground 'navi2ch-bm-updated-unread-face         "white")
-            (set-face-foreground 'navi2ch-bm-new-unread-face             "white")
-            (set-face-foreground 'navi2ch-bm-updated-cache-face          "green")
-            (set-face-foreground 'navi2ch-bm-cache-face                  "blue")
-            (set-face-foreground 'navi2ch-bm-seen-cache-face             "blue")
-            (set-face-foreground 'navi2ch-bm-new-cache-face              "blue")
-            (set-face-foreground 'navi2ch-bm-seen-view-face              "magenta")
-            (set-face-foreground 'navi2ch-bm-view-face                   "magenta")))
+            (set-face-foreground 'navi2ch-article-citation-face "magenta")
+            (set-face-foreground 'navi2ch-bm-unread-face "white")
+            (set-face-foreground 'navi2ch-bm-updated-unread-face "white")
+            (set-face-foreground 'navi2ch-bm-new-unread-face "white")
+            (set-face-foreground 'navi2ch-bm-updated-cache-face "green")
+            (set-face-foreground 'navi2ch-bm-cache-face "blue")
+            (set-face-foreground 'navi2ch-bm-seen-cache-face "blue")
+            (set-face-foreground 'navi2ch-bm-new-cache-face "blue")
+            (set-face-foreground 'navi2ch-bm-seen-view-face "magenta")
+            (set-face-foreground 'navi2ch-bm-view-face "magenta")))
 
 ;;; init.el ends here
