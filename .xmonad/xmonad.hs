@@ -317,11 +317,10 @@ myXmobarPP = xmobarPP
   where
     myDispF (_:'A':[]) = "▲"
     myDispF (_:'B':[]) = "▼"
-    shortenB 0  []     = []
-    shortenB 0  _      = "..."
-    shortenB ln []     = []
-    shortenB ln (x:xs) = x : shortenB (ln - if isAscii x then 1 else 2) xs
-
+    shortenB n []      = []
+    shortenB n (x:xs)
+      | n > 0     = x : shortenB (n - if isAscii x then 1 else 2) xs
+      | otherwise = "..."
 
 ------------------------------------------------------------------------
 -- Startup hook
