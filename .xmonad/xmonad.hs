@@ -65,7 +65,7 @@ myWorkspaces    = ["1A","2A","3A","4A","5A","6A","7A","8A","9A","1B","2B","3B","
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#1A1A1A"
-myFocusedBorderColor = "#BCBCBC"
+myFocusedBorderColor = "#6D9CBE"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -216,9 +216,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 myLayout = avoidStruts standardLayout
   where
-     standardLayout =   renamed [Replace "Tall"] tiled
-                    ||| renamed [Replace "Mirror Tall"] mirrorTiled
-                    ||| renamed [Replace "Full"] Full
+     standardLayout =   renamed [Replace ":: Tall ::"] tiled
+                    ||| renamed [Replace ":: Mirror ::"] mirrorTiled
+                    ||| renamed [Replace ":: Full ::"] Full
      -- default tiling algorithm partitions the screen into two panes
      tiled   = spacing 10 $ Tall nmaster delta ratio
      -- The default number of windows in the master pane
@@ -254,10 +254,13 @@ myManageHook = composeAll
     , className =? "Mikutter.rb"    --> doShift (myWorkspaces !! 0)
     , className =? "Corebird"       --> doShift (myWorkspaces !! 0)
     , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
+    , className =? "Firefox"        --> doShift (myWorkspaces !! 1)
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
     , className =? "vlc"            --> doShift (myWorkspaces !! 3)
+    , className =? "Google-chrome"  --> doShift (myWorkspaces !! 4)
     , className =? "Chromium"       --> doShift (myWorkspaces !! 4)
     , className =? "V2C"            --> doShift (myWorkspaces !! 7)
+    , className =? "Siki"           --> doShift (myWorkspaces !! 7)
     , className =? "Eclipse"        --> doShift (myWorkspaces !! 6)
     -- 新しいウィンドウを末尾に追加しフォーカスする
     , not <$> isFloat               --> insertPosition End Newer
@@ -302,7 +305,7 @@ myXmobarPP = xmobarPP
   , ppUrgent            =   xmobarColor "red"     "#1a1a1a"
   , ppSep               =   "   "
   , ppWsSep             =   ""
-  , ppTitle             =   xmobarColor "#e5e5e5" "#1a1a1a" . shorten 30
+  , ppTitle             =   xmobarColor "#e5e5e5" "#1a1a1a" . shorten 70
   -- , ppTitleSanitize     =
   , ppLayout            =   xmobarColor "#6D9CBE" "#1a1a1a"
   -- , ppOrder             =
@@ -326,9 +329,10 @@ myXmobarPP = xmobarPP
 -- myStartupHook = return ()
 myStartupHook = do
   spawn "xmodmap ~/.Xmodmap"
+  spawn "ibus-daemon -drx"
   spawn "feh --bg-fill ~/data/pic/desktop.png"
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
-  spawn "xscreensaver"
+  --spawn "xscreensaver"
   spawn "~/bin/run-urxvtd.sh"
   --spawn "mlterm --daemon=genuine -e ':'" -- daemonだとemacsでctrl+F2が効かない
   setWMName "LG3D"  -- for java apps
