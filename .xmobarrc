@@ -18,5 +18,5 @@ Config {
       ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = " <fc=#6D9CBE>❖ %myosname%</fc>   %date%   %StdinReader% }{ <fn=1><fn=0><fc=#6D9CBE>卍</fc></fn> %multicpu%  <fn=0><fc=#6D9CBE>‡</fc></fn>%memory%  <fn=0><fc=#6D9CBE>↑↓</fc></fn> %dynnetwork%  <fn=0><fc=#6D9CBE>♪</fc></fn> %myvolume%</fn>  "
+  , template = " <fc=#6D9CBE>❖</fc>  %myosname%   %StdinReader% } %date% { <fn=1><fn=0><fc=#6D9CBE>卍</fc></fn> %multicpu%  <fn=0><fc=#6D9CBE>‡</fc></fn>%memory%  <fn=0><fc=#6D9CBE>↑↓</fc></fn> %dynnetwork%  <fn=0><fc=#6D9CBE>♪</fc></fn> %myvolume%</fn>  "
   }

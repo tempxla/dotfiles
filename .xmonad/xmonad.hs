@@ -8,6 +8,7 @@
 --
 
 import XMonad
+import Data.Char (isAscii)
 import Data.Monoid
 import System.Exit
 
@@ -305,7 +306,7 @@ myXmobarPP = xmobarPP
   , ppUrgent            =   xmobarColor "red"     "#1a1a1a"
   , ppSep               =   "   "
   , ppWsSep             =   ""
-  , ppTitle             =   xmobarColor "#e5e5e5" "#1a1a1a" . shorten 70
+  , ppTitle             =   xmobarColor "#e5e5e5" "#1a1a1a" . shortenB 30
   -- , ppTitleSanitize     =
   , ppLayout            =   xmobarColor "#6D9CBE" "#1a1a1a"
   -- , ppOrder             =
@@ -316,6 +317,10 @@ myXmobarPP = xmobarPP
   where
     myDispF (_:'A':[]) = "▲"
     myDispF (_:'B':[]) = "▼"
+    shortenB 0  []     = []
+    shortenB 0  _      = "..."
+    shortenB ln []     = []
+    shortenB ln (x:xs) = x : shortenB (ln - if isAscii x then 1 else 2) xs
 
 
 ------------------------------------------------------------------------
