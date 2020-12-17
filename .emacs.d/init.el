@@ -24,10 +24,10 @@
   (package-initialize))
 
 ;; auto-install
-;;20201212(when (require 'auto-install nil t)
-;;20201212  (setq auto-install-directory "~/.emacs.d/elisp/")
-;;20201212  (auto-install-update-emacswiki-package-name t)
-;;20201212  (auto-install-compatibility-setup))
+(when (require 'auto-install nil t)
+  (setq auto-install-directory "~/.emacs.d/elisp/")
+  (auto-install-update-emacswiki-package-name t)
+  (auto-install-compatibility-setup))
 ;; << Setup >>
 ;; curl -O https://www.emacswiki.org/emacs/download/auto-install.el
 ;; M-x byte-compile-file
@@ -87,15 +87,15 @@
   (declare (indent 0))
   (let ((message-log-max nil))
     `(with-temp-message (or (current-message) "") ,@body)))
-;;20201212(setq recentf-max-menu-items 30)
-;;20201212(setq recentf-max-saved-items 1000)
-;;20201212(setq recentf-save-file "~/.emacs.d/cache/recentf")
-;;20201212(setq recentf-exclude '("cache/recentf" "COMMIT_EDITMSG"))
-;;20201212(setq recentf-auto-cleanup 'never)
-;;20201212(run-with-idle-timer 30 t '(lambda () ; 30秒ごとに recentf を保存
-;;20201212                             (with-suppressed-message (recentf-save-list))))
-;;20201212(recentf-mode t)
-;;20201212(define-key global-map (kbd "C-c o") 'recentf-open-files)
+(setq recentf-max-menu-items 30)
+(setq recentf-max-saved-items 1000)
+(setq recentf-save-file "~/.emacs.d/cache/recentf")
+(setq recentf-exclude '("cache/recentf" "COMMIT_EDITMSG"))
+(setq recentf-auto-cleanup 'never)
+(run-with-idle-timer 30 t '(lambda () ; 30秒ごとに recentf を保存
+                             (with-suppressed-message (recentf-save-list))))
+(recentf-mode t)
+(define-key global-map (kbd "C-c o") 'recentf-open-files)
 
 ;; ミニバッファの履歴を保存する
 (setq savehist-file "~/.emacs.d/cache/savehist/history")
@@ -157,7 +157,7 @@
 (set-face-background 'mode-line-inactive "black")
 (set-face-foreground 'mode-line "gray80")
 (set-face-background 'mode-line "black")
-;;20201212(set-face-background 'widget-field "white")
+;;(set-face-background 'widget-field "white")
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
@@ -174,7 +174,8 @@
 (setq column-number-mode t)
 ;; 対応する括弧強調
 (show-paren-mode t)
-;;20201212(set-face-background 'show-paren-match-face "blue")
+(set-face-attribute 'show-paren-match nil :background 'unspecified)
+(set-face-background 'show-paren-match "blue")
 ;; truncate-lines
 (set-default 'truncate-lines t)
 
@@ -275,15 +276,16 @@
 (setq read-file-name-completion-ignore-case t)    ; minibuffer
 
 ;; flycheck
-(define-key global-map (kbd "M-n") 'flycheck-next-error)
-(define-key global-map (kbd "M-p") 'flycheck-previous-error)
-(add-hook 'flycheck-mode-hook
-          (lambda ()
-            (set-face-foreground 'flycheck-warning "yellow")
-            (set-face-underline 'flycheck-warning "yellow")
-            (set-face-foreground 'flycheck-error "red")
-            (set-face-underline 'flycheck-error "red")))
-(setq flycheck-check-syntax-automatically '(save mode-enabled))
+(when (boundp 'flycheck-mode)
+  (define-key global-map (kbd "M-n") 'flycheck-next-error)
+  (define-key global-map (kbd "M-p") 'flycheck-previous-error)
+  (add-hook 'flycheck-mode-hook
+            (lambda ()
+              (set-face-foreground 'flycheck-warning "yellow")
+              (set-face-underline 'flycheck-warning "yellow")
+              (set-face-foreground 'flycheck-error "red")
+              (set-face-underline 'flycheck-error "red")))
+  (setq flycheck-check-syntax-automatically '(save mode-enabled)))
 
 ;; company
 (when (require 'company nil t)
@@ -447,12 +449,14 @@
 (define-key dired-mode-map (kbd "b") (lambda () (interactive) (find-alternate-file "..")))
 ;;(define-key dired-mode-map (kbd "q") '(lambda () (interactive) (quit-window t)))
 (define-key dired-mode-map (kbd "M-RET") 'dired-do-async-shell-command)
-;;20201212(define-key shell-mode-map (kbd "q")
-;;  (lambda ()
-;;    (interactive)
-;;    (if (string-match "\\*Async Shell Command\\*\\(<[0-9]+>\\)?" (buffer-name (current-buffer)))
-;;        (kill-this-buffer)
-;;      (self-insert-command 1))))
+
+(require 'shell)
+(define-key shell-mode-map (kbd "q")
+  (lambda ()
+    (interactive)
+    (if (string-match "\\*Async Shell Command\\*\\(<[0-9]+>\\)?" (buffer-name (current-buffer)))
+        (kill-this-buffer)
+      (self-insert-command 1))))
 
 (when (require 'dired+ nil t)
   ;; カスタマイズ
@@ -505,20 +509,23 @@
               (set-face-foreground 'haskell-operator-face "yellow")
               (cond ((not (string-match-p "/xmonad\\.hs$" buffer-file-name))
                      (custom-set-variables '(haskell-stylish-on-save t))
-                     (flycheck-mode)
+                     (when (boundp 'flycheck-mode)
+                       (flycheck-mode))
                      (intero-mode)
                      (define-key haskell-mode-map (kbd "M-,") 'xref-pop-marker-stack))))))
 
 ;; -----------------------------------------------------------------------------
 ;; Emacs-Lisp
 ;; -----------------------------------------------------------------------------
-(add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
+(when (boundp 'flycheck-mode)
+  (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
 (setq flycheck-emacs-lisp-load-path load-path)
 
 ;; -----------------------------------------------------------------------------
 ;; Go
 ;; -----------------------------------------------------------------------------
-(add-hook 'go-mode-hook 'flycheck-mode)
+(when (boundp 'flycheck-mode)
+  (add-hook 'go-mode-hook 'flycheck-mode))
 (add-hook 'go-mode-hook
           (lambda()
             (add-hook 'before-save-hook 'gofmt-before-save)
