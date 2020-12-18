@@ -334,7 +334,7 @@ myXmobarPP = xmobarPP
 myStartupHook = do
   spawn "xmodmap ~/.Xmodmap"
   spawn "ibus-daemon -drx"
-  spawn "feh --bg-fill ~/data/pic/desktop.png"
+  spawn "feh --bg-fill ~/data/pic/desktop_left.png --bg-fill ~/data/pic/desktop_right.png"
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   --spawn "xscreensaver"
   spawn "~/bin/run-urxvtd.sh"
