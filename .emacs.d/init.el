@@ -208,15 +208,10 @@
 ;; (set-face-background 'sml-modeline-end-face "green3")   ; 全体の背景色
 ;; (set-face-background 'sml-modeline-vis-face "red3")   ; 表示領域の背景色
 ;; 選択行ハイライト
-(defface my-hl-line-face
-  '((((class color) (background dark))
-     (:background nil :underline t ))
-    (((class color) (background light))
-     (:background nil :underline t ))
-    (t (:bold t)))
-  "hl-line's my face ")
-(setq hl-line-face 'my-hl-line-face)
-;;(global-hl-line-mode)
+(when (require 'hlinum nil t)
+  (hlinum-activate)
+  (custom-set-faces
+   '(linum-highlight-face ((t (:foreground "black" :background "color-250"))))))
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
