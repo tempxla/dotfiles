@@ -175,7 +175,7 @@
 ;; 対応する括弧強調
 (show-paren-mode t)
 (set-face-attribute 'show-paren-match nil :background 'unspecified)
-(set-face-background 'show-paren-match "blue")
+(set-face-background 'show-paren-match "green")
 ;; truncate-lines
 (set-default 'truncate-lines t)
 
@@ -211,7 +211,7 @@
 (when (require 'hlinum nil t)
   (hlinum-activate)
   (custom-set-faces
-   '(linum-highlight-face ((t (:foreground "black" :background "color-250"))))))
+   '(linum-highlight-face ((t (:foreground "black" :background "color-244"))))))
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
