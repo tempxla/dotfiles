@@ -240,10 +240,6 @@
 (define-key global-map (kbd "<nil> <wheel-down>") 'scroll-up-with-lines)
 ;; カーソル位置の保持
 (setq scroll-preserve-screen-position t)
-(define-key cua-global-keymap (kbd "C-v") (lambda () (interactive) (cua-scroll-up) (backward-char 1)))  ; bug?
-(define-key cua-global-keymap (kbd "<next>") (lambda () (interactive) (cua-scroll-up) (backward-char 1)))  ; bug?
-(define-key cua-global-keymap (kbd "M-v") (lambda () (interactive) (cua-scroll-down) (backward-char 1)))  ; bug?
-(define-key cua-global-keymap (kbd "<prior>") (lambda () (interactive) (cua-scroll-down) (backward-char 1)))  ; bug?
 ;; C-v、M-v でページ切り替えした時の重複行数
 (setq next-screen-context-lines 1)
 ;; スクロール加速
@@ -258,6 +254,12 @@
 ;; コピー/ペーストは通常と同じ Alt+w/Ctrl+y
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ;; cua バインドを無効
+;; (setq scroll-preserve-screen-position t) のとき1文字ずれる (emacs 27)
+(define-key cua-global-keymap (kbd "C-v") (lambda () (interactive) (cua-scroll-up) (backward-char 1)))
+(define-key cua-global-keymap (kbd "M-v") (lambda () (interactive) (cua-scroll-down) (backward-char 1)))
+(define-key cua-global-keymap (kbd "<next>") (lambda () (interactive) (cua-scroll-up) (backward-char 1)))
+(define-key cua-global-keymap (kbd "<prior>") (lambda () (interactive) (cua-scroll-down) (backward-char 1)))
+
 ;; auto-highlight-symbol
 (when (require 'auto-highlight-symbol nil t)
   (global-auto-highlight-symbol-mode t)
