@@ -8,8 +8,10 @@
 --
 
 import XMonad
+import Control.Monad (filterM)
 import Data.Char (isAscii)
 import Data.Monoid
+import System.Directory (doesFileExist)
 import System.Exit
 
 import qualified XMonad.StackSet as W
@@ -334,7 +336,12 @@ myXmobarPP = xmobarPP
 myStartupHook = do
   spawn "xmodmap ~/.Xmodmap"
   spawn "ibus-daemon -drx"
-  spawn "feh --bg-fill ~/data/pic/desktop_left.png --bg-fill ~/data/pic/desktop_right.png"
+  -- feh
+  bgDefault   <- liftIO $ head . (++ ["~/data/pic/desktop.jpg"]) <$> (filterM doesFileExist $ map ("~/data/pic/desktop." ++) ["png"])
+  bgLeftPath  <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map ("~/data/pic/desktop_left." ++) ["png", "jpg"])
+  bgRightPath <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map ("~/data/pic/desktop_right." ++) ["png", "jpg"])
+  spawn $ "feh --bg-fill " ++ bgLeftPath ++ " --bg-fill " ++ bgRightPath
+  -- compton
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   --spawn "xscreensaver"
   spawn "~/bin/run-urxvtd.sh"
