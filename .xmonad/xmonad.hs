@@ -11,7 +11,7 @@ import XMonad
 import Control.Monad (filterM)
 import Data.Char (isAscii)
 import Data.Monoid
-import System.Directory (doesFileExist)
+import System.Directory (doesFileExist, getHomeDirectory)
 import System.Exit
 
 import qualified XMonad.StackSet as W
@@ -337,9 +337,10 @@ myStartupHook = do
   spawn "xmodmap ~/.Xmodmap"
   spawn "ibus-daemon -drx"
   -- feh
-  bgDefault   <- liftIO $ head . (++ ["~/data/pic/desktop.jpg"]) <$> (filterM doesFileExist $ map ("~/data/pic/desktop." ++) ["png"])
-  bgLeftPath  <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map ("~/data/pic/desktop_left." ++) ["png", "jpg"])
-  bgRightPath <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map ("~/data/pic/desktop_right." ++) ["png", "jpg"])
+  bgDir       <- liftIO $ (++ "/data/pic") <$> getHomeDirectory
+  bgDefault   <- liftIO $ head . (++ [bgDir ++ "/desktop.jpg"]) <$> (filterM doesFileExist $ map (\ext -> bgDir ++ "/desktop." ++ ext) ["png"])
+  bgLeftPath  <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map (\ext -> bgDir ++ "/desktop_left." ++ ext) ["png", "jpg"])
+  bgRightPath <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map (\ext -> bgDir ++ "/desktop_right." ++ ext) ["png", "jpg"])
   spawn $ "feh --bg-fill " ++ bgLeftPath ++ " --bg-fill " ++ bgRightPath
   -- compton
   spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
