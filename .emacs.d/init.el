@@ -337,30 +337,27 @@
   ;; C-x oで開始。uで終了
   (global-set-key (kbd "C-x o") 'win-switch-dispatch))
 
-;; elscreen
-(when (require 'elscreen nil t)
-  (setq elscreen-tab-display-kill-screen nil)  ; タブの先頭に[X]を表示しない
-  (setq elscreen-tab-display-control nil)      ; header-lineの先頭に[<->]を表示しない
-  (setq elscreen-display-screen-number nil)    ; モードラインに表示しない
-  (setq elscreen-display-tab 12)
-  ;; face
-  (set-face-foreground 'elscreen-tab-background-face "blue")
-  (set-face-background 'elscreen-tab-background-face "black")
-  (set-face-underline 'elscreen-tab-background-face nil)
-  (set-face-foreground 'elscreen-tab-control-face "blue")
-  (set-face-background 'elscreen-tab-control-face "black")
-  (set-face-underline 'elscreen-tab-control-face nil)
-  (set-face-foreground 'elscreen-tab-current-screen-face "gray80")
-  (set-face-background 'elscreen-tab-current-screen-face "black")
-  (set-face-bold 'elscreen-tab-current-screen-face t)
-  (set-face-underline 'elscreen-tab-current-screen-face nil)
-  (set-face-foreground 'elscreen-tab-other-screen-face "blue")
-  (set-face-background 'elscreen-tab-other-screen-face "black")
-  (set-face-bold 'elscreen-tab-other-screen-face t)
-  (set-face-underline 'elscreen-tab-other-screen-face nil)
-  (setq elscreen-prefix-key (kbd "C-z"))
-  (elscreen-start)
-  (global-set-key (kbd "C-z C-z") 'elscreen-toggle))
+;; tab-bar-mode
+(tab-bar-mode 1)
+(defvar ctl-z-map (make-keymap))
+(define-key global-map (kbd "C-z") ctl-z-map)
+(define-key ctl-z-map (kbd "0") 'tab-select)
+(define-key ctl-z-map (kbd "1") 'tab-select)
+(define-key ctl-z-map (kbd "2") 'tab-select)
+(define-key ctl-z-map (kbd "3") 'tab-select)
+(define-key ctl-z-map (kbd "4") 'tab-select)
+(define-key ctl-z-map (kbd "5") 'tab-select)
+(define-key ctl-z-map (kbd "6") 'tab-select)
+(define-key ctl-z-map (kbd "7") 'tab-select)
+(define-key ctl-z-map (kbd "8") 'tab-select)
+(define-key ctl-z-map (kbd "9") 'tab-select)
+(define-key ctl-z-map (kbd "k") 'tab-close)
+(define-key ctl-z-map (kbd "C-c") 'tab-new)
+(define-key ctl-z-map (kbd "C-k") 'tab-close)
+(define-key ctl-z-map (kbd "C-l") 'my-tab-clone)
+(define-key ctl-z-map (kbd "C-n") 'tab-next)
+(define-key ctl-z-map (kbd "C-p") 'tab-previous)
+(define-key ctl-z-map (kbd "C-z") 'tab-recent)
 
 ;; multi-term
 (when (require 'multi-term nil t)

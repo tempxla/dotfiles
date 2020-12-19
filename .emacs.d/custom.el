@@ -14,6 +14,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(linum ((t (:foreground "white")))))
+ '(linum ((t (:foreground "white"))))
+ '(linum-highlight-face ((t (:foreground "black" :background "red"))))
+ '(tab-bar ((t (:inherit variable-pitch :background "black" :foreground "blue"))))
+ '(tab-bar-tab ((t (:inherit nil :box (:line-width 1 :color "blue" :style pressed-button)))))
+ '(tab-bar-tab-inactive ((t (:inherit tab-bar-tab :foreground "color-244" :background "black")))))
 
 ;;; custom.el ends here
