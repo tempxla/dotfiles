@@ -221,7 +221,8 @@ myLayout = avoidStruts standardLayout
   where
      standardLayout =   renamed [Replace ":: Tall ::"] tiled
                     ||| renamed [Replace ":: Mirror ::"] mirrorTiled
-                    ||| renamed [Replace ":: Full ::"] Full
+                    ||| renamed [Replace ":: Max ::"] Full
+                    ||| renamed [Replace ":: Full ::"] (spacing 0 Full)
      -- default tiling algorithm partitions the screen into two panes
      tiled   = spacing 10 $ Tall nmaster delta ratio
      -- The default number of windows in the master pane
@@ -231,7 +232,7 @@ myLayout = avoidStruts standardLayout
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
      -- Mirror Tiled
-     mirrorTiled  = Mirror . spacing 10 $ Tall nmaster delta (78/100)
+     mirrorTiled  = Mirror . spacing 10 $ Tall nmaster delta (70/100)
 
 ------------------------------------------------------------------------
 -- Window rules:
