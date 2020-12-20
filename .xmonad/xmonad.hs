@@ -221,7 +221,7 @@ myLayout = avoidStruts standardLayout
   where
      standardLayout =   renamed [Replace ":: Tall ::"] tiled
                     ||| renamed [Replace ":: Mirror ::"] mirrorTiled
-                    ||| renamed [Replace ":: Max ::"] Full
+                    ||| renamed [Replace ":: Max ::"] (spacing 10 Full)
                     ||| renamed [Replace ":: Full ::"] (spacing 0 Full)
      -- default tiling algorithm partitions the screen into two panes
      tiled   = spacing 10 $ Tall nmaster delta ratio
