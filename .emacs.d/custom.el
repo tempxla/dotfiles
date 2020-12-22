@@ -14,7 +14,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(linum ((t (:foreground "color-244" :background "black"))))
+ '(linum ((t (:foreground "white" :background "color-234"))))
  '(linum-highlight-face ((t (:foreground "black" :background "red"))))
  '(tab-bar ((t (:inherit variable-pitch :background "black" :foreground "cyan"))))
  '(tab-bar-tab ((t (:inherit nil :box (:line-width 1 :color "blue" :style pressed-button)))))
