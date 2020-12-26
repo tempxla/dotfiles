@@ -31,6 +31,7 @@ ln -sf ${THIS_DIR}/.stack/config.yaml                 ~/.stack/config.yaml
 ln -sf ${THIS_DIR}/.stack/global-project/stack.yaml   ~/.stack/global-project/stack.yaml
 
 ## mpd
+ln -sf ${THIS_DIR}/bin/run-mpd.sh        ~/bin/run-mpd.sh
 ln -sf ${THIS_DIR}/.config/mpd/mpd.conf  ~/.config/mpd/mpd.conf
 ln -sf ${THIS_DIR}/.ncmpcpp/config       ~/.ncmpcpp/config
 
