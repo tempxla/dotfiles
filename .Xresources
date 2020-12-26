@@ -4,7 +4,7 @@ URxvt.preeditType: OverTheSpot
 ! color
 !URxvt*.depth: 32
 URxvt.background: #1a1a1a
-URxvt.foreground: #e5e5e5
+URxvt.foreground: #e4e4e4
 ! font
 URxvt.font: xft:monospace:antialias=true:autohinting=true:size=9
 URxvt.letterSpace: -3
