@@ -141,8 +141,8 @@
 ;; 色
 ;; -----------------------------------------------------------------------------
 ;;
-(custom-set-faces
- '(default ((t (:foreground "color-252")))))
+;; (custom-set-faces
+;;  '(default ((t (:foreground "color-252")))))
 ;; M-x customize-faceでfaceを調べる
 ;; M-x list-colors-displayで使用可能な色一覧を表示
 (set-face-foreground 'font-lock-comment-face "white")
