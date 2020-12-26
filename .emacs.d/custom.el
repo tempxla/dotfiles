@@ -34,7 +34,7 @@
  '(lazy-highlight ((t (:background "paleturquoise" :foreground "black"))))
  '(linum ((t (:foreground "white" :background "color-234"))))
  '(linum-highlight-face ((t (:foreground "black" :background "red"))))
- '(tab-bar ((t (:inherit variable-pitch :background "black" :foreground "cyan"))))
+ '(tab-bar ((t (:inherit variable-pitch :background "black" :foreground "green"))))
  '(tab-bar-tab ((t (:inherit nil :box (:line-width 1 :color "blue" :style pressed-button)))))
  '(tab-bar-tab-inactive ((t (:inherit tab-bar-tab :foreground "color-244" :background "black")))))
 

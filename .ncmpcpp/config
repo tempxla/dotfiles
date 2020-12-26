@@ -205,9 +205,14 @@ visualizer_look = +|
 ##
 #
 #song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+# valid
+#song_list_format = "$1 $9$8%n$9$1 │ $9%t$1  $9$8::$9$1 $9$8%a$9$1 $R $9$5%b$9$1  $9$8%y$9$1  $9[%l]$1 $9"
+# hack a little
+song_list_format = "│$9$1 $9$8%n$9$1  $9$(252)%t$9$1  $9$8::$9$1 $9$8%a$9$1 $R $9$5%b$9$1  $9$8%y$9$1  $9$(252)[%l]$9$1 "
+
 #
 #song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
-song_status_format = {{[%y] }%b}|{%f}
+song_status_format = {{[%y] }%b - %n - %t}|{%f}
 #
 #song_library_format = {%n - }{%t}|{%f}
 #
@@ -217,9 +222,11 @@ song_status_format = {{[%y] }%b}|{%f}
 #alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 #
 #now_playing_prefix = $b
-now_playing_prefix = "$3♪$9$b"
+#now_playing_prefix = "$3♪$9$b"
+now_playing_prefix = $b$3
 #
 #now_playing_suffix = $/b
+now_playing_suffix = $9$/b
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
@@ -286,7 +293,9 @@ now_playing_prefix = "$3♪$9$b"
 #song_columns_list_format = (20)[]{a} (3f)[green]{nE} (30)[white]{t|f:Title} (40)[cyan]{b} (7f)[magenta]{l}
 #song_columns_list_format = (3f)[252]{nrE} (30)[252]{t|f:Title} (20)[white]{a} (40)[blue]{b} (6f)[252]{lr}
 #song_columns_list_format = (3f)[252]{nrE} (30)[252]{t|f:Title} (20)[white]{a} (5f)[blue]{yE} (36)[blue]{b} (6f)[252]{lr}
-song_columns_list_format = (6f)[252]{nrE} (30)[252]{t|f:Title} (20)[white]{a} (5f)[blue]{yE} (30)[blue]{b} (6f)[252]{lr}
+#song_columns_list_format = (15)[white]{nrE} (30)[252]{t|f:Title} (20)[250]{a} (5f)[white]{yE} (30)[blue]{b} (6f)[green]{lr}
+#song_columns_list_format = (6f)[white]{nrE} (20)[252]{t|f:Title} (10)[250]{a} (12)[white]{yE} (30)[blue]{b} (6f)[green]{lr}
+song_columns_list_format = (7f)[green]{lr} (16)[255]{a} (6f)[white]{nrE} (40)[255]{t|f:Title} (30)[blue]{br} (12)[white]{yEr}
 #
 ##### various settings #####
 #
@@ -308,6 +317,7 @@ song_columns_list_format = (6f)[252]{nrE} (30)[252]{t|f:Title} (20)[white]{a} (5
 ## Note: Possible display modes: classic, columns.
 ##
 #playlist_display_mode = columns
+playlist_display_mode = classic
 #
 #browser_display_mode = classic
 #
@@ -333,6 +343,7 @@ seek_time = 10
 ## be used to build 'empty' part of progressbar.
 ##
 #progressbar_look = =>
+progressbar_look = "--"
 #
 #progressbar_boldness = yes
 #
@@ -361,6 +372,7 @@ seek_time = 10
 #statusbar_visibility = yes
 #
 #titles_visibility = yes
+titles_visibility = no
 #
 #header_text_scrolling = yes
 #
@@ -510,10 +522,13 @@ display_bitrate = yes
 #empty_tag_color = cyan
 #
 #header_window_color = default
+header_window_color = green
 #
 #volume_color = default
+volume_color = 252
 #
 #state_line_color = default
+state_line_color = black
 #
 #state_flags_color = default
 #
@@ -532,6 +547,7 @@ color1 = 252
 #progressbar_elapsed_color = green
 #
 #statusbar_color = default
+statusbar_color = 252
 #
 #alternative_ui_separator_color = black
 #
@@ -541,3 +557,6 @@ color1 = 252
 #
 #active_window_border = red
 #
+
+current_item_prefix = $u
+current_item_suffix = $/u
