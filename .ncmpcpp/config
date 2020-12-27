@@ -224,7 +224,7 @@ song_status_format = {{[%y] }%b > %N{(%d)} > %t}|{%f}
 now_playing_prefix = "$b$3"
 #
 #now_playing_suffix = $/b
-now_playing_suffix = "$9$3♪Now Playing$9$1 $9$/b"
+now_playing_suffix = "$9$/b"
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
