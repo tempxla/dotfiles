@@ -215,7 +215,7 @@
 (when (require 'hlinum nil t)
   (hlinum-activate)
   (custom-set-faces
-   '(linum-highlight-face ((t (:foreground "black" :background "red"))))))
+   '(linum-highlight-face ((t (:foreground "black" :background "magenta"))))))
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
