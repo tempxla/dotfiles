@@ -44,7 +44,7 @@ ln -sf ${THIS_DIR}/.navi2ch/init.el     ~/.navi2ch/init.el
 
 ## bash
 #ln -sf ${THIS_DIR}/.bash_aliases        ~/.bash_aliases
-#ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
+ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
 
 ## fish
 #ln -sf ${THIS_DIR}/.config/fish/config.fish                  ~/.config/fish/config.fish

@@ -14,3 +14,5 @@ export GO111MODULE=on
 ## Kawa
 export KAWA_HOME="$HOME/prog/kawa/kawa"
 export PATH="$KAWA_HOME/bin:$PATH"
+## Nodejs
+export CHROME_BIN=google-chrome
