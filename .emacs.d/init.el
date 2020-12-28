@@ -549,6 +549,13 @@
 (add-hook 'clojure-mode-hook
           (lambda ()
             (setq clojure-align-forms-automatically t)))
+(add-hook 'cider-mode-hook
+          (lambda ()
+            ;; CIDER provides a minor-mode that automatically runs all tests for a namespace whenever you load a file (with C-c C-k).
+            ;; You can toggle it manually with M-x cider-auto-test-mode, or you can use:
+            ;; This is identical to manually typing C-c C-t C-n every time you load a Clojure buffer.
+            ;; As described previously, CIDER will try to automatically determine the namespace containing the tests.
+            (cider-auto-test-mode 1)))
 
 ;; -----------------------------------------------------------------------------
 ;; navi2ch
