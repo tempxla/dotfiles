@@ -8,7 +8,8 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bmkp/bookmarks")
  '(package-selected-packages
-   '(win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree intero go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol)))
+   '(win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree intero go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
+ '(safe-local-variable-values '((cider-shadow-cljs-default-options . "app"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
