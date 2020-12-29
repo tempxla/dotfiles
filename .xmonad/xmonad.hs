@@ -89,9 +89,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --, ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm,               xK_c     ), kill)
 
-     -- Rotate through the available layout algorithms
+    -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
-    , ((modm .|. shiftMask, xK_space ), sendMessage NextLayout >> sendMessage NextLayout) -- PreviousLayout
+    -- PreviousLayout (dirty?)
+    , ((modm .|. shiftMask, xK_space ), sendMessage NextLayout >> sendMessage NextLayout >> sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default
     , ((modm,               xK_0     ), setLayout $ XMonad.layoutHook conf)
