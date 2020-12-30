@@ -17,7 +17,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(icicle-candidate-part ((t (:background "#EF84FFEAF427" :foreground "black"))))
+ '(highlight ((t (:background "cyan" :foreground "black"))))
+ '(icicle-candidate-part ((t (:background "yellow" :foreground "black"))))
  '(icicle-key-complete-menu ((t (:background "#EF84FFEAF427" :foreground "black" :box (:line-width 1 :color "#34F393F434F3")))))
  '(icicle-key-complete-menu-local ((t (:background "#EF47FFFFC847" :foreground "black" :box (:line-width 1 :color "#AC4AAC4A0000")))))
  '(icicle-proxy-candidate ((t (:background "#E1E1EAEAFFFF" :foreground "black" :box (:line-width 2 :color "White" :style released-button)))))
@@ -30,10 +31,11 @@
  '(icicle-search-context-level-6 ((t (:background "#E1E1FFFFF0F0" :foreground "black"))))
  '(icicle-search-context-level-7 ((t (:background "#E1E1EAEAFFFF" :foreground "black"))))
  '(icicle-search-context-level-8 ((t (:background "#F6F5FFFFE1E1" :foreground "black"))))
- '(icicle-search-main-regexp-current ((t (:background "misty rose" :foreground "black"))))
- '(icicle-search-main-regexp-others ((t (:background "CadetBlue1" :foreground "black"))))
- '(icicle-special-candidate ((t (:background "#EF47FFFFC847" :foreground "black"))))
+ '(icicle-search-main-regexp-current ((t (:background "magenta" :foreground "black"))))
+ '(icicle-search-main-regexp-others ((t (:background "cyan" :foreground "black"))))
+ '(icicle-special-candidate ((t (:background "blue" :foreground "black"))))
  '(info-index-match ((t (:inherit match :foreground "black"))))
+ '(isearch-fail ((t (:background "magenta"))))
  '(lazy-highlight ((t (:background "paleturquoise" :foreground "black"))))
  '(linum ((t (:foreground "white" :background "color-234"))))
  '(linum-highlight-face ((t (:foreground "black" :background "red"))))
