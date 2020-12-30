@@ -408,6 +408,7 @@
   (set-face-background 'icicle-multi-command-completion "green")
   (set-face-foreground 'icicle-multi-command-completion "black")
   (set-face-background 'icicle-current-candidate-highlight "#444444")
+  (set-face-underline 'icicle-current-candidate-highlight t)
   (set-face-foreground 'icicle-complete-input "green")
   (set-face-background 'icicle-special-candidate nil)
   (set-face-foreground 'icicle-special-candidate "red")
