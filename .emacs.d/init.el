@@ -164,6 +164,13 @@
 (set-face-foreground 'mode-line "gray80")
 (set-face-background 'mode-line "black")
 ;;(set-face-background 'widget-field "white")
+;; isearch
+(set-face-background 'isearch-fail "magenta")
+;; tab-bar
+(set-face-background 'tab-bar "black")
+(set-face-foreground 'tab-bar "green")
+(set-face-background 'tab-bar-tab-inactive "black")
+(set-face-foreground 'tab-bar-tab-inactive "color-244")
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
@@ -176,6 +183,8 @@
 (line-number-mode 0)
 (global-linum-mode t)
 (setq linum-format "%4d  ")
+(set-face-background 'linum "color-234")
+(set-face-foreground 'linum "white")
 ;; 桁番号表示
 (setq column-number-mode t)
 ;; 対応する括弧強調
@@ -396,10 +405,12 @@
             (lambda ()
               (if (boundp 'icicle-mode-map)
                   (define-key icicle-mode-map (kbd "C-h") nil))))  ; help-prefix
-  (set-face-foreground 'icicle-multi-command-completion "black")
   (set-face-background 'icicle-multi-command-completion "green")
+  (set-face-foreground 'icicle-multi-command-completion "black")
   (set-face-background 'icicle-current-candidate-highlight "#444444")
   (set-face-foreground 'icicle-complete-input "green")
+  (set-face-background 'icicle-special-candidate nil)
+  (set-face-foreground 'icicle-special-candidate "red")
   (icy-mode 1))
 
 ;; -----------------------------------------------------------------------------
