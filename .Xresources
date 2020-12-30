@@ -6,7 +6,7 @@ URxvt.preeditType: OverTheSpot
 URxvt.background: #1a1a1a
 URxvt.foreground: #e4e4e4
 ! font
-URxvt.font: xft:MigMix 2M:antialias=true:autohinting=true:pixelsize=13.5,style=regular
+URxvt.font: xft:MigMix 2M:antialias=true:autohinting=true:pixelsize=12.5,style=regular
 URxvt.letterSpace: 0
 ! scroll bar
 URxvt.scrollBar: false
