@@ -430,6 +430,7 @@
      (interactive)
      (switch-to-buffer (format-time-string "*New%s*"))))
 (define-key global-map (kbd "C-x 9") 'balance-windows)
+(define-key global-map (kbd "<f5>") 'revert-buffer)
 ;; (define-key global-map (kbd "C-z") nil)
 ;; (define-key global-map (kbd "C-h") nil)
 ;; (define-key global-map (kbd "C-j") nil)
