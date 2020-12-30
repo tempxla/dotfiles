@@ -376,7 +376,7 @@
 (define-key ctl-z-map (kbd "k") 'tab-close)
 (define-key ctl-z-map (kbd "C-c") 'tab-new)
 (define-key ctl-z-map (kbd "C-k") 'tab-close)
-(define-key ctl-z-map (kbd "C-l") 'my-tab-clone)
+;;(define-key ctl-z-map (kbd "C-l") 'my-tab-clone)
 (define-key ctl-z-map (kbd "C-n") 'tab-next)
 (define-key ctl-z-map (kbd "C-p") 'tab-previous)
 (define-key ctl-z-map (kbd "C-z") 'tab-recent)
