@@ -159,14 +159,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_m         ), spawn "amixer -q set Master toggle")
 
     -- XScreenSaver
-    , ((modm .|. shiftMask, xK_l         ), spawn "xscreensaver-command -lock")
+    --, ((modm .|. shiftMask, xK_l         ), spawn "xscreensaver-command -lock")
 
     -- scrot
-    , ((modm,               xK_Print     ), spawn "scrot \"a.png\" -e 'mv $f ~/data/pic/scrot/tmp && xclip -selection clipboard -t image/png ~/data/pic/scrot/tmp/a.png'")
-    , ((modm .|. shiftMask, xK_Print     ), spawn "scrot -e 'mv $f ~/data/pic/scrot/'")
+    --, ((modm,               xK_Print     ), spawn "scrot \"a.png\" -e 'mv $f ~/data/pic/scrot/tmp && xclip -selection clipboard -t image/png ~/data/pic/scrot/tmp/a.png'")
+    --, ((modm .|. shiftMask, xK_Print     ), spawn "scrot -e 'mv $f ~/data/pic/scrot/'")
 
     -- suspend
-    , ((modm .|. shiftMask, xK_Pause     ), spawn "systemctl suspend")
+    , ((modm,               xK_Pause     ), spawn "systemctl suspend")
+    -- hibernate
+    , ((modm .|. shiftMask, xK_Pause     ), spawn "systemctl hibernate")
     ]
     ++
 
