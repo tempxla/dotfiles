@@ -8,7 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bmkp/bookmarks")
  '(package-selected-packages
-   '(markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree intero go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
+   '(markdown-preview-eww markdown-preview-mode markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree intero go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
  '(safe-local-variable-values
    '((cider-default-cljs-repl . shadow)
      (cider-shadow-cljs-default-options . "app"))))
