@@ -511,6 +511,13 @@
   (set-face-background 'diredp-deletion "red"))
 
 ;; -----------------------------------------------------------------------------
+;; Markdown
+;; -----------------------------------------------------------------------------
+(when (require 'markdown-mode nil t)
+  (custom-set-variables '(markdown-command "/usr/bin/pandoc"))
+  (setq markdown-preview-stylesheets (list "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css")))
+
+;; -----------------------------------------------------------------------------
 ;; Haskell
 ;; -----------------------------------------------------------------------------
 (when (require 'haskell-mode nil t)
