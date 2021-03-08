@@ -7,8 +7,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bmkp/bookmarks")
+ '(haskell-stylish-on-save t)
+ '(markdown-command "/usr/bin/pandoc")
  '(package-selected-packages
-   '(markdown-preview-eww markdown-preview-mode markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree intero go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
+   '(markdown-preview-eww markdown-preview-mode markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
  '(safe-local-variable-values
    '((cider-default-cljs-repl . shadow)
      (cider-shadow-cljs-default-options . "app"))))
