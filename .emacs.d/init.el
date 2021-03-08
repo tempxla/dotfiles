@@ -536,7 +536,6 @@
                      (custom-set-variables '(haskell-stylish-on-save t))
                      (when (boundp 'flycheck-mode)
                        (flycheck-mode))
-                     (intero-mode)
                      (define-key haskell-mode-map (kbd "M-,") 'xref-pop-marker-stack))))))
 
 ;; -----------------------------------------------------------------------------
