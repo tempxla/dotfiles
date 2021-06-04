@@ -19,6 +19,9 @@ ln -sf ${THIS_DIR}/.inputrc             ~/.inputrc
 ln -sf ${THIS_DIR}/.zshrc               ~/.zshrc
 ln -sf ${THIS_DIR}/.zshenv              ~/.zshenv
 
+## pwsh
+ln -sf ${THIS_DIR}/.config/powershell/Microsoft.PowerShell_profile.ps1 ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+
 ## emacs
 ln -sf ${THIS_DIR}/.emacs.d/init.el     ~/.emacs.d/init.el
 ln -sf ${THIS_DIR}/.emacs.d/custom.el   ~/.emacs.d/custom.el
