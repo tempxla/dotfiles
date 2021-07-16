@@ -11,6 +11,7 @@ ln -sf ${THIS_DIR}/bin/get-os-release.sh  ~/bin/get-os-release.sh
 ln -sf ${THIS_DIR}/.Xresources            ~/.Xresources
 ln -sf ${THIS_DIR}/.Xmodmap               ~/.Xmodmap
 ln -sf ${THIS_DIR}/.config/fontconfig/fonts.conf  ~/.config/fontconfig/fonts.conf
+ln -sf ${THIS_DIR}/bin/run-xrandr.sh      ~/bin/run-xrandr.sh
 
 ## shell
 ln -sf ${THIS_DIR}/.inputrc             ~/.inputrc
