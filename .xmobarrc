@@ -3,7 +3,7 @@ Config {
   , additionalFonts = ["xft:MigMix 1M:size=9:antialias=true"]
   , bgColor = "#1a1a1a"
   , fgColor = "#e5e5e5"
-  , position = Static { xpos = 0, ypos = 0, width = 1920, height = 27 }
+  , position = Static { xpos = 1920, ypos = 0, width = 1920, height = 27 }
   , border = BottomB
   , borderColor = "#6D9CBE"
   , lowerOnStart = True
