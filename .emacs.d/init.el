@@ -384,7 +384,10 @@
 ;; multi-term
 (when (require 'multi-term nil t)
   (setq multi-term-program "/usr/bin/zsh")
-  (define-key global-map (kbd "C-x t") 'multi-term))
+  (define-key global-map (kbd "C-x t") 'multi-term)
+  (add-hook 'term-mode-hook
+            '(lambda ()
+               (define-key term-raw-map (kbd "M-o") nil))))
 
 ;; line-bookmark
 (when (require 'bm nil t)
@@ -413,6 +416,16 @@
   (set-face-background 'icicle-special-candidate nil)
   (set-face-foreground 'icicle-special-candidate "red")
   (icy-mode 1))
+
+;; LSP Mode
+(when (require 'lsp-mode nil t)
+  (set-face-foreground 'lsp-face-highlight-read "black")
+  (set-face-background 'lsp-face-highlight-read "yellow")
+  (set-face-foreground 'lsp-face-highlight-textual "black")
+  (set-face-background 'lsp-face-highlight-textual "yellow")
+  (set-face-foreground 'lsp-face-highlight-write "black")
+  (set-face-background 'lsp-face-highlight-write "yellow")
+  (add-hook 'powershell-mode-hook #'lsp))
 
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
