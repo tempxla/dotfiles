@@ -50,6 +50,9 @@ ln -sf ${THIS_DIR}/.navi2ch/init.el     ~/.navi2ch/init.el
 #ln -sf ${THIS_DIR}/.bash_aliases        ~/.bash_aliases
 ln -sf ${THIS_DIR}/.bashrc              ~/.bashrc
 
+## VSCode
+ln -sf ${THIS_DIR}/.config/Code/User/settings.json ~/.config/Code/User/settings.json
+
 ## fish
 #ln -sf ${THIS_DIR}/.config/fish/config.fish                  ~/.config/fish/config.fish
 #ln -sf ${THIS_DIR}/.config/fish/fishd.hostname               ~/.config/fish/fishd.${HOSTNAME}

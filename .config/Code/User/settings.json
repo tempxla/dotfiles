@@ -1,0 +1,18 @@
+{
+    // Window
+    "window.menuBarVisibility": "toggle",
+
+    // Terminal
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontFamily": "'MigMix 2M'",
+    "terminal.external.linuxExec": "urxvtc",
+
+    // PowerShell
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "/var/lib/snapd/snap/bin/pwsh",
+            "versionName": "Snap PowerShell"
+        }
+    ],
+   "powershell.powerShellDefaultVersion": "Snap PowerShell",
+}
