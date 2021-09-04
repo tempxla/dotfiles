@@ -427,6 +427,9 @@
   (set-face-background 'lsp-face-highlight-write "yellow")
   (add-hook 'powershell-mode-hook #'lsp))
 
+;; ediff
+(setq ediff-split-window-function 'split-window-horizontally)
+
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
 ;; -----------------------------------------------------------------------------
