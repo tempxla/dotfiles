@@ -25,6 +25,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Util.WorkspaceCompare (getSortByTag)
 
@@ -288,7 +289,9 @@ myManageHook = composeAll
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
 --myEventHook = mempty
-myEventHook = docksEventHook -- 初期起動時 xmobarに重なるの防止
+myEventHook = do
+  docksEventHook       -- 初期起動時 xmobarに重なるの防止
+  fullscreenEventHook  -- フルスクリーン化対応
 
 ------------------------------------------------------------------------
 -- Status bars and logging
