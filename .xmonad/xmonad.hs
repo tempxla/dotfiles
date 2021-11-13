@@ -155,8 +155,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
 
     -- AlsaMixer
-    , ((modm,               xK_minus     ), spawn "amixer -q set Master 2%-"   )
-    , ((modm .|. shiftMask, xK_semicolon ), spawn "amixer -q set Master 2%+"   )
+    , ((modm,               xK_minus     ), spawn "amixer -q set Master 100-"   )
+    , ((modm .|. shiftMask, xK_semicolon ), spawn "amixer -q set Master 100+"   )
     , ((modm .|. shiftMask, xK_m         ), spawn "amixer -q set Master toggle")
 
     -- XScreenSaver
