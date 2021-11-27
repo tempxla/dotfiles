@@ -241,7 +241,7 @@
 ;; 行末の空白を削除する
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; 閉じ括弧などを自動挿入
-(electric-pair-mode 1)
+;; (electric-pair-mode 1) ; smartparensに置き換え
 ;; (setq skeleton-pair t)
 ;; (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
 ;; (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
@@ -429,6 +429,10 @@
 
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally)
+
+;; smartparens
+(when (require 'smartparens-config nil t)
+  (smartparens-global-mode))
 
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
