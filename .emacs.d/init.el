@@ -432,7 +432,11 @@
 
 ;; smartparens
 (when (require 'smartparens-config nil t)
-  (smartparens-global-mode))
+  (smartparens-global-mode)
+  (set-face-foreground 'sp-pair-overlay-face nil)
+  (set-face-background 'sp-pair-overlay-face nil)
+  (set-face-foreground 'sp-show-pair-enclosing nil)
+  (set-face-background 'sp-show-pair-enclosing nil))
 
 ;; -----------------------------------------------------------------------------
 ;; キーバインド
