@@ -601,7 +601,8 @@
             ;; You can toggle it manually with M-x cider-auto-test-mode, or you can use:
             ;; This is identical to manually typing C-c C-t C-n every time you load a Clojure buffer.
             ;; As described previously, CIDER will try to automatically determine the namespace containing the tests.
-            (cider-auto-test-mode 1)))
+            (cider-auto-test-mode 1)
+            (defalias 'crcb 'cider-repl-clear-buffer)))
 
 ;; -----------------------------------------------------------------------------
 ;; navi2ch
