@@ -12,7 +12,9 @@
  '(package-selected-packages
    '(smartparens powershell dap-mode lsp-ui lsp-mode markdown-preview-eww markdown-preview-mode markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext cider undohist undo-tree go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
  '(safe-local-variable-values
-   '((cider-default-cljs-repl . shadow)
+   '((cider-ns-refresh-after-fn . "integrant.repl/resume")
+     (cider-ns-refresh-before-fn . "integrant.repl/suspend")
+     (cider-default-cljs-repl . shadow)
      (cider-shadow-cljs-default-options . "app"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
