@@ -599,6 +599,8 @@
             ;; As described previously, CIDER will try to automatically determine the namespace containing the tests.
             (cider-auto-test-mode 1)
             (defalias 'crcb 'cider-repl-clear-buffer)))
+(when (require 'flycheck-clj-kondo nil t)
+  )
 
 ;; -----------------------------------------------------------------------------
 ;; navi2ch
