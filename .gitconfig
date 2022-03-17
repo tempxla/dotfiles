@@ -3,8 +3,6 @@
     name = tempxla
 [alias]
     loga = log --decorate --graph --all --oneline
-[merge]
-	ff = false
 [pull]
 	ff = only
 [init]
