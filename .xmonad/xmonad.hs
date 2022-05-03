@@ -77,8 +77,9 @@ myFocusedBorderColor = "#BCBCBC"
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+    [ ((modm .|. shiftMask, xK_Return  ), spawn $ XMonad.terminal conf)
     , ((modm .|. shiftMask, xK_KP_Enter), spawn $ XMonad.terminal conf)
+    , ((modm .|. shiftMask, xK_x       ), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
     , ((modm,               xK_p         ), spawn "dmenu_run -l 10 -m 1")
@@ -115,7 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_m     ), windows W.focusMaster  )
 
     -- Swap the focused window and the master window
-    , ((modm,               xK_Return), windows W.swapMaster)
+    , ((modm,               xK_Return  ), windows W.swapMaster)
     , ((modm,               xK_KP_Enter), windows W.swapMaster)
 
     -- Swap the focused window with the next window
