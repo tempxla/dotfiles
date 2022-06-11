@@ -264,6 +264,7 @@ myManageHook = composeAll
     , className =? "Corebird"       --> doShift (myWorkspaces !! 0)
     , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
     , className =? "Firefox"        --> doShift (myWorkspaces !! 1)
+    , className =? "firefox"        --> doShift (myWorkspaces !! 1)
     , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
     , className =? "vlc"            --> doShift (myWorkspaces !! 3)
     , className =? "Google-chrome"  --> doShift (myWorkspaces !! 4)
