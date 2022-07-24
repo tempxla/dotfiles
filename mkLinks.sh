@@ -28,6 +28,9 @@ ln -sf ${THIS_DIR}/.config/powershell/Microsoft.PowerShell_profile.ps1 ~/.config
 ln -sf ${THIS_DIR}/.emacs.d/init.el     ~/.emacs.d/init.el
 ln -sf ${THIS_DIR}/.emacs.d/custom.el   ~/.emacs.d/custom.el
 
+## vim
+ln -sf ${THIS_DIR}/.vimrc               ~/.vimrc
+
 ## git
 ln -sf ${THIS_DIR}/.gitconfig           ~/.gitconfig
 
