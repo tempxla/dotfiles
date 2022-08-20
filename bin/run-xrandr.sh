@@ -1,4 +1,4 @@
 #!/bin/sh
 
-xrandr --output HDMI-0 --auto --output DP-5 --auto --left-of HDMI-0
-xrandr --output DP-5 --auto --primary
+xrandr --output HDMI-1 --auto
+xrandr --output DP-1 --auto --primary --left-of HDMI-1
