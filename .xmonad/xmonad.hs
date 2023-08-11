@@ -368,7 +368,7 @@ myStartupHook = do
 main = do
   -- The main function.
   --xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
-  xmonad myConfig
+  xmonad $ ewmh myConfig
   where
     -- Command to launch the bar.
     myBar = "/usr/bin/xmobar"
