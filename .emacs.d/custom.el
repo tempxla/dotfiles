@@ -10,7 +10,7 @@
  '(haskell-stylish-on-save t)
  '(markdown-command "/usr/bin/pandoc")
  '(package-selected-packages
-   '(flycheck-clj-kondo smartparens powershell dap-mode lsp-ui lsp-mode markdown-preview-eww markdown-preview-mode markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext undohist undo-tree go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
+   '(csharp-mode flycheck-clj-kondo smartparens powershell dap-mode lsp-ui lsp-mode markdown-preview-eww markdown-preview-mode markdown-mode win-switch multi-term bm ace-window hlinum magit flycheck recentf-ext undohist undo-tree go-eldoc flymake-haskell-multi company-go company-ghc auto-highlight-symbol))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "integrant.repl/resume")
      (cider-ns-refresh-before-fn . "integrant.repl/suspend")
