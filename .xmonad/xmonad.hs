@@ -343,6 +343,7 @@ myXmobarPP = xmobarPP
 -- By default, do nothing.
 -- myStartupHook = return ()
 myStartupHook = do
+  spawn "xset s off -dpms"  -- Screensaver off, DPMS diable
   spawn "xmodmap ~/.Xmodmap"
   spawn "ibus-daemon -drx"
   -- feh
