@@ -83,10 +83,11 @@ alias mlterm-kill="mlclient --kill"
 alias g='git'
 alias ga='git add'
 alias gd='git diff'
+alias gdw='git diff --word-diff'
 alias gs='git status'
 alias gp='git push'
 # alias gb='git branch'
-# alias gco='git checkout'
+alias gco='git checkout'
 # alias gf='git fetch'
 alias gc='git commit'
 
