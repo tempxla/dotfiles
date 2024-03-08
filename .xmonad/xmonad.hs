@@ -290,10 +290,7 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
---myEventHook = mempty
-myEventHook = do
-  docksEventHook       -- 初期起動時 xmobarに重なるの防止
-  fullscreenEventHook  -- フルスクリーン化対応
+myEventHook = mempty
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -369,7 +366,7 @@ myStartupHook = do
 main = do
   -- The main function.
   --xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
-  xmonad $ ewmh myConfig
+  xmonad . ewmh . docks .ewmhFullscreen $ myConfig
   where
     -- Command to launch the bar.
     myBar = "/usr/bin/xmobar"
