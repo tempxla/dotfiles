@@ -180,11 +180,7 @@
 ;; ファイルサイズ表示
 (setq size-indication-mode t)
 ;; 行番号表示
-(line-number-mode 0)
-(global-linum-mode t)
-(setq linum-format "%4d  ")
-(set-face-background 'linum "color-234")
-(set-face-foreground 'linum "white")
+(global-display-line-numbers-mode 1)
 ;; 桁番号表示
 (setq column-number-mode t)
 ;; 対応する括弧強調
@@ -223,11 +219,6 @@
 ;; (sml-modeline-mode t)
 ;; (set-face-background 'sml-modeline-end-face "green3")   ; 全体の背景色
 ;; (set-face-background 'sml-modeline-vis-face "red3")   ; 表示領域の背景色
-;; 選択行ハイライト
-(when (require 'hlinum nil t)
-  (hlinum-activate)
-  (custom-set-faces
-   '(linum-highlight-face ((t (:foreground "black" :background "magenta"))))))
 
 ;; -----------------------------------------------------------------------------
 ;; 挙動
