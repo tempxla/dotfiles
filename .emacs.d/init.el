@@ -86,13 +86,8 @@
 ;; C-x uでtree表示
 (when (require 'undo-tree nil t)
   (setq undo-tree-auto-save-history nil)
+  (define-key global-map (kbd "C-M-_") 'undo-tree-redo)
   (global-undo-tree-mode))
-
-;; redo+
-;; https://www.emacswiki.org/emacs/redo+.el
-(when (require 'redo+ nil t)
-  (define-key global-map (kbd "C-M-/") 'redo)
-  (define-key global-map (kbd "C-M-_") 'redo))
 
 ;; point-undo
 ;; http://d.hatena.ne.jp/rubikitch/20081230/pointundo
