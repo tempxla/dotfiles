@@ -16,6 +16,7 @@ ln -sf ${THIS_DIR}/bin/run-xrandr.sh         ~/bin/run-xrandr.sh
 
 ## shell
 ln -sf ${THIS_DIR}/.inputrc             ~/.inputrc
+ln -sf ${THIS_DIR}/.dir_colors          ~/.dir_colors
 
 ## zsh
 ln -sf ${THIS_DIR}/.zshrc               ~/.zshrc
