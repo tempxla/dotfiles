@@ -85,6 +85,7 @@
 ;; undo-tree
 ;; C-x uでtree表示
 (when (require 'undo-tree nil t)
+  (setq undo-tree-auto-save-history nil)
   (global-undo-tree-mode))
 
 ;; redo+
