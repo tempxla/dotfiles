@@ -19,52 +19,10 @@
 ;; ELPA
 ;; M-x list-packages
 (when (require 'package nil t)
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
   (package-initialize))
-
-;; auto-install
-(when (require 'auto-install nil t)
-  (setq auto-install-directory "~/.emacs.d/elisp/")
-  (auto-install-update-emacswiki-package-name t)
-  (auto-install-compatibility-setup))
-;; << Setup >>
-;; curl -O https://www.emacswiki.org/emacs/download/auto-install.el
-;; M-x byte-compile-file
-;; << Install Elisp >>
-;; https://www.emacswiki.org/emacs/point-undo.el
-;; (install-elisp "https://www.emacswiki.org/emacs/download/point-undo.el")
-;; https://www.emacswiki.org/emacs/RedoPlus
-;; (install-elisp "https://www.emacswiki.org/emacs/download/redo+.el")
-;; https://www.emacswiki.org/emacs/BookmarkPlus
-;; > Please, after you download all of the Bookmark+ files, first load bookmark+-mac.el,
-;; > before you byte-compile and load all of the files.
-;; > It contains the latest Lisp macros needed for proper byte-compiling.
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-mac.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-bmu.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-key.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-lit.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-doc.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+-chg.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/bookmark+.el")
-;; https://www.emacswiki.org/emacs/DiredPlus
-;; (install-elisp "https://www.emacswiki.org/emacs/download/dired+.el")
-;; https://www.emacswiki.org/emacs/Icicles
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-mac.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-face.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-opt.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-var.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-fn.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-mcmd.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-cmd1.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-cmd2.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-mode.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-chg.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-doc1.el")
-;; (install-elisp "https://www.emacswiki.org/emacs/download/icicles-doc2.el")
-
 
 ;; backup & autosave filesはcacheフォルダに保存
 ;; 他のプラグインのキャッシュとかもcacheフォルダへ設定する
@@ -130,12 +88,14 @@
   (global-undo-tree-mode))
 
 ;; redo+
+;; https://www.emacswiki.org/emacs/redo+.el
 (when (require 'redo+ nil t)
   (define-key global-map (kbd "C-M-/") 'redo)
   (define-key global-map (kbd "C-M-_") 'redo))
 
 ;; point-undo
 ;; http://d.hatena.ne.jp/rubikitch/20081230/pointundo
+;; https://www.emacswiki.org/emacs/point-undo.el
 (when (require 'point-undo nil t)
   (define-key global-map [f7] 'point-undo)
   (define-key global-map [S-f7] 'point-redo))
@@ -389,11 +349,12 @@
   (global-set-key (kbd "<f2>") 'bm-next)
   (global-set-key (kbd "<S-f2>") 'bm-previous))
 
-(when (require 'bookmark+ nil t)
-  (setq bmkp-bmenu-state-file "~/.emacs.d/bmkp/.emacs-bmk-bmenu-state.el")
-  (setq bmkp-last-as-first-bookmark-file "~/.emacs.d/bmkp/bookmarks"))
+;; Bookmark+
+;; https://www.emacswiki.org/emacs/BookmarkPlus
+(require 'bookmark+ nil t)
 
 ;; Icicles
+;; https://www.emacswiki.org/emacs/Icicles
 (when (require 'icicles nil t)
   (add-hook 'icicle-mode-hook
             (lambda ()
@@ -471,9 +432,6 @@
 (setq dired-listing-switches "-alh -G")
 (setq ls-lisp-dirs-first t)
 
-(setq diredp-hide-details-initially-flag nil)
-(setq dired-details-propagate-flag t)
-
 (put 'dired-find-alternate-file 'disabled nil)
 (define-key dired-mode-map (kbd "b") (lambda () (interactive) (find-alternate-file "..")))
 ;;(define-key dired-mode-map (kbd "q") '(lambda () (interactive) (quit-window t)))
@@ -487,6 +445,8 @@
         (kill-this-buffer)
       (self-insert-command 1))))
 
+;; DiredPlus
+;; https://www.emacswiki.org/emacs/DiredPlus
 (when (require 'dired+ nil t)
   ;; カスタマイズ
   ;; M-x customize-group RET Dired-Plus
