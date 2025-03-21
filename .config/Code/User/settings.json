@@ -1,12 +1,10 @@
 {
     // Window
     "window.menuBarVisibility": "toggle",
-
     // Terminal
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontFamily": "'MigMix 2M'",
     "terminal.external.linuxExec": "urxvtc",
-
     // PowerShell
     "powershell.powerShellAdditionalExePaths": [
         {
@@ -14,5 +12,21 @@
             "versionName": "Snap PowerShell"
         }
     ],
-   "powershell.powerShellDefaultVersion": "Snap PowerShell",
+    "powershell.powerShellDefaultVersion": "Snap PowerShell",
+    "workbench.colorTheme": "GitHub Light",
+    "editor.tokenColorCustomizations": {
+        "[GitHub Light]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "entity",
+                        "entity.name"
+                    ],
+                    "settings": {
+                        "foreground": "#2F2F2F"
+                    }
+                },
+            ]
+        }
+    },
 }
