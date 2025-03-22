@@ -127,6 +127,10 @@
 (set-face-foreground 'tab-bar "green")
 (set-face-background 'tab-bar-tab-inactive "black")
 (set-face-foreground 'tab-bar-tab-inactive "color-244")
+;; grep-find
+(set-face-foreground 'compilation-info "blue")
+(set-face-foreground 'match "black")
+(set-face-background 'match "yellow")
 
 ;; -----------------------------------------------------------------------------
 ;; 見た目
