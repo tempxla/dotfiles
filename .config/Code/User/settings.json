@@ -6,27 +6,9 @@
     "terminal.integrated.fontFamily": "'MigMix 2M'",
     "terminal.external.linuxExec": "urxvtc",
     // PowerShell
-    "powershell.powerShellAdditionalExePaths": [
-        {
-            "exePath": "/var/lib/snapd/snap/bin/pwsh",
-            "versionName": "Snap PowerShell"
-        }
-    ],
+    "powershell.powerShellAdditionalExePaths": {
+        "Snap PowerShell": "/var/lib/snapd/snap/bin/pwsh"
+    },
     "powershell.powerShellDefaultVersion": "Snap PowerShell",
     "workbench.colorTheme": "GitHub Light",
-    "editor.tokenColorCustomizations": {
-        "[GitHub Light]": {
-            "textMateRules": [
-                {
-                    "scope": [
-                        "entity",
-                        "entity.name"
-                    ],
-                    "settings": {
-                        "foreground": "#2F2F2F"
-                    }
-                },
-            ]
-        }
-    },
 }
