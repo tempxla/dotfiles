@@ -255,23 +255,17 @@ myLayout = avoidStruts standardLayout
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , className =? "feh"            --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
+    [ resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
-    , className =? "Mikutter.rb"    --> doShift (myWorkspaces !! 0)
-    , className =? "Corebird"       --> doShift (myWorkspaces !! 0)
-    , className =? "Firefox-esr"    --> doShift (myWorkspaces !! 1)
-    , className =? "Firefox"        --> doShift (myWorkspaces !! 1)
-    , className =? "firefox"        --> doShift (myWorkspaces !! 1)
-    , className =? "Doublecmd"      --> doShift (myWorkspaces !! 2)
-    , className =? "vlc"            --> doShift (myWorkspaces !! 3)
-    , className =? "Google-chrome"  --> doShift (myWorkspaces !! 4)
-    , className =? "Chromium"       --> doShift (myWorkspaces !! 4)
-    , className =? "V2C"            --> doShift (myWorkspaces !! 7)
-    , className =? "Siki"           --> doShift (myWorkspaces !! 7)
-    , className =? "Eclipse"        --> doShift (myWorkspaces !! 6)
+    , className =? "feh"            --> doFloat
+    , className =? "Gimp"           --> doFloat
+    , className =? "Firefox"        --> doShift "2A"
+    , className =? "firefox"        --> doShift "2A"
+    , className =? "vlc"            --> doShift "4A"
+    , className =? "Google-chrome"  --> doShift "5A"
+    , className =? "Chromium"       --> doShift "5A"
+    , className =? "Siki"           --> doShift "8A"
+    , className =? "Spotify"        --> doShift "7B"
     -- 新しいウィンドウを末尾に追加しフォーカスする
     , not <$> isFloat               --> insertPosition End Newer
     ]
