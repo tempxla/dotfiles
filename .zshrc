@@ -63,7 +63,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias la='ls -a'
+alias l='ls -l --group-directories-first --time-style="+%Y/%m/%d %H:%M:%S"'
+alias la='ls -a --group-directories-first'
 alias ll='ls -al --group-directories-first --time-style="+%Y/%m/%d %H:%M:%S"'
 alias lo='ls -ao --group-directories-first --time-style="+%Y/%m/%d %H:%M:%S"'
 alias x='exit'
@@ -77,8 +78,8 @@ alias e-kill="emacsclient -e '(kill-emacs)'"
 alias e-daemon='emacs --daemon'
 alias e-debug-init='emacs -nw --debug-init'
 
-alias mlterm-daemon="mlterm --daemon=genuine -e ':'"
-alias mlterm-kill="mlclient --kill"
+#alias mlterm-daemon="mlterm --daemon=genuine -e ':'"
+#alias mlterm-kill="mlclient --kill"
 
 alias g='git'
 alias ga='git add'
@@ -86,15 +87,15 @@ alias gd='git diff'
 alias gdw='git diff --word-diff'
 alias gs='git status'
 alias gp='git push'
-# alias gb='git branch'
+alias gb='git branch'
 alias gco='git checkout'
-# alias gf='git fetch'
+alias gf='git fetch'
 alias gc='git commit'
 
 alias feh-scale='feh --scale-down --auto-zoom --geometry 800x600+320+150'
 
-alias tweet-nowplaying='mpc current | sed -e "s/\(.*\)/#nowplaying \0/" | xargs -0 twitter-friend-list tweet'
-alias covid19='curl "https://corona-stats.online/Japan"'
+#alias tweet-nowplaying='mpc current | sed -e "s/\(.*\)/#nowplaying \0/" | xargs -0 twitter-friend-list tweet'
+#alias covid19='curl "https://corona-stats.online/Japan"'
 
 # disable r
 disable r
