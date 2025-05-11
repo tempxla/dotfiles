@@ -430,7 +430,7 @@
 (setq ls-lisp-use-localized-time-format t)
 ;;(setq ls-lisp-format-time-list '("%Y/%m/%d %H:%M:%S" "%Y/%m/%d %H:%M:%S"))
 (setq ls-lisp-format-time-list '("%Y/%m/%d %H:%M:%S " "%Y/%m/%d %H:%M:%S "))
-(setq dired-listing-switches "-alh -G")
+(setq dired-listing-switches "-alh")
 (setq ls-lisp-dirs-first t)
 
 (put 'dired-find-alternate-file 'disabled nil)
