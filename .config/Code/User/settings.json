@@ -5,10 +5,5 @@
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontFamily": "'MigMix 2M'",
     "terminal.external.linuxExec": "urxvtc",
-    // PowerShell
-    "powershell.powerShellAdditionalExePaths": {
-        "Snap PowerShell": "/var/lib/snapd/snap/bin/pwsh"
-    },
-    "powershell.powerShellDefaultVersion": "Snap PowerShell",
     "workbench.colorTheme": "GitHub Light",
 }
