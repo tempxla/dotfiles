@@ -264,7 +264,7 @@ myManageHook = composeAll
     , className =? "vlc"            --> doShift "4A"
     , className =? "Google-chrome"  --> doShift "5A"
     , className =? "Chromium"       --> doShift "5A"
-    , className =? "Siki"           --> doShift "8A"
+    , className =? "siki"           --> doShift "8A"
     , className =? "Spotify"        --> doShift "7B"
     -- 新しいウィンドウを末尾に追加しフォーカスする
     , not <$> isFloat               --> insertPosition End Newer
