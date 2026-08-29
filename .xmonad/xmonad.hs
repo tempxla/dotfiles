@@ -32,7 +32,8 @@ import XMonad.Util.WorkspaceCompare (getSortByTag)
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "urxvtc"
+myTerminal      = "urxvt"
+--myTerminal      = "urxvtc"
 --myTerminal      = "mlclient"
 --myTerminal      = "mlterm"
 
@@ -343,10 +344,9 @@ myStartupHook = do
   bgLeftPath  <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map (\ext -> bgDir ++ "/desktop_left." ++ ext) ["png", "jpg"])
   bgRightPath <- liftIO $ head . (++ [bgDefault]) <$> (filterM doesFileExist $ map (\ext -> bgDir ++ "/desktop_right." ++ ext) ["png", "jpg"])
   spawn $ "feh --bg-fill " ++ bgLeftPath ++ " --bg-fill " ++ bgRightPath
-  -- compton
-  spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
+  --spawn "compton -c -r 2 -o 0.8 -l -2 -t -2"
   --spawn "xscreensaver"
-  spawn "~/bin/run-urxvtd.sh"
+  --spawn "~/bin/run-urxvtd.sh"
   --spawn "mlterm --daemon=genuine -e ':'" -- daemonだとemacsでctrl+F2が効かない
   setWMName "LG3D"  -- for java apps
 
